@@ -21,38 +21,6 @@
     />
     <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-
-    <!--COntact form backend-->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init('D4-LRuIQaRjvR7RXL');
-      })();
-    </script>
-    <script type="text/javascript">
-      window.onload = function () {
-        document
-          .getElementById('contact-form')
-          .addEventListener('submit', function (event) {
-            event.preventDefault();
-            // generate a five digit number for the contact_number variable
-            this.contact_number.value = (Math.random() * 100000) | 0;
-            // these IDs from the previous steps
-            emailjs.sendForm('contact_service', 'contact_form', this).then(
-              function () {
-                console.log('SUCCESS!');
-              },
-              function (error) {
-                console.log('FAILED...', error);
-              }
-            );
-          });
-      };
-    </script>
   </head>
 
   <body>
@@ -230,7 +198,7 @@
               <!--Logo-->
               <div class="logo">
                 <a href="index.html" title=""
-                  ><img src="images/logo.png" alt="" title=""
+                  ><img src="images/logo-dark.png" alt="" title=""
                 /></a>
               </div>
 
@@ -261,7 +229,7 @@
       <!-- Start main-content -->
       <section
         class="page-title"
-        style="background-image: url(images/updated/contact\ us\ page3.jpg)"
+        style="background-image: url(images/background/contact-pagetitle.jpg)"
       >
         <div class="auto-container">
           <div class="title-outer">
@@ -275,7 +243,6 @@
       </section>
       <!-- end main-content -->
 
-<<<<<<< HEAD
       <!--Contact Details Start-->
       <section class="contact-details">
         <div class="container">
@@ -286,12 +253,18 @@
                 <h2>Feel free to write</h2>
               </div>
               <!-- Contact Form -->
-              <form id="contact-form" name="contact_form" class="">
+              <form
+                id="contact_form"
+                name="contact_form"
+                class=""
+                action="contact.php"
+                method="post"
+              >
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-3">
                       <input
-                        name="user_name"
+                        name="name"
                         class="form-control"
                         type="text"
                         placeholder="Enter Name"
@@ -301,7 +274,7 @@
                   <div class="col-sm-6">
                     <div class="mb-3">
                       <input
-                        name="user_email"
+                        name="email"
                         class="form-control required email"
                         type="email"
                         placeholder="Enter Email"
@@ -313,7 +286,17 @@
                   <div class="col-sm-6">
                     <div class="mb-3">
                       <input
-                        name="contact_number"
+                        name="subject"
+                        class="form-control required"
+                        type="text"
+                        placeholder="Enter Subject"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <input
+                        name="phone"
                         class="form-control"
                         type="text"
                         placeholder="Enter Phone"
@@ -338,7 +321,6 @@
                   />
                   <button
                     type="submit"
-                    value="Send"
                     class="theme-btn btn-style-one"
                     data-loading-text="Please wait..."
                   >
@@ -404,16 +386,6 @@
         </div>
       </section>
       <!--Contact Details End-->
-=======
-		<!-- Sticky Header  -->
-		<div class="sticky-header">
-			<div class="auto-container">
-				<div class="inner-container">
-					<!--Logo-->
-					<div class="logo">
-						<a href="index.html" title=""><img src="images/logo-dark.png" alt="" title=""></a>
-					</div>
->>>>>>> 5c8c2c50be693aeaec184c6153c402c082bfd16f
 
       <!-- Divider: Google Map -->
       <section>
@@ -438,7 +410,6 @@
           style="background-image: url(images/background/2.jpg)"
         ></div>
 
-<<<<<<< HEAD
         <!--Widgets Section-->
         <div class="widgets-section">
           <div class="auto-container">
@@ -484,121 +455,6 @@
                   </ul>
                 </div>
               </div>
-=======
-	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url(images/background/contact-pagetitle.jpg);">
-		<div class="auto-container">
-			<div class="title-outer">
-				<h1 class="title">Contact Us</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
-					<li>Contact</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!-- end main-content -->
-
-	<!--Contact Details Start-->
-	<section class="contact-details">
-		<div class="container ">
-			<div class="row">
-				<div class="col-xl-7 col-lg-6">
-					<div class="sec-title">
-						<span class="sub-title">Send us email</span>
-						<h2>Feel free to write</h2>
-					</div>
-					<!-- Contact Form -->
-					<form id="contact_form" name="contact_form" class="" action="contact.php" method="post">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="mb-3">
-									<input name="name" class="form-control" type="text" placeholder="Enter Name">
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="mb-3">
-									<input name="email" class="form-control required email" type="email" placeholder="Enter Email">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="mb-3">
-									<input name="subject" class="form-control required" type="text" placeholder="Enter Subject">
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="mb-3">
-									<input name="phone" class="form-control" type="text" placeholder="Enter Phone">
-								</div>
-							</div>
-						</div>
-						<div class="mb-3">
-							<textarea name="message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
-						</div>
-						<div class="mb-3">
-							<input name="form_botcheck" class="form-control" type="hidden" value="" />
-							<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
-							<button type="reset" class="theme-btn btn-style-one"><span class="btn-title">Reset</span></button>
-						</div>
-					</form>
-					<!-- Contact Form Validation-->
-				</div>
-				<div class="col-xl-5 col-lg-6">
-					<div class="contact-details__right">
-						<div class="sec-title">
-							<span class="sub-title">Need any help?</span>
-							<h2>Say Hello!</h2>
-							<div class="text">Let&#39;s connect and create something remarkable together! Our team is excited to hear from
-								you and discuss how we can help bring your vision to life.</div>
-						</div>
-						<ul class="list-unstyled contact-details__info">
-							<li>
-								<div class="icon">
-									<span class="lnr-icon-phone-plus"></span>
-								</div>
-								<div class="text">
-									<h6>Have any question?</h6>
-									<a href="tel:+919945649161"><span>Free</span> +91 9945649161</a>
-								</div>
-							</li>
-							<li>
-								<div class="icon">
-									<span class="lnr-icon-envelope1"></span>
-								</div>
-								<div class="text">
-									<h6>Write email</h6>
-									<a href="mailto:info@srinfotech.biz">info@srinfotech.biz</a>
-								</div>
-							</li>
-							<li>
-								<div class="icon">
-									<span class="lnr-icon-location"></span>
-								</div>
-								<div class="text">
-									<h6>Visit anytime</h6>
-									<span>#62, 6th main road, JP Nagar, 7th phase, Bengaluru -560078</span>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--Contact Details End-->
-	
-	<!-- Divider: Google Map -->
-	<section>
-		<div class="container-fluid p-0">
-			<div class="row">
-				<!-- Google Map HTML Codes -->
-				<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3889.363362221534!2d77.5812502148211!3d12.884340990913104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDUzJzAzLjYiTiA3N8KwMzUnMDAuNCJF!5e0!3m2!1sen!2sin!4v1681547821740!5m2!1sen!2sin" data-tm-width="100%" height="500" frameborder="0" allowfullscreen=""></iframe>
-			</div>
-		</div>
-	</section>
->>>>>>> 5c8c2c50be693aeaec184c6153c402c082bfd16f
 
               <!--Footer Column-->
               <div class="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
@@ -631,37 +487,38 @@
                   <div class="widget-content">
                     <div class="outer clearfix">
                       <figure class="image">
-                        <a href="services/software-engineering-solutions.html"
+                        <a
+                          href="../services/software-engineering-solutions.html"
                           ><img
-                            src="images/resource/project-thumb-1.jpg"
+                            src="../images/updated/Service_Img_size_80x80/software_engineering_Img_size_80x80.png"
                             alt="Software Engineering"
                         /></a>
                       </figure>
                       <figure class="image">
-                        <a href="services/digital-marketing-details.html"
+                        <a href="../services/digital-marketing-details.html"
                           ><img
-                            src="images/resource/project-thumb-2.jpg"
+                            src="../images/updated/Service_Img_size_80x80/Digital_Marketing_Img_size_80x80.png"
                             alt="Digital Marketing"
                         /></a>
                       </figure>
                       <figure class="image">
-                        <a href="services/software-management-details.html"
+                        <a href="../services/software-management-details.html"
                           ><img
-                            src="images/resource/project-thumb-3.jpg"
+                            src="../images/updated/Service_Img_size_80x80/software_Mantainess_Img_size_80x80.png"
                             alt="Software Management"
                         /></a>
                       </figure>
                       <figure class="image">
-                        <a href="services/ui-ux-details.html"
+                        <a href="../services/ui-ux-details.html"
                           ><img
-                            src="images/resource/project-thumb-4.jpg"
+                            src="../images/updated/Service_Img_size_80x80/UI_UX_Img_size_80x80.png"
                             alt="UI/UX"
                         /></a>
                       </figure>
                       <figure class="image">
-                        <a href="page-projects.html"
+                        <a href="../page-projects.html"
                           ><img
-                            src="images/resource/project-thumb-5.jpg"
+                            src="../images/resource/project-thumb-5.jpg"
                             alt="Projects"
                         /></a>
                       </figure>
