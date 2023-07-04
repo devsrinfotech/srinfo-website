@@ -256,8 +256,8 @@
               <form
                 id="contact_form"
                 name="contact_form"
+                action="https://certificate.srinfotech.biz/mail"
                 class=""
-                action="contact.php"
                 method="post"
               >
                 <div class="row">
@@ -322,9 +322,9 @@
                   <button
                     type="submit"
                     class="theme-btn btn-style-one"
-                    data-loading-text="Please wait..."
+                    data-loading-text="Sent ✔"
                   >
-                    <span class="btn-title">Send message</span>
+                    <span class="btn-title" id="submit-button">Send message</span>
                   </button>
                   <button type="reset" class="theme-btn btn-style-one">
                     <span class="btn-title">Reset</span>
@@ -565,6 +565,7 @@
     <!-- form submit -->
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.form.min.js"></script>
+    <script src="js/submit_form_data.js"></script>
     <script>
       (function ($) {
         $('#contact_form').validate({
