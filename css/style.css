@@ -913,10 +913,10 @@ Scroll To Top style
   position: fixed;
   right: 80px;
   bottom: 20px;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
-  line-height: 60px;
+  width: 80px;
+  height: 80px;
+  font-size: 60px;
+  line-height: 80px;
   color: #fff;
   text-align: center !important;
   cursor: pointer;
