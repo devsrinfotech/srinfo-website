@@ -19,6 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeLyiEnAAAAAGKq4oVVHOun-sJABia4uWbj4Lcv"></script>
 </head>
 
 <body>
@@ -156,25 +157,7 @@
           </ul>
         </nav>
       </div>
-      <!-- End Mobile Menu -->
 
-      <!-- Header Search -->
-      <div class="search-popup">
-        <span class="search-back-drop"></span>
-        <button class="close-search">
-          <span class="fa fa-times"></span>
-        </button>
-
-        <div class="search-inner">
-          <form method="post" action="https://kodesolution.com/html/2022/SRInfotech-html/index.html">
-            <div class="form-group">
-              <input type="search" name="search-field" s value="" placeholder="Search..." required="" />
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- End Header Search -->
 
       <!-- Sticky Header  -->
       <div class="sticky-header">
@@ -238,33 +221,34 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div class="mb-3">
-                    <input name="name" class="form-control" type="text" placeholder="Enter Name" />
+                    <input id="f_name" name="name" class="form-control" type="text" placeholder="Enter Name" />
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="mb-3">
-                    <input name="email" class="form-control required email" type="email" placeholder="Enter Email" />
+                    <input id="f_email" name="email" class="form-control required email" type="email" placeholder="Enter Email" />
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
                   <div class="mb-3">
-                    <input name="subject" class="form-control required" type="text" placeholder="Enter Subject" />
+                    <input id="f_subject" name="subject" class="form-control required" type="text" placeholder="Enter Subject" />
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="mb-3">
-                    <input name="phone" class="form-control" type="text" placeholder="Enter Phone" />
+                    <input id="f_phoen" name="phone" class="form-control" type="text" placeholder="Enter Phone" />
                   </div>
                 </div>
               </div>
               <div class="mb-3">
-                <textarea name="message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                <textarea id="f_message" name="message" class="form-control required" rows="5" maxlength="139" placeholder="Enter Message"></textarea>
               </div>
               <div class="mb-3">
-                <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                <button type="submit" class="theme-btn btn-style-one" data-loading-text="Sent ✔">
+
+                <button data-sitekey="6LeLyiEnAAAAAGKq4oVVHOun-sJABia4uWbj4Lcv" data-callback='onSubmit' data-action='submit' type="submit"
+                  class="theme-btn btn-style-one" data-loading-text="Sent ✔">
                   <span class="btn-title" id="submit-button">Send message</span>
                 </button>
                 <button type="reset" class="theme-btn btn-style-one">
@@ -312,7 +296,7 @@
                     <h6>Visit Us</h6>
                     <p style="font-size: 18px;margin-bottom: 5px;">#62, 6th main road,</p>
                     <p style="font-size: 18px;">JP Nagar,7th phase, Bengaluru-560078 </p>
-                  </div> 
+                  </div>
                 </li>
               </ul>
             </div>
@@ -484,35 +468,7 @@
   <script src="js/jquery.validate.min.js"></script>
   <script src="js/jquery.form.min.js"></script>
   <script src="js/submit_form_data.js"></script>
-  <script>
-    (function ($) {
-      $('#contact_form').validate({
-        submitHandler: function (form) {
-          var form_btn = $(form).find('button[type="submit"]');
-          var form_result_div = '#form-result';
-          $(form_result_div).remove();
-          form_btn.before(
-            '<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>'
-          );
-          var form_btn_old_msg = form_btn.html();
-          form_btn.html(form_btn.prop('disabled', true).data('loading-text'));
-          $(form).ajaxSubmit({
-            dataType: 'json',
-            success: function (data) {
-              if (data.status == 'true') {
-                $(form).find('.form-control').val('');
-              }
-              form_btn.prop('disabled', false).html(form_btn_old_msg);
-              $(form_result_div).html(data.message).fadeIn('slow');
-              setTimeout(function () {
-                $(form_result_div).fadeOut('slow');
-              }, 6000);
-            },
-          });
-        },
-      });
-    })(jQuery);
-  </script>
+
 </body>
 
 <!-- Developed by SR Infotech -->
