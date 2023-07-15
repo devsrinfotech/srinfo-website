@@ -37,5 +37,8 @@ const form = document
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: formData,
-    }).then(response => response.json()).then(data =>{console.log(data);});
+    });
+    alert('Your Query Has Been Submitted, We Will Get Back To You Shortly!');
+    
+    
   });
