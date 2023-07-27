@@ -61,7 +61,7 @@ License: copyright commercial
   --text-color-bg-theme-color1: #fff;
   --text-color-bg-theme-color2: #164333;
   --text-color-bg-theme-color3: #fff;
-  --text-color: #808287;
+  --text-color: #1e1e1;
   --headings-color: var(--theme-color1);
   --link-color: var(--theme-color1);
   --link-hover-color: var(--theme-color1);
@@ -968,6 +968,9 @@ Scroll To Top style
   color: var(--theme-color1);
 }
 
+.my-list li{
+ list-style: disc !important;
+}
 /*=== List Style Two ===*/
 .list-style-two {
   position: relative;
@@ -4062,7 +4065,7 @@ Section Title
 ***/
 .features-section-six {
   position: relative;
-  padding: 120px 0 90px;
+  padding: 50px 0 60px;
 }
 .features-section-six:before {
   position: absolute;
