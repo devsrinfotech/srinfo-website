@@ -1,969 +1,1836 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Developed by Sr INfotech -->
+
+
 
 <head>
-  <meta charset="utf-8" />
-  <title>SR Infotech | IT Solutions & Technology Patner</title>
-  <!-- Stylesheets -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-  <link href="plugins/revolution/css/settings.css" rel="stylesheet" type="text/css" />
-  <!-- REVOLUTION SETTINGS STYLES -->
-  <link href="plugins/revolution/css/layers.css" rel="stylesheet" type="text/css" />
-  <script src="https://kit.fontawesome.com/b4ffb9aafd.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/fontawesome-all.css">
-  <!-- REVOLUTION LAYERS STYLES -->
-  <link href="plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css" />
-  <!-- REVOLUTION NAVIGATION STYLES -->
-
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/responsive.css" rel="stylesheet" />
-
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
-
-  <!-- Responsive -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/SR_FavI_Ver1_wh.png">
+    <title>SR Infotech</title>
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
-  <div class="page-wrapper">
-    <!-- Preloader -->
-    <div class="preloader"></div>
-
-    <!-- Main Header-->
-    <header class="main-header header-style-one">
-      <!-- Header Top -->
-      <div class="header-top">
-        <div class="inner-container">
-          <div class="top-left">
-            <!-- Info List -->
-            <ul class="list-style-one">
-              <li>
-                <i class="fa fa-envelope"></i>
-                <a href="mailto:info@srinfotech.biz">support@srinfotech.com</a>
-              </li>
-              <li>
-                <i class="fa fa-map-marker"></i> #62, 6th main road, JP Nagar,
-                7th phase, Bengaluru -560078
-              </li>
-            </ul>
-          </div>
-
-          <!-- <div class="top-right">
-              <ul class="useful-links">
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div> -->
-        </div>
-
-        <div class="outer-box">
-          <ul class="social-icon-one">
-            <li>
-              <a href="#"><span class="fab fa-twitter"></span></a>
-            </li>
-            <li>
-              <a href="#"><span class="fab fa-facebook-square"></span></a>
-            </li>
-            <li>
-              <a href="#"><span class="fab fa-linkedin-in"></span></a>
-            </li>
-            <li>
-              <a href="#"><span class="fab fa-instagram"></span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Header Top -->
-
-      <!-- Header Lower -->
-      <div class="header-lower">
-        <!-- Main box -->
-        <div class="main-box">
-          <div class="logo-box">
-            <div class="logo">
-              <a href="index.html"><img src="images/logo.png" alt="" title="SRInfotech" /></a>
-            </div>
-          </div>
-
-          <!--Nav Box-->
-          <div class="nav-outer">
-            <nav class="nav main-menu">
-              <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page-about.html">About us</a></li>
-                <li><a href="page-services.html">Services</a></li>
-                <li><a href="page-projects.html">Products</a></li>
-                <li><a href="page-contact.html">Contact</a></li>
-              </ul>
-            </nav>
-            <!-- Main Menu End-->
-
-            <div class="outer-box">
-              <div class="ui-btn-outer">
-
-                <a href="#" class="ui-btn"><i class="fab fa-telegram"></i></a>
-              </div>
-
-              <a href="tel:+92(8800)9806" class="info-btn">
-                <i class="icon fa fa-phone"></i>
-                <small>Call Anytime</small><br />
-                +91 9945649161
-              </a>
-
-              <a href="page-contact.html" class="theme-btn btn-style-one"><span class="btn-title">get
-                  solution</span></a>
-
-              <!-- Mobile Nav toggler -->
-              <div class="mobile-nav-toggler">
-                <span class="icon lnr-icon-bars"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Header Lower -->
-
-      <!-- Mobile Menu  -->
-      <div class="mobile-menu">
-        <div class="menu-backdrop"></div>
-
-        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-        <nav class="menu-box">
-          <div class="upper-box">
-            <div class="nav-logo">
-              <a href="index.html"><img src="images/logo.png" alt="" title="" /></a>
-            </div>
-            <div class="close-btn"><i class="icon fa fa-times"></i></div>
-          </div>
-
-          <ul class="navigation clearfix">
-            <!--Keep This Empty / Menu will come through Javascript-->
-          </ul>
-          <ul class="contact-list-one">
-            <li>
-              <!-- Contact Info Box -->
-              <div class="contact-info-box">
-                <i class="icon lnr-icon-phone-handset"></i>
-                <span class="title">Call Now</span>
-                <a href="tel:+919945649161">+91 9945649161</a>
-              </div>
-            </li>
-            <li>
-              <!-- Contact Info Box -->
-              <div class="contact-info-box">
-                <span class="icon lnr-icon-envelope1"></span>
-                <span class="title">Send Email</span>
-                <a href="mailto:info@srinfotech.biz">info@srinfotech.biz</a>
-              </div>
-            </li>
-            <li>
-              <!-- Contact Info Box -->
-              <div class="contact-info-box">
-                <span class="icon lnr-icon-clock"></span>
-                <span class="title">Send Email</span>
-                Mon - Sat 8:00 - 6:30, Sunday - CLOSED
-              </div>
-            </li>
-          </ul>
-
-          <ul class="social-links">
-            <li>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <!-- End Mobile Menu -->
-
-      <!-- Header Search -->
-      <div class="search-popup">
-        <span class="search-back-drop"></span>
-        <button class="close-search">
-          <span class="fa fa-times"></span>
-        </button>
-
-        <div class="search-inner">
-          <form>
-            <div class="form-group">
-              <input type="search" name="search-field" value="" placeholder="Search..." required="" />
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- End Header Search -->
-
-      <!-- Sticky Header  -->
-      <div class="sticky-header">
-        <div class="auto-container">
-          <div class="inner-container">
-            <!--Logo-->
-            <div class="logo">
-              <a href="index.html" title=""><img src="images/logo-dark.png" alt="" title="" /></a>
-            </div>
-
-            <!--Right Col-->
-            <div class="nav-outer">
-              <!-- Main Menu -->
-              <nav class="main-menu">
-                <div class="navbar-collapse show collapse clearfix">
-                  <ul class="navigation clearfix">
-                    <!--Keep This Empty / Menu will come through Javascript-->
-                  </ul>
-                </div>
-              </nav>
-              <!-- Main Menu End-->
-
-              <!--Mobile Navigation Toggler-->
-              <div class="mobile-nav-toggler">
-                <span class="icon lnr-icon-bars"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Sticky Menu -->
-    </header>
-    <!--End Main Header -->
-
-    <!--Main Slider-->
-    <section class="main-slider">
-      <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
-        <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
-          <ul>
-            <!-- Slide 1 -->
-            <li data-index="rs-1" data-transition="zoomout">
-              <!-- MAIN IMAGE -->
-              <img src="images/photos/Main Home Page Banner 1.png" alt="" class="rev-slidebg" />
-
-              <div class="tp-caption tp-resizeme rs-parallaxlevel-3 hidden-mobile" data-paddingbottom="[0,0,0,0]"
-                data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
-                data-responsive_offset="on" data-type="shape" data-height="none" data-whitespace="nowrap"
-                data-width="none" data-hoffset="['-270','-190','-60','-190']" data-voffset="['160','160','180','160']"
-                data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']"
-                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":3000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                <figure>
-                  <img src="images/main-slider/arrow.png" alt="" />
-                </figure>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="text"
-                data-height="none" data-width="['750','750','750','650']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['-190','-190','-190','-200']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <span class="title">Empowering Your Business for the Future</span>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                data-type="text" data-height="none" data-width="['750','750','750','650']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['-50','-50','-50','-80']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <h1>Beyond Bits <br /><span class="color2">&</span> Bytes</h1>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="text"
-                data-height="none" data-width="['750','750','750','450']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['90','90','90','65']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <div class="text">
-                  SR Infotech bridges the gap between Technology, and Business
-                  by innovating the future with Smart, Agile, and Strategic IT
-                  Solutions and Services.
-                </div>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                data-type="text" data-height="none" data-width="['700','750','700','450']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['185','185','200','185']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <a href="page-about.html" class="theme-btn btn-style-one"><span class="btn-title">Discover
-                    more</span></a>
-              </div>
-            </li>
-
-            <!-- Slide 2 -->
-            <li data-index="rs-2" data-transition="zoomin">
-              <!-- MAIN IMAGE -->
-              <img src="images/photos/Main Home Page Banner 2.png" alt="" class="rev-slidebg" />
-
-              <div class="tp-caption tp-resizeme rs-parallaxlevel-3 hidden-mobile" data-paddingbottom="[0,0,0,0]"
-                data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
-                data-responsive_offset="on" data-type="shape" data-height="none" data-whitespace="nowrap"
-                data-width="none" data-hoffset="['-270','-190','-60','-190']" data-voffset="['160','160','180','160']"
-                data-x="['center','center','center','center']" data-y="['middle','middle','middle','middle']"
-                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":3000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                <figure>
-                  <img src="images/main-slider/arrow.png" alt="" />
-                </figure>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="text"
-                data-height="none" data-width="['750','750','750','650']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['-190','-190','-190','-200']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <span class="title">Pioneering the Future of Technology Solutions and
-                  Services</span>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                data-type="text" data-height="none" data-width="['750','750','750','650']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['-50','-50','-50','-80']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <h1>
-                  Your Partner <br /><span class="color2">in</span> IT
-                  Journey.
-                </h1>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="text"
-                data-height="none" data-width="['750','750','750','450']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['90','90','90','65']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <div class="text">
-                  We are a forward-thinking IT company committed to driving
-                  the future of technology solutions and services through
-                  innovation and excellence.
-                </div>
-              </div>
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                data-type="text" data-height="none" data-width="['700','750','700','450']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['185','185','200','185']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <a href="page-about.html" class="theme-btn btn-style-one"><span class="btn-title">Discover
-                    more</span></a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- End Main Slider-->
-
-    <!-- Services Section Three -->
-    <section class="services-section-three layout_7 pt-0">
-      <div class="auto-container">
-        <div class="outer-box">
-          <div class="row justify-content-center">
-            <!-- Service Block Two -->
-
-            <div class="service-block-three col wow fadeInUp"
-              onclick="location.href='services/software-engineering-solutions.html';">
-              <div class="inner-box">
-                <i class="icon flaticon-business-024-configure"></i>
-                <h6 class="title">
-                  <a href="services/software-engineering-solutions.html">Software <br />
-                    Engineering <br />
-                    Solutions</a>
-                </h6>
-                <div class="text">
-                  Our Services Bring Your Ideas to Life and Drive Business
-                  Success
-                </div>
-              </div>
-            </div>
-
-            <!-- Service Block Two -->
-
-            <div class="service-block-three col wow fadeInUp" data-wow-delay="200ms"
-              onclick="location.href='page-projects.html';">
-              <div class="inner-box">
-                <i class="icon flaticon-business-010-startup"></i>
-                <h6 class="title">
-                  <a href="page-projects.html">Enterprise <br />
-                    Software <br />
-                    Products</a>
-                </h6>
-                <div class="text">
-                  Our Enterprise products will help ou boost your management
-                  and sales.
-                </div>
-              </div>
-            </div>
-
-            <!-- Service Block Two -->
-            <div class="service-block-three col wow fadeInUp" data-wow-delay="200ms"
-              onclick="location.href='services/digital-marketing-details.html';">
-              <div class="inner-box">
-                <i class="icon flaticon-business-016-world"></i>
-                <h6 class="title">
-                  <a href="services/digital-marketing-details.html">Digital <br />Marketing</a>
-                </h6>
-                <div class="text">
-                  Our Digital Marketing Services Drive Business Growth and
-                  Keep You Ahead of the Game
-                </div>
-              </div>
-            </div>
-
-            <!-- Service Block Two -->
-            <div class="service-block-three col wow fadeInUp" data-wow-delay="400ms"
-              onclick="location.href='services/software-management-details.html';">
-              <div class="inner-box">
-                <i class="icon flaticon-business-030-settings"></i>
-                <h6 class="title">
-                  <a href="services/software-management-details.html">Software support <br />
-                    & Maintenance</a>
-                </h6>
-                <div class="text">
-                  Our Management Solutions Drive Business Efficiency and Make
-                  It Easy
-                </div>
-              </div>
-            </div>
-
-            <!-- Service Block Two -->
-
-            <div class="service-block-three col wow fadeInUp" data-wow-delay="600ms"
-              onclick="location.href='services/ui-ux-details.html';">
-              <div class="inner-box">
-                <i class="icon flaticon-business-045-stationery"></i>
-                <h6 class="title">
-                  <a href="services/ui-ux-details.html">UI/UX <br />
-                    Designing</a>
-                </h6>
-                <div class="text">
-                  Crafting Intuitive and Engaging Interfaces That Inspire
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Services Section Three -->
-
-    <!-- About Section Five -->
-    <section class="about-section-five style-two pt-0">
-      <div class="auto-container">
-        <div class="row">
-          <div class="content-column col-xl-6 col-lg-6 col-md-12 order-2 wow fadeInRight" data-wow-delay="600ms">
-            <div class="inner-column">
-              <div class="sec-title">
-                <span class="sub-title">Welcome to IT Renaissance</span>
-                <h2>Empowering Your Business with Technology</h2>
-                <div class="text">
-                  SR Infotech provides advanced technology and digital
-                  services that help businesses grow with next-generation
-                  solutions.
-                </div>
-              </div>
-
-              <ul class="list-style-three">
-                <li>Website Development</li>
-                <li>Graphic Designing</li>
-                <li>Digital Marketing</li>
-                <li>SaaS Development</li>
-              </ul>
-
-              <div class="btn-box d-flex align-items-center">
-                <a href="page-about.html" class="theme-btn btn-style-one"><span class="btn-title"
-                    style="color: #ffffff">Discover more</span></a>
-                <a href="tel:+92(8800)9806" class="info-btn">
-                  <i class="icon fa fa-phone"></i>
-                  <small>Call Anytime</small><br />
-                  +91 9945649161
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Image Column -->
-          <div class="image-column col-xl-6 col-lg-6 col-md-12">
-            <div class="inner-column">
-              <div class="image-box">
-                <figure class="image overlay-anim wow fadeInUp">
-                  <img src="images/photos/Welcome to Tech image_Size_540x470.jpg" alt="" />
-                </figure>
-                <div class="experience">
-                  <strong style="color: #ffffff">5</strong>
-                  <div class="text" style="color: #ffffff">
-                    Years <br />Experience
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Emd About Section Five -->
-
-    <!-- Offer Section -->
-    <section class="offer-section">
-      <div class="auto-container">
-        <div class="row">
-          <!-- Content Column -->
-          <div class="content-column col-lg-6 col-md-12">
-            <div class="inner-column">
-              <div class="sec-title light">
-                <span class="sub-title">Tech management</span>
-                <h2>The Best Source for IT Solutions</h2>
-                <div class="text">
-                  Tech Management delivers IT solutions that drive success,
-                  and we strive to be the top choice for businesses seeking
-                  reliable and innovative technology.
-                </div>
-              </div>
-              <div class="info-box">
-                <i class="icon flaticon-business-036-idea"></i>
-                <h5 class="title">
-                  We’re doing the right thing.<br />
-                  The right way.
-                </h5>
-              </div>
-              <ul class="list-style-two">
-                <li>
-                  <i class="fa fa-check-circle"></i> IT solutions for various
-                  industries.
-                </li>
-                <li>
-                  <i class="fa fa-check-circle"></i> Driving future tech
-                  through innovation.
-                </li>
-                <li>
-                  <i class="fa fa-check-circle"></i> Experts delivering
-                  customized IT solutions.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Content Column -->
-          <div class="image-column col-lg-6 col-md-12 col-sm-12">
-            <div class="inner-column">
-              <div class="image-box">
-                <figure class="image">
-                  <img src="images/photos/Tech Management Image_Size_930 x 570.jpg" alt="" />
-                </figure>
-                <div class="caption-box wow slideInRight">
-                  <div class="icon-box">
-                    <a href="https://www.youtube.com/embed/tUP5S4YdEJo" class="play-now-two lightbox-image"><i
-                        class="icon fa fa-play"></i></a>
-                  </div>
-                  <div class="title-box">
-                    <h5 class="title" style="color: #ffffff">
-                      Professional IT technology services you can trust
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Offer Section -->
-
-    <!-- Offer Section Four -->
-    <section class="offer-section-four">
-      <div class="auto-container">
-        <div class="outer-box">
-          <div class="row">
-            <!-- Content Column -->
-            <div class="content-column col-xl-5 col-lg-6 col-md-12">
-              <div class="inner-column wow fadeInRight">
-                <div class="sec-title">
-                  <span class="sub-title">company benefits</span>
-                  <h2>Always Deliver More than you Expected</h2>
-                </div>
-                <div class="info-box">
-                  <span class="count">01</span>
-                  <h5 class="title">Latest Technologies</h5>
-                  <div class="text">
-                    Leveraging latest tech for innovative solutions that drive
-                    success.
-                  </div>
-                </div>
-                <div class="info-box">
-                  <span class="count">02</span>
-                  <h5 class="title">End to End Development</h5>
-                  <div class="text">
-                    Providing comprehensive solutions from concept to
-                    deployment and beyond.
-                  </div>
-                </div>
-                <div class="info-box">
-                  <span class="count">03</span>
-                  <h5 class="title">Dedicated Support</h5>
-                  <div class="text">
-                    support to ensure seamless IT operations and customer
-                    satisfaction.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Content Column -->
-            <div class="image-column col-xl-7 col-lg-6 col-md-12 col-sm-12">
-              <div class="inner-column wow fadeInLeft">
-                <div class="image-box">
-                  <figure class="image">
-                    <img src="images/photos/Company Benefits Image_Size_1032x 660.jpg" alt="" />
-                  </figure>
-                  <div class="caption">Execute your Ideas from start</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Offer Section Four -->
-
-    <!-- Call To Action Two -->
-    <section class="call-to-action-two p-0">
-      <div class="auto-container">
-        <div class="outer-box wow fadeIn">
-          <!-- Image Box -->
-          <div class="image-box">
-            <figure class="image">
-              <img src="images/resource/image-2.jpg" alt="" />
-            </figure>
-          </div>
-          <!-- Content Box -->
-          <div class="content-box">
-            <div class="title-box">
-              <h3 class="title">We’re Ready <br />Digitise your Business</h3>
-            </div>
-            <div class="btn-box">
-              <a href="page-contact.html" class="theme-btn btn-style-two hvr-light"><span class="btn-title">Contact
-                  US</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--End Call To Action Two -->
-
-    <!-- Industries Section -->
-    <section class="industries-section style-two">
-      <div class="auto-container">
-        <div class="sec-title text-center light">
-          <span class="sub-title">Industries we work with</span>
-          <h2>
-            Our expertise spans across <br />
-            various industries
-          </h2>
-        </div>
-        <div class="row justify-content-center">
-          <!-- Feature Block Two -->
-          <div class="feature-block-two dark col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
-            <div class="inner-box">
-              <img class="icon" src="images/icons/Banking.png" />
-              <h6 class="title">Banking</h6>
-            </div>
-          </div>
-
-          <!-- Feature Block Two -->
-          <div class="feature-block-two dark col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
-            <div class="inner-box">
-              <img class="icon" src="images/icons/Healthcare.png" />
-              <h6 class="title">Healthcare</h6>
-            </div>
-          </div>
-
-          <!-- Feature Block Two -->
-          <div class="feature-block-two dark col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
-            <div class="inner-box">
-              <img class="icon" src="images/icons/education.png" />
-              <h6 class="title">Education</h6>
-            </div>
-          </div>
-
-          <!-- Feature Block Two -->
-          <div class="feature-block-two dark col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
-            <div class="inner-box">
-              <img class="icon" src="images/icons/Manufacturing.png" />
-              <h6 class="title">Manufacturing</h6>
-            </div>
-          </div>
-
-          <!-- Feature Block Two -->
-          <div class="feature-block-two dark col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
-            <div class="inner-box">
-              <img class="icon" src="images/icons/sales.png" />
-              <h6 class="title">Sales</h6>
-            </div>
-          </div>
-
-          <!-- Feature Block Two -->
-          <div class="feature-block-two dark col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
-            <div class="inner-box">
-              <img class="icon" src="images/icons/Advertising.png" />
-              <h6 class="title">Advertising</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Industries Section -->
-
-    <!-- Fun Fact Section 
-	<section class="fun-fact-section">
-		<div class="auto-container">
-			<div class="fact-counter">
-				<div class="row">
-					
-					<div class="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
-						<div class="inner">
-							<i class="icon flaticon-business-060-graph"></i>
-							<div class="count-box"><span class="count-text" data-speed="3000" data-stop="4520">0</span></div>
-							<h6 class="counter-title" style="color:#FFFFFF">Project completed</h6>
-						</div>
-					</div>
-
-					
-					<div class="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
-						<div class="inner">
-							<i class="icon flaticon-business-035-helpline"></i>
-							<div class="count-box"><span class="count-text" data-speed="3000" data-stop="326">0</span></div>
-							<h6 class="counter-title" style="color:#FFFFFF">IT specialists</h6>
-						</div>
-					</div>
-
-					
-					<div class="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
-						<div class="inner">
-							<i class="icon flaticon-business-020-hierarchy"></i>
-							<div class="count-box"><span class="count-text" data-speed="3000" data-stop="8600">0</span></div>
-							<h6 class="counter-title" style="color:#FFFFFF">Satisfied clients</h6>
-						</div>
-					</div>
-
-					
-					<div class="counter-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="900ms">
-						<div class="inner">
-							<i class="icon flaticon-business-048-coin"></i>
-							<div class="count-box"><span class="count-text" data-speed="3000" data-stop="238">0</span></div>
-							<h6 class="counter-title" style="color:#FFFFFF">Smart solutions</h6>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	 End Fun Fact Section -->
-
-    <!-- Call To Action Five -->
-    <section class="call-to-action-five">
-      <div class="row g-0">
-        <div class="column col-lg-6 col-md-12 col-sm-12">
-          <div class="title-box">
-            <h2 class="title">
-              <a href="page-projects.html">Improve & Enhance with our <br />Tech Products</a>
-            </h2>
-          </div>
-        </div>
-        <div class="column col-lg-6 col-md-12 col-sm-12">
-          <div class="title-box style-two">
-            <h2 class="title">
-              <a href="page-services.html">The Best Source for <br />IT Solutions</a>
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--End Call To Action Five -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <div class="bg-image" style="background-image: url(images/background/2.jpg)"></div>
-
-      <!--Widgets Section-->
-      <div class="widgets-section">
-        <div class="auto-container">
-          <div class="row">
-            <!--Footer Column-->
-            <div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
-              <div class="footer-widget about-widget">
-                <div class="logo">
-                  <a href="index.html"><img src="images/logo.png" alt="" /></a>
-                </div>
-                <div class="text">
-                  Reliable and Cutting-Edge IT Solutions and Services
-                </div>
-                <ul class="social-icon-two">
-                  <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!--Footer Column-->
-            <div class="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
-              <div class="footer-widget">
-                <h3 class="widget-title">Explore</h3>
-                <ul class="user-links">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="page-about.html">About us</a></li>
-                  <li><a href="page-services.html">Services</a></li>
-                  <li><a href="page-projects.html">Products</a></li>
-                  <li><a href="page-contact.html">Contact us</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <!--Footer Column-->
-            <div class="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
-              <div class="footer-widget contact-widget">
-                <h3 class="widget-title">Contact</h3>
-                <div class="widget-content">
-                  <div class="text">
-                    #62, 6th main road, JP Nagar, 7th phase, Bengaluru -560078
-                  </div>
-                  <ul class="contact-info">
-                    <li>
-                      <i class="fa fa-envelope"></i>
-                      <a href="mailto:info@srinfotech.biz">info@srinfotech.biz</a><br />
-                    </li>
-                    <li>
-                      <i class="fa fa-phone-square"></i>
-                      <a href="tel:+919945649161">+91 9945649161</a><br />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!--Footer Column-->
-            <div class="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
-              <div class="footer-widget gallery-widget">
-                <h3 class="widget-title">Services</h3>
-                <div class="widget-content">
-                  <div class="outer clearfix">
-                    <figure class="image">
-                      <a href="services/software-engineering-solutions.html"><img
-                          src="images/updated/Service_Img_size_80x80/software_engineering_Img_size_80x80.png"
-                          alt="Software Engineering" /></a>
-                    </figure>
-                    <figure class="image">
-                      <a href="services/digital-marketing-details.html"><img
-                          src="images/updated/Service_Img_size_80x80/Digital_Marketing_Img_size_80x80.png"
-                          alt="Digital Marketing" /></a>
-                    </figure>
-                    <figure class="image">
-                      <a href="services/software-management-details.html"><img
-                          src="images/updated/Service_Img_size_80x80/software_Mantainess_Img_size_80x80.png"
-                          alt="Software Management" /></a>
-                    </figure>
-                    <figure class="image">
-                      <a href="services/ui-ux-details.html"><img
-                          src="images/updated/Service_Img_size_80x80/UI_UX_Img_size_80x80.png" alt="UI/UX" /></a>
-                    </figure>
-                    <figure class="image">
-                      <a href="page-projects.html"><img src="images/resource/project-thumb-5.jpg" alt="Projects" /></a>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--Footer Bottom-->
-      <div class="footer-bottom">
-        <div class="auto-container">
-          <div class="inner-container">
-            <div class="copyright-text">
-              &copy; Copyright 2022 <a href="index.html">SR Infotech</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!--End Main Footer -->
-  </div>
-  <!-- End Page Wrapper -->
-
-  <!-- Scroll To Top -->
-  <div class="scroll-to-top scroll-to-target" data-target="html">
-    <span class="fa fa-angle-up"></span>
-  </div>
-
-  <a href="https://api.whatsapp.com/send?phone=919945649161&text=helloFromWebsite" target="_blank">
-    <div class="whatsapp-floating-button" data-target="html">
-      <span class="fa fa-whatsapp"></span>
+<body class="index-one">
+    <div class="loading-screen" id="loading-screen">
+        <span class="bar top-bar"></span>
+        <span class="bar down-bar"></span>
+        <span class="progress-line"></span>
+        <span class="loading-counter"> </span>
     </div>
-  </a>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/popper.min.js"></script>
-  <!--Revolution Slider-->
-  <script src="plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-  <script src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-  <script src="plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-  <script src="js/main-slider-script.js"></script>
-  <!--Revolution Slider-->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.fancybox.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/wow.js"></script>
-  <script src="js/appear.js"></script>
-  <script src="js/select2.min.js"></script>
-  <script src="js/swiper.min.js"></script>
-  <script src="js/owl.js"></script>
-  <script src="js/script.js"></script>
+    <!-- header area start -->
+    <header class="header-area header-one header--sticky">
+        <div class="header-container-one">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo/SR_Ver1_wh.png" alt="logo" style="max-width: 50%;">
+                </a>
+                <div class="header-right">
+
+                    <nav class="nav-area drop-down-rts">
+                        <ul class="navbar-nav-1">
+                            <li class="menu-item main-nav-on">
+                                <a href="index.html"><span class="rolling-text">Home</span></a>
+
+
+                                <ul class="" style="display: block;">
+
+                                </ul>
+
+                            </li>
+                            
+                            <li class="menu-item main-nav-on menu-item-has-children">
+                                <a href="#services"><span class="rolling-text">Services</span></a>
+                                <ul class="sub-menu" style="display: block;">
+                                    <li class="menu-item menu-item-home"><a class="menu-link"
+                                            href="social-media-marketing.html">Social Media Marketing </a></li>
+                                    <li class="menu-item menu-item-home"><a class="menu-link"
+                                            href="search-engine-optimization.html">Search Engine Optimization</a></li>
+                                    <li class="menu-item menu-item-home"><a class="menu-link"
+                                            href="email-marketing.html">Email Marketing </a></li>
+                                    <li class="menu-item menu-item-home"><a class="menu-link"
+                                            href="ecommerce-marketing.html">E-commerce Marketing</a></li>
+                                    <li class="menu-item menu-item-home"><a class="menu-link"
+                                            href="brand-and-identity.html">Branding and Identity</a></li>
+                                    <li class="menu-item menu-item-home"><a class="menu-link"
+                                            href="web-design-and-development.html">Product Development</a></li>
+
+                                </ul>
+
+                            </li>
+
+
+                            <li class="menu-item main-nav-on menu-item-has-children">
+                                <a href="#products"><span class="rolling-text">Products</span></a>
+                                <ul class="sub-menu" style="display: block;">
+                                    <li class="menu-item menu-item-home"><a class="menu-link" href="crm.html">CRM </a>
+                                    </li>
+                                    <li class="menu-item menu-item-home"><a class="menu-link" href="hrm.html">HRM</a>
+                                    </li>
+                                    <li class="menu-item menu-item-home"><a class="menu-link" href="pms.html">PMS </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                           
+                            <li class="menu-item main-nav-on">
+                                <a class="menu-link" href="contact.html"><span class="rolling-text">Contact</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="action-area">
+
+                        <div class="menu-btn">
+
+                            <div class="rts-offcanvas-wrapper">
+                                <div class="container-menu">
+                                    <div class="action-menu">
+                                        <div class="close-event"></div>
+                                        <div class="open-event">
+                                            <!-- <div class="text">
+                        <span>Menu</span>
+                        <span>Close</span>
+                    </div> -->
+                                            <div class="burger">
+                                                <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon-close" data-v-649bbaab="">
+                                                    <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161"
+                                                        stroke="currentColor" stroke-width="1.2"></line>
+                                                    <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675"
+                                                        stroke="currentColor" stroke-width="1.2"></line>
+                                                </svg>
+                                                <svg viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon-burger" data-v-649bbaab="">
+                                                    <line x1="18" y1="0.6" y2="0.6" stroke="currentColor"
+                                                        stroke-width="1.2" data-v-649bbaab=""></line>
+                                                    <line x1="18" y1="5.7167" y2="5.7167" stroke="currentColor"
+                                                        stroke-width="1.2" data-v-649bbaab=""></line>
+                                                    <line x1="18" y1="10.8334" y2="10.8334" stroke="currentColor"
+                                                        stroke-width="1.2" data-v-649bbaab=""></line>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rts-fs-menu">
+                                    <div class="rts-fs-container row">
+
+                                        <div class="rts-fs--nav col-12 col-md-6">
+                                            <ul id="primary-menu" class="navbar-nav-button">
+                                                <li class="menu-item"><a href="index.html">home</a></li>
+                                               
+                                                <li id="menu-item-76" class="menu-item menu-item-has-children">
+                                                    <a href="#">Services<span><svg height="24" viewBox="0 0 24 24"
+                                                                width="24" xmlns="http://www.w3.org/2000/svg">
+                                                                <path class="heroicon-ui"
+                                                                    d="M18.59 13H3a1 1 0 0 1 0-2h15.59l-5.3-5.3a1 1 0 1 1 1.42-1.4l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.42-1.4l5.3-5.3z">
+                                                                </path>
+                                                            </svg></span></a>
+                                                    <ul class="sub-menu">
+                                                        <li
+                                                            class="menu-item menu-item-home current-menu-item page_item">
+                                                            <a href="social-media-marketing.html"
+                                                                aria-current="page">Social Media Marketing</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="search-engine-optimization.html">Search Engine
+                                                                Optimization</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="email-marketing.html">Email Marketing</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="ecommerce-marketing.html">E-commerce Marketing</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="brand-and-identity.html">Branding and Identity</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="web-design-and-development.html">Product
+                                                                Development</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+
+                                                <li id="menu-item-76" class="menu-item menu-item-has-children">
+                                                    <a href="#">Products<span><svg height="24" viewBox="0 0 24 24"
+                                                                width="24" xmlns="http://www.w3.org/2000/svg">
+                                                                <path class="heroicon-ui"
+                                                                    d="M18.59 13H3a1 1 0 0 1 0-2h15.59l-5.3-5.3a1 1 0 1 1 1.42-1.4l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.42-1.4l5.3-5.3z">
+                                                                </path>
+                                                            </svg></span></a>
+                                                    <ul class="sub-menu">
+                                                        <li
+                                                            class="menu-item menu-item-home current-menu-item page_item">
+                                                            <a href="crm.html"
+                                                                aria-current="page">CRM</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="hrm.html">HRM</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="pms.html">PMS</a>
+                                                        </li>
+                                                       
+                                                    </ul>
+                                                </li>
+                                                
+                                                <li class="menu-item"><a href="contact.html">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="rts-fs--contacts col-12 col-md-6">
+                                            <div class="contact-inner">
+                                                <div class="contact-information">
+                                                    <h2 class="heading-title">Our Office</h2>
+                                                    <div class="address">
+                                                        <ul>
+                                                            <li>
+                                                                <p>#62, 6th main road, JP Nagar, 7th phase <br>
+                                                                    Bengaluru -560078. India</p>
+                                                            </li>
+                                                            <li>
+
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="contact-information">
+                                                    <h2 class="heading-title">Get In Touch</h2>
+                                                    <div class="contact">
+                                                        <ul>
+                                                            <li><a href="mailto:info@srinfotech.biz"
+                                                                    class="mail">info@srinfotech.biz</a></li>
+                                                            <li><a href="tel:+91 9606846445" class="number">+91 9606846445
+                                                                </a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="rts-social-area-one">
+                                                        <ul>
+                                                            <li><a href="https://www.facebook.com/srinfotechsaas" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                                            </li>
+                                                            <li><a href="https://twitter.com/srinfotechsaas" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                                                            </li>
+                                                            <li><a href="https://wa.me/+919606846445?text=I%20am%20interested%20in%20your%20Services" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                                                            </li>
+                                                            <li><a href="https://www.instagram.com/srinfotechsaas/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                                            </li>
+                                                            <li><a href="https://www.linkedin.com/company/sr1infotech/mycompany/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- rts banenr area start -->
+            <div class="banner-area banner-style-one banner-bg-1 hero__area-3 banner__jump">
+                <div class="shape-image">
+                    <img src="assets/images/banner/06.png" alt="banner">
+                </div>
+                <!-- <div class="top-center-image rts-scroll-down-circle-wrapper-3">
+                    <a href="portfolio-one.html" class="speen-shape scroll-down-circle-3">
+                        <svg class="uni-circle-text-path uk-text-secondary uni-animation-spin" viewBox="0 0 100 100"
+                            width="180" height="180">
+                            <defs>
+                                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0">
+                                </path>
+                            </defs>
+                            <text font-size="11.75">
+                                <textPath xlink:href="#circle">Project SHowcase • Project SHowcase •</textPath>
+                            </text>
+                        </svg>
+                        <i class="fa-solid fa-star-sharp"></i>
+                    </a>
+                </div> -->
+                <div class="container">
+                    <div class="row  ptb--200 ptb_sm--150">
+                        <div class="col-lg-9">
+                            <div class="banner-one-wrapper mt--80 mt_sm--0">
+                                <h1 class="title rts_hero__title">
+                                    Everyone’s on their <br>
+                                    <span class="border-bottom-1">Phone!</span> <br>
+                                </h1>
+                                <h3>Turn scrollers into customers with our Digital
+                                    Marketing Solution.</h3>
+                                <div style="margin-top: 25px;" class="para-wraph">
+                                    <p class="disc hero__sub-title">
+                                        Our team of experts is dedicated to helping you achieve your digital goals.
+                                        <br>From website design and development to SEO, PPC advertising, and social
+                                        media marketing.
+                                    </p>
+                                </div>
+                                <div class="bannerJump_animation banner-jump-button rts-scroll-down-circle-wrapper-4">
+                                    <div class="jump__anim rts_round_btn_wrap scroll-down-circle-4">
+                                        <div class="rts-mouse-move-button">
+                                            <div class="btn_wrapper">
+                                                <a href="#services"
+                                                    class="rts-btn-mouse-move btn-hover btn-item"><span></span> Explore
+                                                    Our <br>
+                                                    Services
+                                                    <i style="color: white;" class="fa-solid fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4">
+                            <div class="vedio-button-area-banner-one">
+                                <img src="assets/images/banner/05.png" alt="">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- rts banenr area end -->
+
+            <!-- rts about area start -->
+            <div style="padding-bottom: 20px;" class="rts-about-area-1 rts-section-gapBottom">
+                <div class="shape-about-one">
+                    <img src="assets/images/about/05.png" alt="about">
+                </div>
+                <div class="container-full">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="grid-lines-wrapper">
+                                <div class="grid-lines">
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="gsap-inner sec1">
+                                <div class="image-wrapper-main-about mt-dec-135 rts-reveal-one">
+                                    <img src="assets/images/banner/home_banner.png" alt="about"
+                                        class="rts-reveal-image-one">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-split-wrap-about scrolltext-wrapper">
+                        <div class="text-split scrollingText-two">
+                            <h2 class="title">
+                                The digital Marketing agency <span>you are looking for! </span>
+                                The digital Marketing agency <span>you are looking for! </span>
+                                The digital Marketing agency <span>you are looking for! </span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- about main inner wrapper -->
+                <div class="container mt--100">
+                    <div class="row">
+                        <div class="col-lg-5"
+                            style="display: grid; align-items: end; justify-content: end; align-content: end;">
+                            <div class="left-main-about-inner">
+                                <img src="assets/images/banner/experts.png" alt="about">
+                                <div class="shape-about-two">
+                                    <img src="assets/images/about/06.png" alt="about">
+                                </div>
+                            </div>
+
+                            <div class="left-main-about-inner">
+                                <img style="padding-top: 30px; max-width: 95%;"
+                                    src="assets/images/banner/index_banner.jpg" alt="about">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-7 pl--60 pl_sm--15 pt_md--50 pt_sm--30">
+                            <!-- about right area start -->
+                            <div class="about-area-right-start">
+                                <div class="inner-about-wrapper">
+                                    <h2 class="title quote">Let the experts handle marketing!</h2>
+                                    <h4 style="font-size: 23px;" class="title quote">Your company is too precious.
+                                    </h4>
+                                    <p class="disc rts-text-anim">
+                                        <strong class="rts-dark-light">Social Media Marketing:</strong> Want to create a
+                                        strong social media
+                                        presence for your brand?
+                                        Our team of experts will take your social media engagement to a whole new level!
+                                    </p>
+                                    <div class="progress-main-wrapper">
+                                        <p class="disc rts-text-anim ">
+                                            <strong> Search Engine Optimization:</strong> Want more visitors for your
+                                            website?
+                                            We help you outrank the competition and dominate the SERPS
+
+                                        </p>
+
+                                        <p class="disc rts-text-anim">
+                                            <strong> Email Marketing :</strong> Want to send emails that gain you more
+                                            customers?
+                                            Our creative team will craft engaging emails that will turn readers into
+                                            customers.
+
+                                        </p>
+
+                                        <p class="disc rts-text-anim">
+                                            <strong>E Commerce Marketing : </strong>Sell your products with our expert
+                                            made E-commerce marketing strategies.
+
+                                        </p>
+
+                                        <p class="disc rts-text-anim">
+                                            <strong>CRM:</strong> Maintain a healthy relationship with your customers
+                                            with our Customer Relationship Management software.
+
+                                        </p>
+
+
+                                        <p class="disc rts-text-anim">
+                                            <strong>PMS:</strong> Ensure timely delivery of projects with our PMS
+                                            software. Monitor progress of the projects and stay ahead of the deadline.
+                                        </p>
+
+                                        <p class="disc rts-text-anim">
+                                            <strong>HRM:</strong> Manage your workforce at ease with our HRM software.
+                                            Here you can manage payslips, view information about your employees and
+                                            review performance as well.
+
+                                        </p>
+
+                                    </div>
+                                    <!-- <div class="btn--area-left mt--50">
+                                        <a href="about.html" class="learn-more-btn">Try It for free<i
+                                                class="fa-solid fa-arrow-right"></i></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- about right area end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- about main inner wrapper main -->
+            </div>
+            <!-- rts about area end -->
+
+            <!-- our approch area start -->
+            <div class="our-approch-area-style-one rts-section-gap bg-dark-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="grid-lines-wrapper">
+                                <div class="grid-lines">
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 rts-slide-right-gsap">
+
+                            <div class="approch-area-left">
+                                <div class="title-area-left-wrapper">
+                                    <span class="pre-title">Our Approach</span>
+                                    <h2 class="title quote">We love your customers and that will show in our work</h2>
+                                </div>
+                                <h6 class="disc rts-text-anim">
+                                    Results are what you need and we will bring it to you. Our tailor made strategies
+                                    will help you win in the digital marketing space.
+
+                                </h6>
+                                <!-- <a href="#" class="learn-more-btn">Learn More <i
+                                        class="fa-solid fa-arrow-right"></i></a> -->
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 rts-slide-left-gsap mt_sm--30">
+
+                            <div class="single-approach-area-start">
+                                <div class="left-area">
+                                    <h3 class="title">Research</h3>
+                                    <p class="disc rts-text-anim">Collecting information and having a deep understanding
+                                        about the problem we are solving, audience and the company.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="single-approach-area-start two">
+                                <div class="left-area">
+                                    <h3 class="title">Strategic PLanning</h3>
+                                    <p class="disc rts-text-anim">Creating tailor made strategies that aligns with your
+                                        business needs.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="single-approach-area-start three ">
+                                <div class="left-area">
+                                    <h3 class="title">Creatives</h3>
+                                    <p class="disc rts-text-anim">Brainstorming and coming up with mind blowing creative
+                                        ideas to solve the problem.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="single-approach-area-start four ">
+                                <div class="left-area">
+                                    <h3 class="title">Execution </h3>
+                                    <p class="disc rts-text-anim">Flawless execution of the strategy we planned.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="single-approach-area-start five mb--0">
+                                <div class="left-area">
+                                    <h3 class="title">Delivering results </h3>
+                                    <p class="disc rts-text-anim">Delivering desired results to the business
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- our approch area end -->
+
+            <!-- rts service style one area start -->
+            <div style="padding-top: 40px;" class="rts-section-gap rts-service-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title-area">
+                                <span class="sub-title">Our SERVICES</span>
+                            </div>
+                            <div style="margin-bottom: 30px;" class="title-top-service-varticle">
+                                <h2 style="font-size: 25px;" class="title">Everything you need to take your brand
+                                    to heights in the digital space!</h2>
+                                <!-- <p class="dsic">
+                                    The digital agency work process may vary depending on the <br> specific project and
+                                    client needs, but typically follows these <br> basic steps. It is a collaborative
+                                    and iterative process.
+                                </p> -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="service-area-one-main-wrapper">
+
+
+                                <div class="single-item-service-one">
+                                    <a href="social-media-marketing.html\">
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/banner/Service Tab_D Mrkt.png"
+                                                    alt="Stream Shop">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Digital marketing</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                Drive your online presence with digital marketing
+                                            </p>
+                                        </div>
+                                        <div class="button-area">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.67 384.67">
+                                                <g>
+                                                    <path fill-rule="evenodd"
+                                                        d="M0 45.26l276.05 276.05H22.63v63.36h362.04V22.63h-63.36v253.42L45.26 0 0 45.26z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-item-service-one">
+                                    <a href="brand-and-identity.html">
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img"
+                                                    src="assets/images/banner/Service Tab_Branding.png"
+                                                    alt="Stream Shop">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Branding & identity</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We empower brands to tell stories with eye-catching designs.
+
+                                            </p>
+                                        </div>
+                                        <div class="button-area">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.67 384.67">
+                                                <g>
+                                                    <path fill-rule="evenodd"
+                                                        d="M0 45.26l276.05 276.05H22.63v63.36h362.04V22.63h-63.36v253.42L45.26 0 0 45.26z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-item-service-one">
+                                    <a href="web-design-and-development.html">
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/banner/Service Tab_WEB DEV.png"
+                                                    alt="Stream Shop">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Product Development</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We bring your design to life with seamless user experience.
+
+                                            </p>
+                                        </div>
+                                        <div class="button-area">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.67 384.67">
+                                                <g>
+                                                    <path fill-rule="evenodd"
+                                                        d="M0 45.26l276.05 276.05H22.63v63.36h362.04V22.63h-63.36v253.42L45.26 0 0 45.26z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-item-service-one">
+                                    <a href="web-design-and-development.html">
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/banner/Service Tab_App Dev.png"
+                                                    alt="Stream Shop">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>App development</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We help you transform your ideas into user friendly applications
+
+                                            </p>
+                                        </div>
+                                        <div class="button-area">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.67 384.67">
+                                                <g>
+                                                    <path fill-rule="evenodd"
+                                                        d="M0 45.26l276.05 276.05H22.63v63.36h362.04V22.63h-63.36v253.42L45.26 0 0 45.26z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="single-item-service-one">
+                                    <a href="#products">
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img"
+                                                    src="assets/images/banner/Service Tab_SAAS Serv.png"
+                                                    alt="Stream Shop">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Saas</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We have Saas Products that will skyrocket the overall performance of
+                                                your company.
+                                                Our CRM, HRM and PMS services will help you to make the company more
+                                                efficient and productive.
+
+
+                                            </p>
+                                        </div>
+                                        <div class="button-area">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.67 384.67">
+                                                <g>
+                                                    <path fill-rule="evenodd"
+                                                        d="M0 45.26l276.05 276.05H22.63v63.36h362.04V22.63h-63.36v253.42L45.26 0 0 45.26z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- working process start -->
+
+            <div style="padding: 30px 0px 80px 0px;" class="working-process-area rts-section-gapTop">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="title-area-four-w text-start">
+                                <span class="pre">REVOLUTIONARY COMPANY</span>
+                                <h2 class="title quote">Working Easy Process</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-0">
+                        <div class="col-lg-12">
+                            <div style="align-items:normal" class="main-process-wrapper">
+
+                                <!-- single process area start -->
+                                <div class="single-working-process-three">
+                                    <div class="icon">
+                                        <img src="assets/images/working-process/icon/01.png" alt="">
+                                    </div>
+                                    <h5 class="title">Consultation</h5>
+                                    <p class="disc">
+                                        During this initial phase, our team engages with you to understand your needs,
+                                        preferences, and vision for the project. We prioritise open communication to
+                                        ensure a clear understanding of your goals.
+                                    </p>
+                                </div>
+                                <!-- single process area end -->
+                                <!-- single process area start -->
+                                <div class="single-working-process-three">
+                                    <div class="icon">
+                                        <img src="assets/images/working-process/icon/02.png" alt="">
+                                    </div>
+                                    <h5 class="title">Detailed Proposal</h5>
+                                    <p class="disc">
+                                        Following the consultation, we provide a comprehensive proposal outlining the
+                                        scope of work, timeline, budget estimates, and any specific requirements
+                                        discussed. Our aim is to offer transparent and detailed information to
+                                        facilitate informed decision-making.
+                                    </p>
+                                </div>
+                                <!-- single process area end -->
+                                <!-- single process area start -->
+                                <div class="single-working-process-three">
+                                    <div class="icon">
+                                        <img src="assets/images/working-process/icon/03.png" alt="">
+                                    </div>
+                                    <h5 class="title">Strategy and Execution</h5>
+                                    <p class="disc">
+                                        We craft tailored solutions based on your chosen service, ensuring efficient
+                                        execution. From ideation to implementation, trust us to deliver results that
+                                        exceed your expectations. Your journey to solving challenges begins with our
+                                        dedicated expertise and commitment to excellence.
+                                    </p>
+                                </div>
+                                <!-- single process area end -->
+                                <!-- single process area start -->
+                                <div class="single-working-process-three">
+                                    <div class="icon">
+                                        <img src="assets/images/working-process/icon/04.png" alt="">
+                                    </div>
+                                    <h5 class="title">Analysis & Improvisation</h5>
+                                    <p class="disc">
+                                        After execution, we conduct strategic analyses to assess service performance,
+                                        ensuring it meets expectations. We're committed to continuous improvement,
+                                        refining strategies to deliver optimal results. Your satisfaction is our
+                                        priority, and we strive to enhance outcomes through data-driven insights and
+                                        proactive adjustments. Partner with us for ongoing success.
+                                    </p>
+                                </div>
+                                <!-- single process area end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- working process end -->
+
+
+            <!-- rts service style one area end -->
+
+            <div class="container-full">
+                <div id="services" class="row">
+                    <div class="col-lg-12">
+                        <div class="main-wrapper-case-studies scrolltext-wrapper">
+                            <div class="scrollingText-three">
+                                <h2 style="color: #000;" class="title">
+                                    our <span> SERVICES</span>
+                                    our <span>SERVICES</span>
+                                    our <span>SERVICES </span>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rts-service-area rts-section-gap">
+                <div class="container">
+                    <div class="row g-24 rts-slide-up-gsap" style="">
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="social-media-marketing.html">
+                                <div class="single-service-card-box-1">
+                                    <span class="right-icon">01</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_SMM.png" alt="social media marketing">
+                                    </div>
+                                    <h5 class="title">
+                                        Social Media Marketing
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Content Strategy </p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>User Research</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Analytics</p>
+                                        </div>
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Copywriting</p>
+                                        </div>
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="social-media-marketing.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+                            <!-- single-service- card box one end -->
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="search-engine-optimization.html">
+                                <div class="single-service-card-box-1 two">
+                                    <span class="right-icon">02</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_SEO.png"
+                                            alt="search engine optimization">
+                                    </div>
+                                    <h5 class="title">
+                                        Search Engine Optimization
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Keyword Research</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Content Writing</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Back Linking</p>
+                                        </div>
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Website Optimization</p>
+                                        </div>
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Analytics</p>
+                                        </div>
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="search-engine-optimization.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+                            <!-- single-service- card box one end -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="email-marketing.html">
+                                <div class="single-service-card-box-1 three">
+                                    <span class="right-icon">03</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_Email Mrkt.png" alt="email marketing">
+                                    </div>
+                                    <h5 class="title">
+                                        Email Marketing
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Content Personalization</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Email Design</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Automation</p>
+                                        </div>
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Analytics</p>
+                                        </div>
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="email-marketing.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+                            <!-- single-service- card box one end -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="ecommerce-marketing.html">
+                                <div class="single-service-card-box-1 four">
+                                    <span class="right-icon">04</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_SEM.png" alt="ecommerce marketing">
+                                    </div>
+                                    <h5 class="title">
+                                        E-commerce Marketing
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Product Positioning</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Conversion Optimization</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Social Media Advertising</p>
+                                        </div>
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Search Engine Marketing</p>
+                                        </div>
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="ecommerce-marketing.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+                            <!-- single-service- card box one end -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="brand-and-identity.html">
+                                <div class="single-service-card-box-1 five">
+                                    <span class="right-icon">05</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_Branding.png" alt="brand and identity">
+                                    </div>
+                                    <h5 class="title">
+                                        Branding and Identity
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Brand Strategy</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Market Research</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Identity Design</p>
+                                        </div>
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Logo Design</p>
+                                        </div>
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Social Media Posts</p>
+                                        </div>
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Brochures </p>
+                                        </div>
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="brand-and-identity.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+                            <!-- single-service- card box one end -->
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="web-design-and-development.html">
+                                <div class="single-service-card-box-1 six">
+                                    <span class="right-icon">06</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_Web Dev.png"
+                                            alt="web design and development">
+                                    </div>
+                                    <h5 class="title">
+                                        Web Design and Development
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>User Friendly Design</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Web Development</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Compelling Copywriting</p>
+                                        </div>
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="web-design-and-development.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+                            <!-- single-service- card box one end -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-full">
+                <div id="products" class="row">
+                    <div class="col-lg-12">
+                        <div class="main-wrapper-case-studies scrolltext-wrapper">
+                            <div class="scrollingText-three">
+                                <h2 style="color: #000;" class="title">
+                                    our <span> Products</span>
+                                    our <span> Products</span>
+                                    our <span> Products </span>
+                                    our <span> Products </span>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rts-service-area rts-section-gap">
+                <div class="container">
+                    <div class="row g-24 rts-slide-up-gsap">
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="crm.html">
+                                <div class="single-service-card-box-1">
+                                    <span class="right-icon">01</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_CRM.png" alt="crm">
+                                    </div>
+                                    <h5 class="title">
+                                        CRM
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <div class="single-check-area">
+
+                                            <p> Improve your customer interaction with our CRM service.
+                                                Customer is always the king, business that puts customers over anything
+                                                always wins at the end. Our Customised CRM Software will help your
+                                                business
+                                                maintain a proper interaction with your customers. </p>
+                                        </div>
+                                        <!-- single check -->
+
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Customer Database </p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Customer Interaction</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Personalisation</p>
+                                        </div>
+
+                                    </div>
+
+                                    <a href="crm.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="pms.html">
+                                <div class="single-service-card-box-1">
+                                    <span class="right-icon">02</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_PRM.png" alt="pms">
+                                    </div>
+                                    <h5 class="title">
+                                        PMS
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <div class="single-check-area">
+
+                                            <p> Ensure timely delivery of your projects.
+                                                Completing projects on time is a challenging task for a lot of
+                                                companies.
+                                                Our PMS software will help you track all the projects, their status and
+                                                improve team collaboration.
+
+                                            </p>
+                                        </div>
+                                        <!-- single check -->
+
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Track Progress
+                                            </p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Customer Database integration</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Customizable Workflow
+                                            </p>
+                                        </div>
+
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="pms.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                            <!-- single-service- card box one -->
+                            <a href="hrm.html">
+                                <div class="single-service-card-box-1">
+                                    <span class="right-icon">03</span>
+                                    <div class="icon">
+                                        <img src="assets/images/icons/Service Ic_HRM.png" alt="hrm">
+                                    </div>
+                                    <h5 class="title">
+                                        HRM
+                                    </h5>
+                                    <!-- check area start -->
+                                    <div class="check-area-wrapper">
+                                        <div style="margin-bottom: 10px;" class="single-check-area">
+
+                                            <p> The quality of a company is determined by its employees,
+                                                Our HRM software will help you manage the workforce and smoothen the HR
+                                                process. You can review employee performance, attendance and manage
+                                                payslip.
+                                            </p>
+                                        </div>
+                                        <!-- single check -->
+
+
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Employee information</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Attendance Management</p>
+                                        </div>
+                                        <!-- single check end -->
+                                        <!-- single check -->
+                                        <div class="single-check-area">
+                                            <i class="fa-solid fa-check"></i>
+                                            <p>Payslip Management</p>
+                                        </div>
+
+                                        <!-- single check end -->
+                                    </div>
+                                    <!-- check area end -->
+                                    <a href="hrm.html" class="plus-btn">View Details<i
+                                            class="fa-regular fa-plus"></i></a>
+                                </div>
+                            </a>
+                            <!-- single-service- card box one end -->
+                        </div>
+
+
+
+                        <!-- rts pricing area start -->
+                        <!-- <div class="rts-pricing-area rts-section-gap position-relative">
+                            <div class="container-2">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="grid-lines-wrapper">
+                                            <div class="grid-lines">
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-5">
+                                    <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                                        <div class="pricing-left-area">
+                                            <div class="title-area">
+                                                <span class="sub-title">Pricing Table</span>
+                                                <h2 class="title mt--30 quote">Affordable <br>
+                                                    Pricing Plans to <br>
+                                                    Meet Your Needs</h2>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-area-start-one">
+                                            <div class="accordion" id="accordionExample">
+                                                <div class="accordion-item rts-slide-up-gsap">
+                                                    <h2 class="accordion-header" id="headingOne">
+                                                        <button class="accordion-button" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                            aria-expanded="true" aria-controls="collapseOne">
+                                                            CRM
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            Maintain a healthy relationship with your customers with our
+                                                            Customer
+                                                            Relationship Management software.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item rts-slide-up-gsap">
+                                                    <h2 class="accordion-header" id="headingTwo">
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                            aria-expanded="false" aria-controls="collapseTwo">
+                                                            PMS
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            Ensure timely delivery of projects with our PMS software.
+                                                            Monitor
+                                                            progress of the projects and stay ahead of the deadline.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item rts-slide-up-gsap">
+                                                    <h2 class="accordion-header" id="headingThree">
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                            aria-expanded="false" aria-controls="collapseThree">
+                                                            HRM
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingThree"
+                                                        data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            Manage your workforce at ease with our HRM software. Here
+                                                            you can manage
+                                                            payslips, view information about your employees and review
+                                                            performance
+                                                            as well.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12 pl--100 pl_md--15 pl_sm--15 plr_md--20 plr_sm--20">
+                                        <div class="row g-5 rts-slide-left-gsap">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="single-pricing-area-start active card-tilt">
+                                                    <span class="pre-title">Monthly</span>
+                                                    <h2 id="monthly_pricing" class="title">₹1000/ Per User Per Month
+                                                    </h2>
+                                                    <p class="dsic">
+                                                        Let top creative talent come to you by <br> posting your job
+                                                        listing on #1
+                                                        Design <br> Jobs Board.
+                                                    </p>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>Web Development</p>
+                                                    </div>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>SEO Optimization</p>
+                                                    </div>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>Content Writing</p>
+                                                    </div>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>Social Media Management</p>
+                                                    </div>
+                                                    <a href="#" class="pricing-btn">Choose Package</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="single-pricing-area-start card-tilt">
+                                                    <div class="badge">
+                                                        <span>Best Value</span>
+                                                    </div>
+                                                    <span class="pre-title">Yearly</span>
+                                                    <h2 id="yearly_pricing" class="title">₹5000/ Per User Per Year</h2>
+                                                    <p class="dsic">
+                                                        Let top creative talent come to you by <br> posting your job
+                                                        listing on #1
+                                                        Design <br> Jobs Board.
+                                                    </p>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>Web Development</p>
+                                                    </div>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>SEO Optimization</p>
+                                                    </div>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>Content Writing</p>
+                                                    </div>
+                                                    <div class="single-fc">
+                                                        <i class="fa-solid fa-check"></i>
+                                                        <p>Social Media Management</p>
+                                                    </div>
+                                                    <a href="#" class="pricing-btn">Choose Package</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="btn--area-center">
+                                            <a href="#" class="learn-more-btn">Try It for free<i
+                                                    class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row brad-pricing-area-start mt--130">
+                                    <div class="col-lg-12">
+                                        <div class="pricing-wrapper-main">
+                                            <p>WE WORKED WITH GLOBAL LARGEST BRANDS</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mt--60">
+                                        <div class="brand-area-style-one">
+                                            <a class="rts-skew-up-gsap" href="#"><img src="assets/images/brand/01.png"
+                                                    alt="brand"></a>
+                                            <a class="rts-skew-up-gsap" href="#"><img src="assets/images/brand/02.png"
+                                                    alt="brand"></a>
+                                            <a class="rts-skew-up-gsap" href="#"><img src="assets/images/brand/03.png"
+                                                    alt="brand"></a>
+                                            <a class="rts-skew-up-gsap" href="#"><img src="assets/images/brand/04.png"
+                                                    alt="brand"></a>
+                                            <a class="rts-skew-up-gsap" href="#"><img src="assets/images/brand/05.png"
+                                                    alt="brand"></a>
+                                            <a class="rts-skew-up-gsap" href="#"><img src="assets/images/brand/06.png"
+                                                    alt="brand"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- rts pricing area end -->
+
+                        <!-- large-image sections starts -->
+                        <!-- <div
+                            class="large-image-option-start rts-section-gap position-relative rts_jump_counter__animation">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="title-area-inner large-image">
+                                            <h2 class="title quote" style="color: rgb(243, 207, 3);">Get ready to make
+                                                some serious revenue
+
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-160">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="large-video-playing grow">
+                                            <video autoplay muted loop playsinline preload="metadata">
+                                                <source src="assets/images/video/02.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- large-image sections end -->
+
+                        <!-- large-image sections starts -->
+                        <!-- <div
+                            class="large-image-option-start rts-section-gap bg-dark-1 position-relative rts_jump_counter__animation">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="grid-lines-wrapper">
+                                            <div class="grid-lines">
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="title-area-inner large-image">
+                                            <h2 class="title quote">Digital Expertise Action <br> <span> digital
+                                                    services.</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container mt--120">
+                                <div style="justify-content: center; width: 76;" class="row">
+                                    <div style="padding-top: 50px;" class="col-lg-10">
+                                       
+                                        <div class="counter-up-wrapper counter_animation">
+                                            <div class="counter-single counter__anim">
+                                                <div class="inner">
+                                                    <h2 class="title"><span class="counter">362</span>k</h2>
+                                                    <p>Project <br>
+                                                        Completed</p>
+                                                </div>
+                                            </div>
+                                            <div class="counter-single counter__anim">
+                                                <div class="inner">
+                                                    <h2 class="title"><span class="counter">300</span>M</h2>
+                                                    <p>Happy <br>
+                                                        Customers</p>
+                                                </div>
+                                            </div>
+                                            <div class="counter-single counter__anim">
+                                                <div class="inner">
+                                                    <h2 class="title"><span class="counter">62</span>+</h2>
+                                                    <p>Years <br>
+                                                        Experience</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- large-image sections end -->
+
+
+                        <!-- blog area start -->
+                        <div style="padding-top: 50px;" class="blog-area-start rts-section-gap "> <!-- bg-dark-1 -->
+
+                            <div class="container">
+                                <!-- <div class="row g-5">
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <div class="blog-left-wrapper-area-one">
+                                            <div class="content-wrapper">
+                                                <span class="sub-title">Update Blog</span>
+                                                <h2 class="title quote">
+                                                    READ UPDATED <br>
+                                                    JOURNAL
+                                                </h2>
+                                                <p class="disc rts-text-anim">
+                                                    Irna torquent accumsan aliquet a metus netus tellus <br> egestas, eu
+                                                    semper
+                                                    tortor fusce duis massa morbi <br> parturient ornare.
+                                                </p>
+                                                <a href="blog.html" class="learn-more-btn">VIEW BLOG <i
+                                                        class="fa-solid fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 rts-slide-left-gsap">
+                                        <div class="blog-single-main-wrapper style-one">
+                                            <a href="blog-details.html" class="thumbnail">
+                                                <div class="imgae-box">
+                                                    <img src="assets/images/blog/01.jpg" alt="blog">
+                                                </div>
+                                            </a>
+                                            <div class="inner">
+                                                <div class="head">
+                                                    <span class="date">March 25, 2023</span>
+                                                    <span class="time">8 min read</span>
+                                                </div>
+                                                <div class="body">
+                                                    <a href="blog-details.html">
+                                                        <h4 class="title">Marketing Musings: Insights from a <br> Social
+                                                            Media
+                                                            Marketer</h4>
+                                                    </a>
+                                                    <a href="blog-details.html" class="rts-btn btn-primary mt--30">Read
+                                                        More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 rts-slide-left-gsap">
+                                        <div class="blog-single-main-wrapper style-one">
+                                            <a href="blog-details.html" class="thumbnail">
+                                                <div class="imgae-box">
+                                                    <img src="assets/images/blog/02.jpg" alt="blog">
+                                                </div>
+                                            </a>
+                                            <div class="inner">
+                                                <div class="head">
+                                                    <span class="date">March 25, 2023</span>
+                                                    <span class="time">8 min read</span>
+                                                </div>
+                                                <div class="body">
+                                                    <a href="blog-details.html">
+                                                        <h4 class="title">Social media platforms are like ecosystems
+                                                            with its own
+                                                            rules</h4>
+                                                    </a>
+                                                    <a href="blog-details.html" class="rts-btn btn-primary mt--30">Read
+                                                        More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div style="padding-top: 90px;" class="row rts-section-gapTop">
+                                    <div class="col-lg-12">
+                                        <div class="card-tilt--off">
+                                            <div class="cta-main-wrapper-one rts-slide-up-gsap">
+                                                <div class="right-bg-image">
+                                                    <img src="assets/images/cta/02.png" alt="bg-cta">
+                                                </div>
+                                                <div class="left-area">
+                                                    <img src="assets/images/cta/01.png" alt="cta-main-wrapper">
+                                                </div>
+                                                <div class="cta-mid-area">
+                                                    <h4 class="title">Let’s scale up <br>your business with our <br>tech
+                                                        and marketing solutions</h4>
+                                                    <p style="color: aliceblue;" class="disc">
+                                                        we are dedicated to helping businesses achieve <br> their goals
+                                                        through
+                                                        innovative digital solutions.
+                                                    </p>
+                                                </div>
+                                                <div class="button-area-right">
+                                                    <a style="background: white; color: black !important;"
+                                                        href="contact.html?cl=Home Page CTA"
+                                                        class="rts-btn btn-white">Get Quote <i
+                                                            class="fa-light fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- blog area end -->
+
+                        <!-- rts-footer-area one -->
+                        <div style="padding-top: 60px;" class="rts-footer-area-one rts-section-gapTop">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="grid-lines-wrapper">
+                                            <div class="grid-lines">
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                                <div class="grid-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row rts-section-gapBottom">
+                                    <div class="col-lg-12">
+                                        <div style="gap: 117px;" class="footer-main-wrapper-one">
+                                            <!-- footer left area start -->
+                                            <div class="footer-left-area">
+                                                <a href="#" class="logo-footer">
+                                                    <img class="logo-1" src="assets/images/logo/SR_Ver1_Clr.png"
+                                                        alt="logo-area">
+                                                    <img class="logo-2" src="assets/images/logo/SR_Ver1_wh.png"
+                                                        alt="logo-area">
+                                                </a>
+
+                                                <div class="rts-social-area-one">
+                                                    <ul>
+                                                        <li><a href="https://www.facebook.com/srinfotechsaas" target="_blank"><i
+                                                                    class="fa-brands fa-facebook-f"></i></a></li>
+                                                        <li><a href="https://twitter.com/srinfotechsaas" target="_blank"><i
+                                                                    class="fa-brands fa-x-twitter"></i></a></li>
+                                                        <li><a href="https://wa.me/+919606846445?text=I%20am%20interested%20in%20your%20Services" target="_blank"><i
+                                                                    class="fa-brands fa-whatsapp"></i></a></li>
+                                                        <li><a href="https://www.instagram.com/srinfotechsaas/" target="_blank"><i
+                                                                    class="fa-brands fa-instagram"></i></a></li>
+                                                        <li><a href="https://www.linkedin.com/company/sr1infotech/mycompany/" target="_blank"><i
+                                                                    class="fa-brands fa-linkedin"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- footer left area end -->
+                                            <!-- footer single wized start -->
+                                            <div class="footer-single-wized-start">
+                                                <h5 class="title">Useful Links</h5>
+                                                <ul class="footer-nav">
+                                                    <li><a href="index.html">Home</a></li>
+                                                   
+                                                    <li><a href="#services">Service</a></li>
+
+                                                    <li><a href="#products">Products</a></li>
+                                                    
+                                                    <li><a href="contact.html">Contact Us</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- footer single wized end -->
+                                            <!-- footer single wized start -->
+                                            <div class="footer-single-wized-start">
+                                                <h5 class="title">Contact Info</h5>
+                                                <div class="mail-contact-area">
+                                                    <div class="single-con-info mb--40">
+                                                        <a href="#">
+                                                            #62, JP Nagar, 7th phase, Bengaluru -560078. <br>
+                                                            Karnataka, India
+                                                        </a>
+                                                    </div>
+                                                    <div class="single-con-info mail">
+                                                        <a href="mailto:info@srinfotech.biz">
+                                                            info@srinfotech.biz
+                                                        </a>
+                                                    </div>
+                                                    <div class="single-con-info">
+                                                        <a href="tel:+91 9606846445">
+                                                            +91 9606846445
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- footer single wized end -->
+                                            <!-- footer single wized start -->
+                                           
+                                            <!-- footer single wized end -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="copyright-area text-center">
+                                            <div class="left">
+                                                <p>
+                                                    <script>document.write(new Date().getFullYear())</script> © <a
+                                                        href="#">SR
+                                                        Infotech</a>. All rights reserved.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- rts-footer-area one end -->
+                    </div>
+                </div>
+
+                <!-- Scripts style two -->
+
+
+                <div class="bg-noise"></div>
+
+
+                <!-- back to top start -->
+                <div class="progress-wrap">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+                    </svg>
+                </div>
+                <!-- back to top end -->
+
+
+
+                <!-- pre loader start -->
+                <div class="rts-cursor cursor-outer" data-default="yes" data-link="yes" data-slider="no">
+                    <span class="fn-cursor"></span>
+                </div>
+                <div class="rts-cursor cursor-inner" data-default="yes" data-link="yes" data-slider="no">
+                    <span class="fn-cursor">
+                        <span class="fn-left"></span>
+                        <span class="fn-right"></span>
+                    </span>
+                </div>
+                <!-- pre loader end -->
+
+
+
+                <!-- dark light switcher start-->
+                <div class="modal-sidebar-scroll rts-dark-light">
+                    <ul>
+                        <li class="go-dark-w"><span>Dark</span><i class="rts-go-dark fal fa-moon"></i></li>
+                        <li class="go-light-w"><span>Light</span><i class="rts-go-light fa-light fa-brightness"></i>
+                        </li>
+                    </ul>
+                </div>
+                <!-- dark light switcher end -->
+
+
+                <script src="https://kit.fontawesome.com/b4ffb9aafd.js" crossorigin="anonymous"></script>
+                <script defer src="assets/js/vendor/jquery.min.js"></script>
+                <script defer src="assets/js/plugins/bootstrap.min.js"></script>
+                <script defer src="assets/js/plugins/contact.form.js"></script>
+                <script defer src="assets/js/vendor/waypoint.js"></script>
+                <script defer src="assets/js/plugins/swiper.js"></script>
+
+
+                <!-- for side bar sticky -->
+                <script defer src="assets/js/plugins/resizer-sensor.js"></script>
+                <script defer src="assets/js/plugins/sticky-sidebar.js"></script>
+                <!-- for side bar sticky end-->
+
+                <script defer src="assets/js/plugins/isotop.js"></script>
+                <script defer src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+
+                <script defer src="assets/js/plugins/smoothscroll-varticle.js"></script>
+                <script defer src="assets/js/vendor/gsap.js"></script>
+                <script defer src="assets/js/plugins/scrolltiger.js"></script>
+                <script defer src="assets/js/plugins/scrolltoplugin.js"></script>
+                <script defer src="assets/js/plugins/splittext.js"></script>
+                <script defer src="assets/js/plugins/smoothscroll.js"></script>
+
+                <!-- title opacity scroll magix -->
+                <script defer src="assets/js/plugins/scrollmagic.js"></script>
+                <script defer src="assets/js/plugins/animate-scrollmagic.js"></script>
+                <!-- title opacity scroll magic end -->
+
+
+                <script src="/assets/js/pricing_cards.js"></script>
+                <script defer src="assets/js/plugins/tilt.js"></script>
+                <script defer src="assets/js/plugins/counterup.js"></script>
+
+                <script defer src="assets/js/vendor/waw.js"></script>
+                <!-- custom javascripts -->
+                <script defer src="assets/js/main.js"></script>
+                <!-- Scripts style two End -->
+
+
+
 </body>
 
-<!-- Developed by SR Infotech -->
 
 </html>
