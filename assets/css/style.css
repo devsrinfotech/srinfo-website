@@ -529,6 +529,13 @@ ol ul {
   margin-top: 0;
 }
 
+.rts-light-mood .title h2{
+color: #000 !important; 
+}
+
+.rts-dark .title h2{
+  color: white !important;
+}
 .paragraph-area p.disc {
   margin-bottom: 20px;
   color: #fff;
@@ -29427,6 +29434,7 @@ body.servi-ce-details .rts-footer-two-area {
   background: #fff;
 }
 .rts-light-mood .servi-ce-details .main-page-title-service-left-area .title-page,
+.rts-light-mood  .privacy-title,
 .rts-light-mood .servi-ce-details .circle-speen .speen-shape text textPath,
 .rts-light-mood .servi-ce-details .check-area-main-sd .single-check p,
 .rts-light-mood .servi-ce-details .rts-single-wized .wized-header .title,
@@ -29482,6 +29490,7 @@ body.servi-ce-details .rts-footer-two-area {
 
 .rts-footer-area-one .footer-left-area .logo-footer .logo-1 {
   display: block;
+  width: 250px;
 }
 .rts-footer-area-one .footer-left-area .logo-footer .logo-2 {
   display: none;
