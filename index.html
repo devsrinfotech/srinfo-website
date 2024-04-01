@@ -19,6 +19,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/SR_FavI_Ver1_wh.png">
     <title>SR Infotech</title>
     <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/vendor/silverBox.min.css">
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
     <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
     <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
@@ -1817,7 +1818,68 @@
                 </div>
                 <!-- dark light switcher end -->
 
+                <script src="assets/js/vendor/silverBox.min.js"></script>
+                <script>
+                        (function () {
 
+                            const urlParams = new URLSearchParams(window.location.search);
+
+                            const hasQueryParam = urlParams.has('emailcampaign_popup');
+
+                            if (hasQueryParam) {
+
+                                // Set a delay of 3 seconds before triggering the modal
+                                setTimeout(function () {
+                                    new silverBox({
+                                        alertIcon: "info",
+                                        theme: "light",
+                                        closeOnOverlayClick: false,
+                                        // customIcon: "/public/src/images/loginExample.png",
+                                        title: {
+                                            text: "Get Best Pricing Details"
+                                        },
+                                        centerContent: true,
+                                        text: "Enter Your Contact Information And Download Our Pricing Broacher",
+                                        showCloseButton: true,
+
+
+                                        input: [
+                                            {
+                                                id: "popup_name",
+                                                label: "Your Name",
+                                                type: "text",
+                                                placeHolder: "Enter your Name"
+
+                                            },
+                                            {
+                                                id: "popup_email",
+                                                label: "Your Email ID",
+                                                type: "email",
+                                                placeHolder: "Enter Email ID"
+                                            },
+                                            {
+                                                id: "popup_mobile_number",
+                                                label: "Your Mobile Number",
+                                                type: "text",
+                                                numberOnly: true,
+                                                placeHolder: "Enter Mobile Number",
+                                                maxLength: 10
+                                            }
+
+                                        ],
+                                        confirmButton: {
+                                            text: "DownLoad Broacher",
+                                            closeOnClick: false,
+                                            onClick: () => {
+                                                submitPopUpForm();
+                                            }
+                                        },
+                                    });
+                                }, 3000);
+                            }
+                        })();
+                </script>
+                <script src="assets/js/popup_callbacks.js"></script>
                 <script src="https://kit.fontawesome.com/b4ffb9aafd.js" crossorigin="anonymous"></script>
                 <script defer src="assets/js/vendor/jquery.min.js"></script>
                 <script defer src="assets/js/plugins/bootstrap.min.js"></script>
