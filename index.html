@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./assets/js/smoothscroll.min.js"></script>
 </head>
 
 <body class="index-one">
@@ -57,7 +58,8 @@
                             </li>
 
                             <li class="menu-item main-nav-on menu-item-has-children">
-                                <a href="#services"><span class="rolling-text">Services</span></a>
+                                <a href="#services" onclick="smoothScroll({yPos: 5500, duration: 50});"><span
+                                        class="rolling-text">Services</span></a>
                                 <ul class="sub-menu" style="display: block;">
                                     <li class="menu-item menu-item-home"><a class="menu-link"
                                             href="social-media-marketing.html">Social Media Marketing </a></li>
@@ -80,7 +82,7 @@
 
 
                             <li class="menu-item main-nav-on menu-item-has-children">
-                                <a href="#products"><span class="rolling-text">Products</span></a>
+                                <a href="#products" onclick="smoothScroll({yPos: 7300, duration: 50});"><span class="rolling-text">Products</span></a>
                                 <ul class="sub-menu" style="display: block;">
                                     <li class="menu-item menu-item-home"><a class="menu-link" href="crm.html">CRM </a>
                                     </li>
