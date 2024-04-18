@@ -17933,6 +17933,18 @@ body.coming-soon {
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
+  color: #fff;
+  border-radius: 3px;
+  display: block;
+  max-width: max-content;
+  transition: 0.3s;
+}
+
+.rts-dark .rts-btn {
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
   color: #FFFFFF;
   border-radius: 3px;
   display: block;
@@ -17940,7 +17952,12 @@ body.coming-soon {
   transition: 0.3s;
 }
 .rts-btn.btn-primary {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(39, 39, 39, 0.432);
+  border-radius: 3px;
+}
+
+.rts-dark .rts-btn.btn-primary {
+  background: rgba(32, 32, 32, 0.849);
   border-radius: 3px;
 }
 .rts-btn.btn-primary:hover {
@@ -18921,6 +18938,14 @@ body.coming-soon {
 }
 
 h6{
+  color: #000;
+}
+
+.rts-dark h3{
+  color: #fff;
+}
+
+h3{
   color: #000;
 }
 
@@ -24870,6 +24895,13 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   background: #fff;
 }
 .blog-single-main-wrapper .inner .head span.date {
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.rts-dark .blog-single-main-wrapper .inner .head span.date {
   color: #fff;
   font-weight: 500;
   font-size: 14px;
@@ -24882,6 +24914,14 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   color: #74787C;
 }
 .blog-single-main-wrapper .inner .body .title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.rts-dark .blog-single-main-wrapper .inner .body .title {
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
@@ -29478,6 +29518,10 @@ body.servi-ce-details .rts-footer-two-area {
 }
 .rts-light-mood .mySwiper_portfolio-5 .swiper-slide {
   opacity: 1;
+}
+
+.title h3{
+  color:#000 !important;
 }
 
 .portfolio-six-single-swiper .left-content .title {
