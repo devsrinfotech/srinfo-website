@@ -350,7 +350,7 @@ p {
   line-height: var(--line-height-b2);
   font-weight: var(--p-regular);
   color: var(--color-body);
-  margin: 0 0 40px;
+  margin: 0 0 10px;
 }
 
 strong{
@@ -9192,6 +9192,7 @@ menu,
 ol,
 ul {
   margin: 16px 0;
+  list-style: none;
   padding: 0 0 0 40px;
 }
 
@@ -18946,6 +18947,13 @@ h6{
   color: #000;
 }
 
+.rts-light-mood h2{
+  color: #000000 !important;
+}
+
+.rts-dark h2{
+  color: #fff;
+}
 .rts-dark h3{
   color: #fff;
 }
@@ -18954,6 +18962,9 @@ h3{
   color: #000;
 }
 
+.rts-light-mood h4{
+  color: #000000 !important;
+}
 .inner-service-card-box-1 h5 {
 padding-bottom: 30px;
 text-align: center;
@@ -23455,6 +23466,7 @@ main {
 }
 .footer-two-wrapper-content .footer-left-two .logo {
   display: block;
+  width:250px;
   margin-bottom: 40px;
 }
 .footer-two-wrapper-content .footer-left-two p.disc {
@@ -28761,6 +28773,7 @@ body.servi-ce-details .rts-footer-two-area {
 }
 .rts-dark .rts-footer-area-one .footer-left-area .logo-footer .logo-2 {
   display: block;
+  width: 250px;
 }
 .rts-dark .shape-about-one {
   display: none;
