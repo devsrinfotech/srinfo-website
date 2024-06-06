@@ -25396,12 +25396,30 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   line-height: normal;
   position: relative;
 }
+.rts-light-mood .single-blog-area-5 .inner-content .read-more-bb {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+}
 .single-blog-area-5 .inner-content .read-more-bb::after {
   position: absolute;
   bottom: -5px;
   width: 100%;
   height: 1px;
   background: #fff;
+  content: "";
+  left: 0;
+}
+
+.rts-light-mood .single-blog-area-5 .inner-content .read-more-bb::after {
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 1px;
+  background: #000;
   content: "";
   left: 0;
 }
@@ -26951,6 +26969,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 }
 .rts-offcanvas-wrapper .container-menu .action-menu .burger .icon-close {
   position: absolute;
+  color:#0181fb;
   top: -2px;
   left: 0;
   will-change: transform;
