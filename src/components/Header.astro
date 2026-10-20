@@ -1,0 +1,50 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+const path = Astro.url.pathname;
+const links = [
+  { href: '/#what-we-buy', label: 'What we buy' },
+  { href: '/how-it-works/', label: 'How it works' },
+  { href: '/about/', label: 'About us' },
+  { href: '/insights/', label: 'Insights' },
+];
+---
+<a href="#main" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="contact-bar">
+    <nav class="container contact-links" aria-label="Quick contact">
+      <a href={`mailto:${site.email}`}><Icon name="mail" size={15} /><span>{site.email}</span></a>
+      <a href={`tel:${site.phoneHref}`}><Icon name="phone" size={14} /><span>{site.phone}</span></a>
+      <a href={`${site.whatsapp}?text=${encodeURIComponent('Hello SR Infotech, I would like to discuss selling bulk inventory.')}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with SR Infotech on WhatsApp"><span>WhatsApp</span><Icon name="diagonal" size={14} /></a>
+    </nav>
+  </div>
+  <div class="container nav-inner">
+    <a href="/" class="brand" aria-label="SR Infotech home"><img src="/images/logo.png" alt="SR Infotech" width="514" height="84" /></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span></button>
+    <nav id="primary-navigation" class="primary-nav" aria-label="Main navigation">
+      {links.map(link => <a href={link.href} aria-current={path === link.href ? 'page' : undefined}>{link.label}</a>)}
+      <a class="button button-small" href="/contact/?cl=Header">Sell your inventory <Icon name="diagonal" size={17} /></a>
+    </nav>
+  </div>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.querySelector<HTMLElement>('.primary-nav');
+  const setMenu = (open: boolean) => {
+    toggle?.setAttribute('aria-expanded', String(open));
+    toggle?.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    nav?.classList.toggle('is-open', open);
+  };
+  toggle?.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Node && !nav?.contains(event.target) && !toggle?.contains(event.target)) setMenu(false);
+  });
+  matchMedia('(min-width: 1000px)').addEventListener('change', event => { if (event.matches) setMenu(false); });
+</script>

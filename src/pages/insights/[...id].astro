@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTA from '../../components/CTA.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection, render } from 'astro:content';
+import { isPublished, newestFirst } from '../../lib/content.mjs';
+import { site } from '../../data/site';
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({data}) => isPublished(data));
+  return posts.map(post => ({ params: { id: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const related = (await getCollection('blog', ({data, id}) => isPublished(data) && id !== post.id)).sort((a, b) => {
+  const relevance = (entry: typeof a) => entry.data.relatedCategories.filter(category => post.data.relatedCategories.includes(category)).length;
+  return relevance(b) - relevance(a) || newestFirst(a, b);
+}).slice(0,3);
+const url = `${site.url}/insights/${post.id}/`;
+const schema = [
+  {
+    '@type': 'BlogPosting', '@id': `${url}#article`, headline: post.data.title, description: post.data.description,
+    image: `${site.url}/images/${post.data.image}.webp`, mainEntityOfPage: { '@id': `${url}#webpage` },
+    datePublished: post.data.pubDate.toISOString(), dateModified: (post.data.updatedDate || post.data.pubDate).toISOString(),
+    author: { '@type': 'Organization', name: post.data.author, url: `${site.url}/about/` },
+    publisher: { '@id': `${site.url}/#organization` }, articleSection: post.data.category, inLanguage: 'en-IN',
+  },
+];
+---
+<BaseLayout title={`${post.data.title} | SR Infotech`} description={post.data.description} schema={schema} type="article" image={`/images/${post.data.image}.webp`} imageAlt={post.data.imageAlt} publishedTime={post.data.pubDate.toISOString()} modifiedTime={(post.data.updatedDate || post.data.pubDate).toISOString()}>
+  <div class="container"><Breadcrumbs items={[{name:'Insights',href:'/insights/'},{name:post.data.title}]} /><header class="blog-header"><div class="article-meta"><span class="tag">{post.data.category}</span><span>·</span><span>{post.data.readingTime} min read</span></div><h1>{post.data.title}</h1><p>{post.data.description}</p><div class="byline">By <a href="/about/">{post.data.author}</a> <span aria-hidden="true">·</span> <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time>{post.data.updatedDate && <span> · Updated <time datetime={post.data.updatedDate.toISOString()}>{post.data.updatedDate.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time></span>}</div></header><img class="blog-cover" src={`/images/${post.data.image}.webp`} alt={post.data.imageAlt} width="1000" height="667" /></div>
+  <section class="section" style="padding-top:0"><div class="container blog-layout"><nav class="toc" aria-label="On this page"><strong>IN THIS INSIGHT</strong>{headings.filter(h => h.depth === 2).map(h => <a href={`#${h.slug}`}>{h.text}</a>)}<a href="/contact/" style="color:var(--blue);font-weight:700;margin-top:16px">Discuss your stock ↗</a></nav><article class="prose"><Content /></article></div></section>
+  {related.length > 0 && <section class="section insights-section"><div class="container"><div class="section-heading"><div><span class="eyebrow">KEEP EXPLORING</span><h2>Another perspective.</h2></div></div><div class="article-grid">{related.map(p => <ArticleCard post={p} />)}</div></div></section>}
+  <CTA />
+</BaseLayout>

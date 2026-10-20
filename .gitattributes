@@ -1,0 +1,14 @@
+# Keep source files consistent between Windows development and Linux builds.
+* text=auto eol=lf
+
+# Preserve binary assets byte-for-byte.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.mp4 binary

@@ -1,0 +1,48 @@
+# Dependencies, build output and caches (keep package-lock.json committed).
+node_modules/
+/dist/
+/.astro/
+/.cache/
+/.npm/
+*.tsbuildinfo
+
+# Environment settings and private credentials; only a sanitized template is shared.
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+/.aws/
+/.ssh/
+
+# Browser reports, screenshots, performance audits and test output.
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/coverage/
+/.nyc_output/
+/artifacts/
+*.log
+
+# Local context for the owner and development agents; never publish or commit.
+/local-context/
+/old business website data/
+
+# Local hosting state.
+/.wrangler/
+/.vercel/
+/.netlify/
+
+# Personal editor settings, temporary files and operating-system metadata.
+/.vscode/
+/.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini

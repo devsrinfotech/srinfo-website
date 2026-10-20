@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleCard from './ArticleCard.astro';
+import Icon from './Icon.astro';
+import { isPublished, newestFirst } from '../lib/content.mjs';
+interface Props { category?: 'apparel' | 'home-kitchen' | 'electronics' }
+const { category } = Astro.props;
+const posts = (await getCollection('blog', ({data}) =>
+  isPublished(data) && (!category || data.relatedCategories.includes(category))
+)).sort((a, b) => {
+  // Prefer focused category guidance, then general preparation guides.
+  if (category) {
+    const specificity = a.data.relatedCategories.length - b.data.relatedCategories.length;
+    if (specificity) return specificity;
+  } else {
+    const priority = (topic: string) => topic === 'Supplier guides' ? 2 : topic === 'Inventory strategy' ? 1 : 0;
+    const relevance = priority(b.data.category) - priority(a.data.category);
+    if (relevance) return relevance;
+  }
+  return newestFirst(a, b);
+}).slice(0, 3);
+---
+{posts.length > 0 && <section class="section insights-section"><div class="container">
+  <div class="section-heading"><div><span class="eyebrow">PREPARE FOR YOUR NEXT MOVE</span><h2>Useful answers.<br />For your inventory decisions.</h2></div><a href="/insights/" class="text-link">All supplier guides <Icon name="diagonal" size={18} /></a></div>
+  <div class="article-grid">{posts.map(post => <ArticleCard post={post} />)}</div>
+</div></section>}

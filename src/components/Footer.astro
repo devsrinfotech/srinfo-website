@@ -1,0 +1,17 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label="SR Infotech home"><img src="/images/logo-white.png" alt="SR Infotech" width="514" height="84" loading="lazy" /></a>
+      <p>A new perspective on surplus.<br />A new opportunity for your business.</p>
+      <div class="footer-coverage"><Icon name="globe" size={18} /> Buying & picking up across India</div>
+    </div>
+    <div><h2>Explore</h2><a href="/about/">About SR Infotech</a><a href="/how-it-works/">How it works</a><a href="/insights/">Inventory insights</a><a href="/contact/">Contact us</a></div>
+    <div><h2>What we buy</h2><a href="/categories/apparel/">Apparel & fashion</a><a href="/categories/home-kitchen/">Home & kitchen</a><a href="/categories/electronics/">Electronics</a><a href="/ecommerce-returns/">Ecommerce returns</a></div>
+    <div><h2>Let’s talk inventory</h2><a href={`tel:${site.phoneHref}`}>{site.phone}</a><a href={`mailto:${site.email}`}>{site.email}</a><p class="footer-address">{site.address}<br />{site.city} – {site.postalCode}, {site.country}</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© {new Date().getFullYear()} SR Infotech. All rights reserved.</span><div>{site.socials.map(s => <a href={s.url} target="_blank" rel="noopener noreferrer">{s.name}</a>)}</div><a href="/privacy-policy/">Privacy policy</a></div>
+</footer>

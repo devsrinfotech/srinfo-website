@@ -1,0 +1,9 @@
+---
+const steps = [
+  ['Share your inventory', 'Tell us the category, quantity, condition and where your stock is located.'],
+  ['Connect with our team', 'We review your lot and discuss the right buying opportunity with you.'],
+  ['Agree the details', 'Work out the commercial terms and next steps directly with our team.'],
+  ['We arrange pickup', 'Our own logistics collects the agreed goods, anywhere in India.'],
+];
+---
+<div class="steps">{steps.map(([title, text], i) => <div class="step"><div class="step-num">0{i + 1}</div><h3>{title}</h3><p>{text}</p></div>)}</div>

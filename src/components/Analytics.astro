@@ -1,0 +1,42 @@
+---
+// Public measurement ID recovered from the original homepage and contact page.
+const measurementId = 'G-MVWQDQYKX9';
+---
+<script is:inline id="site-analytics" define:vars={{ measurementId, productionBuild: import.meta.env.PROD }}>
+  (() => {
+    const productionHosts = ['srinfotech.biz', 'www.srinfotech.biz'];
+    if (!productionBuild || !productionHosts.includes(window.location.hostname)) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+
+    // Keep campaign attribution, without forwarding arbitrary enquiry URL values.
+    const pageLocation = new URL(window.location.origin + window.location.pathname);
+    const query = new URLSearchParams(window.location.search);
+    const attributionKeys = [
+      'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+      'utm_id', 'utm_source_platform', 'gclid', 'dclid', 'gbraid', 'wbraid',
+    ];
+    attributionKeys.forEach(key => {
+      const value = query.get(key);
+      if (value) pageLocation.searchParams.set(key, value);
+    });
+    let pageReferrer = '';
+    try {
+      const referrer = new URL(document.referrer);
+      pageReferrer = referrer.origin + referrer.pathname;
+    } catch { /* A direct visit may have no referrer. */ }
+
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      page_location: pageLocation.href,
+      page_referrer: pageReferrer,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+    });
+    const tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(tag);
+  })();
+</script>

@@ -1,0 +1,78 @@
+---
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import { site } from '../data/site';
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  type?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+}
+const {
+  title, description, image = '/images/social-cover.jpg',
+  imageAlt = 'SR Infotech — a smarter future for surplus inventory',
+  type = 'website', publishedTime, modifiedTime, schema = [], noindex = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const organization = {
+  '@type': 'Organization', '@id': `${site.url}/#organization`, name: site.name, url: site.url,
+  logo: { '@type': 'ImageObject', url: `${site.url}/images/organization-logo.png`, width: 600, height: 160 },
+  telephone: site.phoneHref, email: site.email,
+  description: 'SR Infotech buys bulk surplus inventory, ecommerce returns and damaged-label stock across India, with its own pickup logistics.',
+  address: { '@type': 'PostalAddress', streetAddress: site.address, addressLocality: site.city, postalCode: site.postalCode, addressCountry: 'IN' },
+  areaServed: { '@type': 'Country', name: 'India' }, sameAs: site.socials.map(s => s.url),
+};
+const graph = [
+  organization,
+  { '@type': 'WebSite', '@id': `${site.url}/#website`, name: site.name, url: site.url, publisher: { '@id': `${site.url}/#organization` } },
+  {
+    '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: title, description,
+    isPartOf: { '@id': `${site.url}/#website` },
+    about: { '@id': `${site.url}/#organization` }, inLanguage: 'en-IN',
+    ...(publishedTime ? { datePublished: publishedTime, dateModified: modifiedTime || publishedTime } : {}),
+    ...(type === 'article' ? { mainEntity: { '@id': `${canonical}#article` } } : {}),
+  },
+  ...(Array.isArray(schema) ? schema : [schema]),
+];
+---
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <Analytics />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#123454" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="SR Infotech Insights" href="/rss.xml" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:image" content={new URL(image, site.url).href} />
+    <meta property="og:image:alt" content={imageAlt} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, site.url).href} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
+    <slot name="head" />
+  </head>
+  <body><Header /><main id="main"><slot /></main><Footer /></body>
+</html>

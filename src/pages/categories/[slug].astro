@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTA from '../../components/CTA.astro';
+import FAQ from '../../components/FAQ.astro';
+import Icon from '../../components/Icon.astro';
+import RelatedInsights from '../../components/RelatedInsights.astro';
+import { categories, faqs } from '../../data/business';
+import { site } from '../../data/site';
+export function getStaticPaths() { return categories.map(category => ({ params: { slug: category.slug }, props: { category } })); }
+const { category } = Astro.props;
+const schema = [
+  { '@type': 'Service', name: `${category.name} surplus inventory buying`, serviceType: 'Bulk inventory procurement', provider: { '@id': `${site.url}/#organization` }, areaServed: 'India', description: category.description },
+];
+---
+<BaseLayout title={`${category.name} Surplus Stock Buyers in India | SR Infotech`} description={category.description} schema={schema}>
+  <section class="page-hero"><div class="container"><Breadcrumbs items={[{ name: category.name }]} /><div class="split-hero"><div><span class="eyebrow">{category.name} · BULK INVENTORY BUYING</span><h1>{category.title}</h1><p>{category.intro}</p><a class="button" href={`/contact/?category=${category.slug}&cl=Category%20${category.slug}`}>Discuss your {category.short.toLowerCase()} stock <Icon name="diagonal" /></a></div><img src={`/images/${category.image}.webp`} alt={`Illustrative ${category.name.toLowerCase()} products`} width="1000" height="667" /></div></div></section>
+  <section class="section"><div class="container split-content"><div><span class="eyebrow">INVENTORY WE CONSIDER</span><h2>Your stock. A new opportunity.</h2><ul class="check-list">{category.types.map(type => <li><Icon name="check" size={18} />{type}</li>)}</ul></div><div><span class="eyebrow">START THE CONVERSATION</span><h2>A few details go a long way.</h2><p>Give us a picture of the lot. We’ll discuss the rest directly.</p><ul class="check-list">{category.details.map(detail => <li><Icon name="file" size={18} />{detail}</li>)}</ul><p class="info-note">{category.note}</p></div></div></section>
+  <FAQ items={[...category.faqs, ...faqs.filter((_, i) => [2, 4].includes(i))]} title="Before we get started." />
+  <RelatedInsights category={category.slug} />
+  <CTA title="Let’s find what’s next for your stock." />
+</BaseLayout>

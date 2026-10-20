@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import CTA from '../../components/CTA.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection } from 'astro:content';
+import { isPublished, newestFirst } from '../../lib/content.mjs';
+const posts = (await getCollection('blog', ({data}) => isPublished(data))).sort(newestFirst);
+const categories = ['All insights', ...new Set(posts.map(post => post.data.category))];
+---
+<BaseLayout title="Inventory Liquidation Guides & Insights | SR Infotech" description="Practical guides for brands and ecommerce businesses selling surplus inventory, apparel stocklots, customer returns and electronics in India.">
+  <section class="page-hero"><div class="container"><Breadcrumbs items={[{name:'Insights'}]} /><span class="eyebrow">THE INVENTORY PERSPECTIVE</span><h1>Fresh thinking.<br />For stock that isn’t moving.</h1><p>Practical perspectives for the teams managing surplus, returns and the next big inventory decision.</p></div></section>
+  <section class="section"><div class="container">
+    <div class="insights-controls" id="insights-controls" hidden><div class="filter-buttons" role="group" aria-label="Filter insights by topic">{categories.map((category,i) => <button type="button" class="filter-button" data-filter={category} aria-pressed={i === 0 ? 'true' : 'false'}>{category}</button>)}</div><div class="search-box"><label class="sr-only" for="insight-search">Search insights</label><Icon name="search" size={19} /><input id="insight-search" type="search" placeholder="Search insights" /></div></div>
+    <div class="article-grid" id="insights-grid">{posts.map(post => <ArticleCard post={post} />)}</div>
+    <div class="empty-state" id="no-results" hidden><h2>No matching insights yet.</h2><p>Try another search or explore all topics.</p><button class="button button-outline" id="reset-filters" type="button" style="margin-top:20px">Show all insights</button></div>
+    <p class="results-message" id="results-count" role="status" aria-live="polite">{posts.length} insights</p>
+  </div></section>
+  <CTA title="Ready to put your stock in motion?" />
+</BaseLayout>
+<script>
+  document.querySelector<HTMLElement>('#insights-controls')!.hidden = false;
+  const search = document.querySelector<HTMLInputElement>('#insight-search')!;
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const cards = document.querySelectorAll<HTMLElement>('#insights-grid .article-card');
+  let active = 'All insights';
+  const apply = () => {
+    const query = search.value.trim().toLowerCase();
+    let count = 0;
+    cards.forEach(card => {
+      const matches = (active === 'All insights' || card.dataset.category === active) && (card.dataset.search || '').includes(query);
+      card.hidden = !matches;
+      if (matches) count++;
+    });
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === active)));
+    document.querySelector<HTMLElement>('#no-results')!.hidden = count > 0;
+    document.querySelector<HTMLElement>('#results-count')!.textContent = `${count} ${count === 1 ? 'insight' : 'insights'}${query ? ` matching “${search.value.trim()}”` : ''}`;
+  };
+  buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.filter!; apply(); }));
+  search.addEventListener('input', apply);
+  document.querySelector('#reset-filters')!.addEventListener('click', () => { search.value = ''; active = 'All insights'; apply(); search.focus(); });
+</script>

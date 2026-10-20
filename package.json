@@ -1,0 +1,29 @@
+{
+  "name": "sr-infotech-liquidation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build && node scripts/finalize-build.mjs",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "verify": "npm run check && npm test && npm run build && node scripts/verify-build.mjs",
+    "new-post": "node scripts/new-post.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@fontsource-variable/manrope": "^5.2.0",
+    "astro": "^6.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.55.0",
+    "sharp": "^0.34.0",
+    "typescript": "^5.9.0"
+  }
+}

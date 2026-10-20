@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+interface Props { post: CollectionEntry<'blog'> }
+const { post } = Astro.props;
+---
+<article class="article-card" data-category={post.data.category} data-search={`${post.data.title} ${post.data.description} ${post.data.category}`.toLowerCase()}>
+  <a href={`/insights/${post.id}/`} tabindex="-1" aria-hidden="true"><img src={`/images/${post.data.image}.webp`} alt="" width="768" height="512" loading="lazy" /></a>
+  <div class="article-meta"><span class="tag">{post.data.category}</span><span>·</span><span>{post.data.readingTime} min read</span></div>
+  <h3><a href={`/insights/${post.id}/`}>{post.data.title}</a></h3>
+  <p>{post.data.description}</p>
+  <a class="text-link" href={`/insights/${post.id}/`} aria-label={`Read the insight: ${post.data.title}`}>Read the insight <Icon name="diagonal" size={16} /></a>
+</article>

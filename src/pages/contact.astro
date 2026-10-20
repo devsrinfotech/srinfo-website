@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Sell Your Surplus Inventory | Contact SR Infotech" description="Have surplus stock, bulk returns or untested electronics? Contact SR Infotech to discuss a purchase and pickup across India.">
+  <section class="page-hero"><div class="container"><Breadcrumbs items={[{name:'Contact'}]} /><span class="eyebrow">LET’S TALK INVENTORY</span><h1>Your next move<br />starts right here.</h1><p>Tell us what you have. We’ll discuss the opportunity, the details and the way forward.</p></div></section>
+  <section class="section"><div class="container contact-layout">
+    <aside class="contact-aside"><span class="eyebrow">A DIRECT CONVERSATION</span><h2>Good business starts<br />with a hello.</h2><p>Prefer to talk it through? Reach our team directly. Commercial details stay in the conversation.</p>
+      <div class="contact-item"><Icon name="phone" /><div><small>CALL US</small><a href={`tel:${site.phoneHref}`}>{site.phone}</a></div></div>
+      <div class="contact-item"><Icon name="mail" /><div><small>EMAIL US</small><a href={`mailto:${site.email}`}>{site.email}</a></div></div>
+      <div class="contact-item"><Icon name="pin" /><div><small>OUR ADDRESS</small><address>{site.address}<br />{site.city} – {site.postalCode}, {site.country}</address></div></div>
+      <a class="button button-outline" href={`${site.whatsapp}?text=${encodeURIComponent('Hello SR Infotech, I would like to discuss selling bulk inventory.')}`} target="_blank" rel="noopener noreferrer">Chat on WhatsApp <Icon name="diagonal" size={18} /></a>
+      <p class="info-note"><strong>Have a stock list ready?</strong><br />Mention it in your enquiry. We’ll arrange the next step for sharing your files. Please keep confidential documents out of this form.</p>
+    </aside>
+    <form class="contact-form" id="inventory-form">
+      <h2>Tell us about your stock.</h2><p>Fields marked * are required. A quick overview is all we need to start.</p>
+      <div class="honeypot" aria-hidden="true"><label for="fax_number">Leave this field empty</label><input id="fax_number" name="fax_number" tabindex="-1" autocomplete="off" /></div>
+      <div class="form-grid">
+        <div><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" maxlength="100" required placeholder="Full name" /></div>
+        <div><label for="organization">Company name *</label><input id="organization" name="organization" autocomplete="organization" maxlength="160" required placeholder="Your company" /></div>
+        <div><label for="email_id">Work email *</label><input id="email_id" name="email_id" type="email" autocomplete="email" maxlength="254" required placeholder="you@company.com" /></div>
+        <div><label for="mobile_number">Phone number *</label><input id="mobile_number" name="mobile_number" type="tel" autocomplete="tel" minlength="7" maxlength="25" pattern={String.raw`(?=.*[0-9])[+0-9 \(\)\-]{7,25}`} title="Enter a phone number using digits, spaces, +, parentheses or hyphens." required placeholder="+91" /></div>
+        <div><label for="service">Inventory category *</label><select id="service" name="service" required><option value="">Select a category</option><option value="Apparel liquidation">Apparel & fashion</option><option value="Home and kitchen liquidation">Home & kitchen</option><option value="Electronics liquidation">Electronics</option><option value="Mixed inventory liquidation">Mixed categories</option></select></div>
+        <div><label for="location">Stock location *</label><input id="location" name="location" autocomplete="off" required maxlength="200" placeholder="City or multiple locations" /></div>
+        <div><label for="quantity">Approximate quantity</label><input id="quantity" name="quantity" maxlength="100" placeholder="e.g. 2,000 units / 30 cartons" /></div>
+        <div><label for="condition">Stock type</label><select id="condition" name="condition"><option value="">Select if known</option><option>Surplus / overstock</option><option>Ecommerce returns</option><option>Damaged labels / packaging</option><option>Untested electronics</option><option>Mixed condition</option></select></div>
+        <div class="form-full"><label for="company_website">Company website</label><input id="company_website" name="company_website" type="text" inputmode="url" autocomplete="url" maxlength="300" placeholder="Your company website (optional)" /></div>
+        <div class="form-full"><label for="message">Anything else we should know?</label><textarea id="message" name="message" rows="4" maxlength="4000" placeholder="A short stock overview, known condition, or what you’d like to discuss."></textarea></div>
+      </div>
+      <label class="privacy-check"><input type="checkbox" name="consent" required /><span>I agree to be contacted about this enquiry and have read the <a href="/privacy-policy/">privacy notice</a>.</span></label>
+      <button class="button" type="submit" id="submit-enquiry"><span>Discuss my inventory</span><Icon name="diagonal" size={19} /></button>
+      <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+      <noscript><p class="info-note">This form needs JavaScript to send your enquiry. Please email <a href={`mailto:${site.email}`}>{site.email}</a> or call {site.phone}.</p></noscript>
+    </form>
+  </div></section>
+</BaseLayout>
+<script>
+  import { createLeadPayload, sendLead } from '../lib/contact.mjs';
+  const form = document.querySelector<HTMLFormElement>('#inventory-form')!;
+  const button = document.querySelector<HTMLButtonElement>('#submit-enquiry')!;
+  const status = document.querySelector<HTMLDivElement>('#form-status')!;
+  const params = new URLSearchParams(window.location.search);
+  const categories: Record<string, string> = { apparel: 'Apparel liquidation', 'home-kitchen': 'Home and kitchen liquidation', electronics: 'Electronics liquidation' };
+  const category = params.get('category');
+  if (category && categories[category]) (form.elements.namedItem('service') as HTMLSelectElement).value = categories[category];
+  let submitting = false;
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (submitting || !form.reportValidity()) return;
+    const values = Object.fromEntries(new FormData(form).entries());
+    if (values.fax_number) return;
+    submitting = true;
+    button.disabled = true;
+    button.querySelector('span')!.textContent = 'Sending enquiry…';
+    status.hidden = true;
+    status.classList.remove('error');
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+    try {
+      await sendLead(createLeadPayload(values, params.get('cl') || 'Contact Page'), { signal: controller.signal });
+      status.textContent = 'Your enquiry was sent, but delivery has not been confirmed. For a confirmed conversation, call +91 9606846445, email info@srinfotech.biz or use WhatsApp. Your details remain here for reference.';
+    } catch {
+      status.classList.add('error');
+      status.textContent = 'We couldn’t confirm delivery of your enquiry. Your details are still here. Please call +91 9606846445, email info@srinfotech.biz or try again.';
+    } finally {
+      clearTimeout(timeout);
+      status.hidden = false;
+      status.focus();
+      button.disabled = false;
+      button.querySelector('span')!.textContent = 'Discuss my inventory';
+      submitting = false;
+    }
+  });
+</script>

@@ -1,0 +1,21 @@
+---
+import { site } from '../data/site';
+interface Props { items: { name: string; href?: string }[] }
+const { items } = Astro.props;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': `${site.url}${Astro.url.pathname}#breadcrumbs`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+    ...items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 2,
+      name: item.name,
+      item: new URL(item.href || Astro.url.pathname, site.url).href,
+    })),
+  ],
+};
+---
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a>{items.map(item => <><span aria-hidden="true">/</span>{item.href ? <a href={item.href}>{item.name}</a> : <span aria-current="page">{item.name}</span>}</>)}</nav>
+<script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
