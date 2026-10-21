@@ -98,18 +98,36 @@ test('form validates, sends stock fields, and only confirms a documented saved l
   expect(requestBody).toContain('inventory-v1');
   await expect(page.getByLabel('Your name')).toHaveValue('QA Supplier');
   await page.unroute('https://mycrm.srinfotech.biz/**');
-  await page.route('https://mycrm.srinfotech.biz/**',route=>route.fulfill({status:201,headers:{'Access-Control-Allow-Origin':'*'},contentType:'application/json',body:'{"message":{"status":"success","saved":true,"lead_id":"WEBSITE-LEAD-2026-QA"}}'}));
-  await page.getByRole('button',{name:'Verify test check',exact:true}).click();
-  await page.getByRole('button',{name:'Discuss my inventory'}).click();
-  await expect(page.getByRole('status')).toContainText('Your inventory enquiry has been received');
-  await expect(page.getByLabel('Your name')).toHaveValue('QA Supplier');
-  await page.unroute('https://mycrm.srinfotech.biz/**');
   await page.route('https://mycrm.srinfotech.biz/**',route=>route.abort('failed'));
   await page.getByRole('button',{name:'Verify test check',exact:true}).click();
   await page.getByRole('button',{name:'Discuss my inventory'}).click();
   await expect(page.getByRole('status')).toContainText('couldn’t confirm delivery');
   await expect(page.locator('#submit-enquiry')).toBeDisabled();
-  expect(await page.evaluate(()=>(window as any).__turnstileMock.resets)).toBe(3);
+  expect(await page.evaluate(()=>(window as any).__turnstileMock.resets)).toBe(2);
+  await page.unroute('https://mycrm.srinfotech.biz/**');
+  let confirmedCalls=0;
+  await page.route('https://mycrm.srinfotech.biz/**',route=>{
+    confirmedCalls++;
+    return route.fulfill({status:201,headers:{'Access-Control-Allow-Origin':'*'},contentType:'application/json',body:'{"message":{"status":"success","saved":true,"lead_id":"WEBSITE-LEAD-2026-QA"}}'});
+  });
+  await page.getByRole('button',{name:'Verify test check',exact:true}).click();
+  await page.getByRole('button',{name:'Discuss my inventory'}).click();
+  await expect(page.getByRole('status')).toContainText('Your inventory enquiry has been received');
+  await expect(page.getByLabel('Your name')).toHaveValue('QA Supplier');
+  await expect(page.getByRole('button',{name:'Enquiry received',exact:true})).toBeDisabled();
+  await expect(page.locator('.security-check')).toBeHidden();
+  await page.evaluate(()=>{(window as any).__turnstileMock.error();(window as any).__turnstileMock.expire();});
+  await page.locator('#inventory-form').evaluate((form: HTMLFormElement)=>form.requestSubmit());
+  expect(confirmedCalls).toBe(1);
+  expect(await page.evaluate(()=>(window as any).__turnstileMock.resets)).toBe(2);
+  await expect(page.getByRole('status')).toContainText('Your inventory enquiry has been received');
+  await expect(page.locator('.security-check')).toBeHidden();
+  await page.setViewportSize({width:1440,height:1000});
+  await page.getByRole('status').scrollIntoViewIfNeeded();
+  await page.screenshot({path:'artifacts/turnstile/confirmed-form-1440.png'});
+  await page.setViewportSize({width:320,height:844});
+  await page.getByRole('status').scrollIntoViewIfNeeded();
+  await page.screenshot({path:'artifacts/turnstile/confirmed-form-320.png'});
 });
 
 test('security expiry, provider failure and retry keep submission gated on mobile', async ({page}) => {

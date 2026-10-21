@@ -7,6 +7,7 @@
 - The original LinkedIn URL contains `/mycompany/` and the social handles include `saas`. They are deliberately preserved; an account owner can update profile branding separately.
 - The owner requested deletion of the old website archive and spilled legacy root files; cleanup is complete.
 - Production migrated to Cloudflare Pages on 20 October 2026 from commit `028149b` (`NEW BUSINESS`). Both `srinfotech.biz` and `www.srinfotech.biz` are active with SSL.
+- The CRM/Turnstile release `a497a8b` deployed successfully on 21 October 2026. After the owner corrected the private backend secret and restarted Frappe, the live form confirmed the labelled test was saved; the owner confirmed Discord receipt. The post-success UI now ends the attempt without launching another CAPTCHA and blocks a duplicate submission on the same page.
 
 ## CRM contract and remaining verification
 Endpoint:
@@ -17,13 +18,13 @@ https://mycrm.srinfotech.biz/api/method/erpnext.product_request.doctype.sr_websi
 
 The original POST multipart fields remain: `name`, `email_id`, `mobile_number`, `organization`, `company_website`, `service`, `message`, `click_location`.
 
-The deployed `028149b` frontend folds quantity, stock condition and location into `message` and uses `mode: no-cors`; it cannot confirm CRM storage. The prepared local frontend also supplies dedicated stock/consent fields and uses credential-free CORS to read the new handler's acknowledgement. It confirms delivery only on the documented saved-lead response and preserves input on success, unknown responses and failure. Category remains in `service` using the liquidation category labels.
+The deployed CRM integration supplies dedicated stock/consent fields and uses credential-free CORS to read the handler's acknowledgement. The compatibility stock summary also remains in `message`. It confirms delivery only on the documented saved-lead response and preserves input on success, unknown responses and failure. Category remains in `service` using the liquidation category labels. The earlier `028149b` eight-field/no-CORS frontend has been superseded.
 
-Browser tests intercept all CRM traffic. **No test lead has been sent to production.** A CRM owner still needs to:
+Browser tests intercept all CRM traffic. Separately, one labelled internal test was explicitly approved by the owner and successfully submitted through production. Its saved-lead acknowledgement and owner-confirmed Discord delivery are recorded in the integration README. For future backend releases:
 
-1. Paste the prepared controller from `integrations/frappe/sr_website_leads.py` into the existing server controller, configure its private `turnstile_secret` site setting (or `TURNSTILE_SECRET` process environment) from the Cloudflare **SR Infotech inventory enquiries** widget, and reload the web/worker processes. Its allowlisted fields, endpoint-local production CORS, input validation, Turnstile Siteverify and explicit responses are documented in that directory's README. It includes an IP guard of ten validated enquiry attempts per ten minutes. All submissions require a token, so coordinate the matching frontend release immediately after backend enforcement; the old deployed form will otherwise be rejected. The widget/public key is prepared, but the real secret and deployed backend are not yet validated.
+1. Update the controller from `integrations/frappe/sr_website_leads.py` while retaining the owner's private server-only Turnstile secret, then reload the web/worker processes. The committed template supports private configuration/environment too, but the owner chose a literal secret in the untracked server copy; never copy that value into this repository. Its allowlisted fields, endpoint-local production CORS, input validation, Turnstile Siteverify and explicit responses are documented in that directory's README. It includes an IP guard of ten validated enquiry attempts per ten minutes. All submissions require a token; keep backend and frontend contracts coordinated.
 2. Verify the controller in the real Frappe environment and perform one authorised real enquiry check, including structured stock, consent and Discord delivery.
-3. Release the matching website change after the new handler is running. No frontend commit, push or deployment was performed during this integration work.
+3. Release the matching website change after the new handler is running. The current matching frontend is already deployed; do not restore the historical no-CORS integration.
 
 The public frontend cannot add server-side validation, anti-spam enforcement or retention controls to this external endpoint. The honeypot and native validation are usability/light spam measures, not backend security.
 

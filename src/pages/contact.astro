@@ -68,24 +68,27 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
   const category = params.get('category');
   if (category && categories[category]) (form.elements.namedItem('service') as HTMLSelectElement).value = categories[category];
   let submitting = false;
+  let received = false;
   let token = '';
   let widgetId: string | undefined;
   let widgetSize: 'compact' | 'flexible';
   let loadingScript = false;
   let tokenTimer: ReturnType<typeof setTimeout> | undefined;
   const invalidate = (message: string) => {
+    if (received) return;
     token = '';
     clearTimeout(tokenTimer);
     button.disabled = true;
     securityStatus.textContent = message;
   };
   const securityError = () => {
+    if (received) return true;
     invalidate('The security check could not load. Retry below, or contact us by phone, email or WhatsApp.');
     retry.hidden = false;
     return true;
   };
   const renderWidget = () => {
-    if (!captchaWindow.turnstile || widgetId !== undefined) return;
+    if (received || !captchaWindow.turnstile || widgetId !== undefined) return;
     try {
       widgetSize = security.clientWidth < 300 ? 'compact' : 'flexible';
       widgetId = captchaWindow.turnstile.render(security, {
@@ -93,6 +96,7 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
         theme: 'light', size: widgetSize,
         'response-field': false,
         callback: nextToken => {
+          if (received) return;
           if (!nextToken || nextToken.length > 2048) { securityError(); return; }
           token = nextToken;
           button.disabled = submitting;
@@ -123,6 +127,7 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
     document.head.appendChild(script);
   };
   const resetWidget = () => {
+    if (received) return;
     invalidate('Complete a fresh security check before sending another enquiry.');
     if (widgetId !== undefined && captchaWindow.turnstile) {
       try { captchaWindow.turnstile.reset(widgetId); } catch { securityError(); }
@@ -140,7 +145,7 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
   loadWidget();
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (submitting || !form.reportValidity()) return;
+    if (submitting || received || !form.reportValidity()) return;
     if (!token) { invalidate('Complete the security check before sending.'); return; }
     const values = Object.fromEntries(new FormData(form).entries());
     if (values.fax_number) return;
@@ -156,6 +161,7 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
     const timeout = setTimeout(() => controller.abort(), 20000);
     try {
       const result = await sendLead(createLeadPayload(values, params.get('cl') || 'Contact Page'), { signal: controller.signal });
+      received = result.status === 'confirmed';
       status.textContent = result.status === 'confirmed'
         ? 'Your inventory enquiry has been received. We’ll contact you using the details provided. Your details remain here for reference.'
         : 'Your enquiry was sent, but delivery has not been confirmed. For a confirmed conversation, call +91 9606846445, email info@srinfotech.biz or use WhatsApp. Your details remain here for reference.';
@@ -166,9 +172,23 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
       clearTimeout(timeout);
       status.hidden = false;
       status.focus();
-      button.querySelector('span')!.textContent = 'Discuss my inventory';
       submitting = false;
-      resetWidget();
+      if (received) {
+        // A confirmed receipt ends this attempt. Do not start a second challenge
+        // or allow a duplicate lead while the visitor reads their confirmation.
+        token = '';
+        clearTimeout(tokenTimer);
+        security.parentElement!.hidden = true;
+        button.disabled = true;
+        button.querySelector('span')!.textContent = 'Enquiry received';
+        if (widgetId !== undefined) {
+          try { captchaWindow.turnstile?.remove(widgetId); } catch { /* Receipt remains confirmed if widget cleanup fails. */ }
+          widgetId = undefined;
+        }
+      } else {
+        button.querySelector('span')!.textContent = 'Discuss my inventory';
+        resetWidget();
+      }
     }
   });
 </script>
