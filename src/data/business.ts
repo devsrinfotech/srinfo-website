@@ -1,7 +1,7 @@
 export const categories = [
   {
     slug: 'apparel' as const, name: 'Apparel & fashion', short: 'Apparel', image: 'apparel',
-    imageAlt: 'Illustrative bulk apparel sorted into open cartons with folded garments and palletised stock',
+    imageAlt: 'Illustrative apparel stockroom with folded garments, open reused cartons and a worn sorting table',
     title: 'A fresh start for your surplus apparel.',
     description: 'Sell bulk apparel stocklots, end-of-season garments, excess size runs and damaged-label stock to SR Infotech. Pickup across India.',
     intro: 'SR Infotech buys surplus apparel, end-of-season garments and return stocklots from brands, retailers and ecommerce businesses across India, with our own pickup logistics.',
@@ -15,7 +15,7 @@ export const categories = [
   },
   {
     slug: 'home-kitchen' as const, name: 'Home & kitchen', short: 'Home & kitchen', image: 'home-kitchen',
-    imageAlt: 'Illustrative bulk cookware and kitchenware beside open cartons and stacked pallets',
+    imageAlt: 'Illustrative kitchenware stockroom with mugs, containers and cookware in worn bulk cartons',
     title: 'Make space for the next best seller.',
     description: 'Sell surplus home and kitchen inventory in bulk. SR Infotech buys household goods, kitchenware and return lots with pan-India pickup.',
     intro: 'SR Infotech buys bulk surplus home and kitchen inventory from brands and ecommerce businesses across India. Share your kitchenware, home essentials, discontinued ranges or return lots for review.',

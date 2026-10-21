@@ -5,7 +5,7 @@ pubDate: 2026-10-20
 category: "Apparel"
 relatedCategories: ["apparel"]
 image: "apparel-stocklots"
-imageAlt: "Illustrative apparel stocklot sorting with tagged garments, open cartons and bulk pallets"
+imageAlt: "Illustrative apparel stocklot preparation with tagged garments, reused cartons and a worn sorting table"
 readingTime: 4
 draft: false
 ---
