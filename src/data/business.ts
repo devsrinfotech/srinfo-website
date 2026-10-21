@@ -1,7 +1,7 @@
 export const categories = [
   {
     slug: 'apparel' as const, name: 'Apparel & fashion', short: 'Apparel', image: 'apparel',
-    imageAlt: 'Illustrative apparel stockroom with folded garments, open reused cartons and a worn sorting table',
+    imageAlt: 'Illustrative apparel warehouse intake with folded garments, bulk cartons and tall stocked pallet racks',
     title: 'A fresh start for your surplus apparel.',
     description: 'Sell bulk apparel stocklots, end-of-season garments, excess size runs and damaged-label stock to SR Infotech. Pickup across India.',
     intro: 'SR Infotech buys surplus apparel, end-of-season garments and return stocklots from brands, retailers and ecommerce businesses across India, with our own pickup logistics.',
@@ -15,7 +15,7 @@ export const categories = [
   },
   {
     slug: 'home-kitchen' as const, name: 'Home & kitchen', short: 'Home & kitchen', image: 'home-kitchen',
-    imageAlt: 'Illustrative kitchenware stockroom with mugs, containers and cookware in worn bulk cartons',
+    imageAlt: 'Illustrative kitchenware warehouse with cookware, open master cartons and pallet loads beneath tall racks',
     title: 'Make space for the next best seller.',
     description: 'Sell surplus home and kitchen inventory in bulk. SR Infotech buys household goods, kitchenware and return lots with pan-India pickup.',
     intro: 'SR Infotech buys bulk surplus home and kitchen inventory from brands and ecommerce businesses across India. Share your kitchenware, home essentials, discontinued ranges or return lots for review.',
@@ -29,7 +29,7 @@ export const categories = [
   },
   {
     slug: 'electronics' as const, name: 'Electronics', short: 'Electronics', image: 'electronics',
-    imageAlt: 'Illustrative bulk electronics and accessories grouped for review beside open master cartons',
+    imageAlt: 'Illustrative electronics receiving bay with bulk return cartons, sorting benches and stocked warehouse racks',
     title: 'A smarter route for surplus electronics.',
     description: 'SR Infotech buys surplus electronics, open-box stock and untested return lots in bulk, with its own pickup logistics across India.',
     intro: 'SR Infotech buys surplus electronics, open-box stock and commercially suitable untested return lots across India. Share the models, quantities and known condition; our own logistics handles agreed pickups.',

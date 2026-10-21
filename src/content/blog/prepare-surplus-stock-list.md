@@ -5,7 +5,7 @@ pubDate: 2026-10-20
 category: "Supplier guides"
 relatedCategories: ["apparel", "home-kitchen", "electronics"]
 image: "warehouse"
-imageAlt: "Illustrative inventory manifest desk with a laptop, scanner and mixed products grouped in bulk cartons"
+imageAlt: "Illustrative warehouse receiving desk with an inventory laptop, mixed stock cartons and tall pallet racks"
 readingTime: 5
 draft: false
 ---

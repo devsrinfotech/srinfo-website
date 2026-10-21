@@ -18,7 +18,7 @@ pubDate: ${date}
 category: "Supplier guides"
 relatedCategories: []
 image: "warehouse"
-imageAlt: "Illustrative inventory manifest desk with products and cartons of bulk stock"
+imageAlt: "Illustrative warehouse receiving desk with mixed stock cartons and tall pallet racks"
 readingTime: 4
 draft: true
 ---

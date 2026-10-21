@@ -5,7 +5,7 @@ pubDate: 2026-10-20
 category: "Electronics"
 relatedCategories: ["electronics"]
 image: "electronics-grading"
-imageAlt: "Illustrative electronics assessment bench with sample devices, accessories and cartons of bulk inventory"
+imageAlt: "Illustrative unattended electronics review bench with sample devices, bulk return cartons and warehouse racks"
 readingTime: 4
 draft: false
 ---

@@ -5,7 +5,7 @@ pubDate: 2026-10-20
 category: "Inventory strategy"
 relatedCategories: ["apparel", "home-kitchen", "electronics"]
 image: "stock-conditions"
-imageAlt: "Illustrative sealed surplus, open-box returns and packaging-damaged stock grouped beside bulk cartons"
+imageAlt: "Illustrative warehouse sorting area with sealed surplus, open-box returns and packaging-damaged stock"
 readingTime: 4
 draft: false
 ---
