@@ -18,7 +18,7 @@ pubDate: ${date}
 category: "Supplier guides"
 relatedCategories: []
 image: "warehouse"
-imageAlt: "Illustrative warehouse inventory"
+imageAlt: "Illustrative inventory manifest desk with products and cartons of bulk stock"
 readingTime: 4
 draft: true
 ---

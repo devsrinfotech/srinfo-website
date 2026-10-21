@@ -4,8 +4,8 @@ description: "Stock origin and product condition tell different stories. Learn h
 pubDate: 2026-10-20
 category: "Inventory strategy"
 relatedCategories: ["apparel", "home-kitchen", "electronics"]
-image: "home-kitchen"
-imageAlt: "Illustrative home and kitchen products arranged for an inventory overview"
+image: "stock-conditions"
+imageAlt: "Illustrative sealed surplus, open-box returns and packaging-damaged stock grouped beside bulk cartons"
 readingTime: 4
 draft: false
 ---

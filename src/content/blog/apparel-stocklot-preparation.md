@@ -4,8 +4,8 @@ description: "How brands and retail teams can organise surplus apparel by style,
 pubDate: 2026-10-20
 category: "Apparel"
 relatedCategories: ["apparel"]
-image: "apparel"
-imageAlt: "Illustrative folded apparel with a blank swing tag"
+image: "apparel-stocklots"
+imageAlt: "Illustrative apparel stocklot sorting with tagged garments, open cartons and bulk pallets"
 readingTime: 4
 draft: false
 ---

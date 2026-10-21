@@ -4,8 +4,8 @@ description: "Prepare a clearer electronics inventory enquiry with model details
 pubDate: 2026-10-20
 category: "Electronics"
 relatedCategories: ["electronics"]
-image: "electronics"
-imageAlt: "Illustrative headphones, speaker and laptop representing electronics inventory"
+image: "electronics-grading"
+imageAlt: "Illustrative electronics assessment bench with sample devices, accessories and cartons of bulk inventory"
 readingTime: 4
 draft: false
 ---

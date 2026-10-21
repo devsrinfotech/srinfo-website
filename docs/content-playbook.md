@@ -26,7 +26,7 @@ author: "SR Infotech"
 draft: false
 ```
 
-Categories: `Inventory strategy`, `Supplier guides`, `Electronics`, `Apparel`. Add a new enum deliberately in `src/content.config.ts` if the content strategy warrants it. Available images: `warehouse`, `apparel`, `home-kitchen`, `electronics`, `hero`. Add new optimised images plus schema options when needed.
+Categories: `Inventory strategy`, `Supplier guides`, `Electronics`, `Apparel`. Add a new enum deliberately in `src/content.config.ts` if the content strategy warrants it. Available images: `warehouse`, `apparel`, `home-kitchen`, `electronics`, `hero`, `apparel-stocklots`, `electronics-grading`, `stock-conditions`. See [image library](./image-library.md) for the best use of each scene and responsive export sizes. Add new optimised images plus schema options when needed.
 
 `relatedCategories` controls relevant guide recommendations on buying pages. Use only the categories the article genuinely covers (`apparel`, `home-kitchen`, `electronics`). A focused apparel guide should use `["apparel"]`; leave an empty array if none applies. Related articles also use these associations.
 

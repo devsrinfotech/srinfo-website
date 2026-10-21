@@ -10,7 +10,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     category: z.enum(['Inventory strategy', 'Supplier guides', 'Electronics', 'Apparel']),
-    image: z.enum(['warehouse', 'apparel', 'home-kitchen', 'electronics', 'hero']),
+    image: z.enum(['warehouse', 'apparel', 'home-kitchen', 'electronics', 'hero', 'apparel-stocklots', 'electronics-grading', 'stock-conditions']),
     imageAlt: z.string().min(5),
     readingTime: z.number().int().min(1),
     author: z.string().default('SR Infotech'),
