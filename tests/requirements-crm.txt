@@ -1,0 +1,2 @@
+# Optional isolated tests for the paste-in Frappe integration; never sent to Pages.
+Jinja2>=3.1.6,<4

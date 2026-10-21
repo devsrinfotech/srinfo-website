@@ -1,0 +1,26 @@
+{% set fields = [
+  {"name": "Contact", "value": (doc.get("customer_name") or "Not provided") | string | truncate(100, true, "…"), "inline": true},
+  {"name": "Company", "value": (doc.get("organization_name") or "Not provided") | string | truncate(160, true, "…"), "inline": true},
+  {"name": "Email", "value": (doc.get("email") or "Not provided") | string | truncate(254, true, "…"), "inline": true},
+  {"name": "Phone", "value": (doc.get("mobile_number") or "Not provided") | string | truncate(25, true, "…"), "inline": true},
+  {"name": "Inventory category", "value": (doc.get("service") or "Not provided") | string | truncate(100, true, "…"), "inline": true},
+  {"name": "Stock location", "value": (doc.get("stock_location") or "Not separately recorded — check notes") | string | truncate(200, true, "…"), "inline": true},
+  {"name": "Approximate quantity", "value": (doc.get("approximate_quantity") or "Not separately recorded — check notes") | string | truncate(100, true, "…"), "inline": true},
+  {"name": "Stock condition", "value": (doc.get("stock_condition") or "Not separately recorded — check notes") | string | truncate(80, true, "…"), "inline": true},
+  {"name": "Company website", "value": (doc.get("website_url") or "Not provided") | string | truncate(300, true, "…"), "inline": false},
+  {"name": "Enquiry source", "value": (doc.get("click_location") or "Contact Page") | string | truncate(200, true, "…"), "inline": true},
+  {"name": "Consent", "value": "Recorded on website" if doc.get("contact_consent") else "Not recorded by this integration", "inline": true},
+  {"name": "Notes (preview)", "value": (doc.get("message") or "No additional notes") | string | truncate(450, true, "…"), "inline": false}
+] %}
+{{ {
+  "username": "SR Infotech Leads",
+  "allowed_mentions": {"parse": []},
+  "embeds": [{
+    "title": "New inventory enquiry",
+    "url": "https://mycrm.srinfotech.biz/app/sr-website-leads/" ~ (doc.get("name") | urlencode),
+    "description": "Open the CRM record to review the complete enquiry.",
+    "color": 2387199,
+    "fields": fields,
+    "footer": {"text": "SR Infotech • Inventory acquisition • Full notes remain in CRM"}
+  }]
+} | tojson }}

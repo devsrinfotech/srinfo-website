@@ -5,6 +5,8 @@ node_modules/
 /.cache/
 /.npm/
 *.tsbuildinfo
+__pycache__/
+*.py[cod]
 
 # Environment settings and private credentials; only a sanitized template is shared.
 .env

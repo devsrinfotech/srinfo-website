@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Icon from '../components/Icon.astro';
 import { site } from '../data/site';
+import { turnstileSiteKey, turnstileAction } from '../data/turnstile';
+// Cloudflare's official always-pass key is local-development only.
+const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSiteKey;
 ---
 <BaseLayout title="Sell Your Surplus Inventory | Contact SR Infotech" description="Have surplus stock, bulk returns or untested electronics? Contact SR Infotech to discuss a purchase and pickup across India.">
   <section class="page-hero"><div class="container"><Breadcrumbs items={[{name:'Contact'}]} /><span class="eyebrow">LET’S TALK INVENTORY</span><h1>Your next move<br />starts right here.</h1><p>Tell us what you have. We’ll discuss the opportunity, the details and the way forward.</p></div></section>
@@ -30,7 +33,12 @@ import { site } from '../data/site';
         <div class="form-full"><label for="message">Anything else we should know?</label><textarea id="message" name="message" rows="4" maxlength="4000" placeholder="A short stock overview, known condition, or what you’d like to discuss."></textarea></div>
       </div>
       <label class="privacy-check"><input type="checkbox" name="consent" required /><span>I agree to be contacted about this enquiry and have read the <a href="/privacy-policy/">privacy notice</a>.</span></label>
-      <button class="button" type="submit" id="submit-enquiry"><span>Discuss my inventory</span><Icon name="diagonal" size={19} /></button>
+      <div class="security-check">
+        <div id="inventory-turnstile" data-sitekey={siteKey} data-action={turnstileAction}></div>
+        <p id="security-status" class="info-note" aria-live="polite">Complete the security check to enable sending.</p>
+        <button type="button" class="security-retry" id="security-retry" hidden>Retry security check</button>
+      </div>
+      <button class="button" type="submit" id="submit-enquiry" disabled aria-describedby="security-status"><span>Discuss my inventory</span><Icon name="diagonal" size={19} /></button>
       <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
       <noscript><p class="info-note">This form needs JavaScript to send your enquiry. Please email <a href={`mailto:${site.email}`}>{site.email}</a> or call {site.phone}.</p></noscript>
     </form>
@@ -41,16 +49,104 @@ import { site } from '../data/site';
   const form = document.querySelector<HTMLFormElement>('#inventory-form')!;
   const button = document.querySelector<HTMLButtonElement>('#submit-enquiry')!;
   const status = document.querySelector<HTMLDivElement>('#form-status')!;
+  const security = document.querySelector<HTMLDivElement>('#inventory-turnstile')!;
+  const securityStatus = document.querySelector<HTMLParagraphElement>('#security-status')!;
+  const retry = document.querySelector<HTMLButtonElement>('#security-retry')!;
+  type WidgetOptions = {
+    sitekey: string; action: string; size: 'compact' | 'flexible'; theme: 'light';
+    callback: (token: string) => void;
+    'error-callback': () => boolean; 'expired-callback': () => void;
+    'timeout-callback': () => void; 'response-field': false;
+  };
+  const captchaWindow = window as Window & { turnstile?: {
+    render: (container: HTMLElement, options: WidgetOptions) => string;
+    reset: (id: string) => void;
+    remove: (id: string) => void;
+  }};
   const params = new URLSearchParams(window.location.search);
   const categories: Record<string, string> = { apparel: 'Apparel liquidation', 'home-kitchen': 'Home and kitchen liquidation', electronics: 'Electronics liquidation' };
   const category = params.get('category');
   if (category && categories[category]) (form.elements.namedItem('service') as HTMLSelectElement).value = categories[category];
   let submitting = false;
+  let token = '';
+  let widgetId: string | undefined;
+  let widgetSize: 'compact' | 'flexible';
+  let loadingScript = false;
+  let tokenTimer: ReturnType<typeof setTimeout> | undefined;
+  const invalidate = (message: string) => {
+    token = '';
+    clearTimeout(tokenTimer);
+    button.disabled = true;
+    securityStatus.textContent = message;
+  };
+  const securityError = () => {
+    invalidate('The security check could not load. Retry below, or contact us by phone, email or WhatsApp.');
+    retry.hidden = false;
+    return true;
+  };
+  const renderWidget = () => {
+    if (!captchaWindow.turnstile || widgetId !== undefined) return;
+    try {
+      widgetSize = security.clientWidth < 300 ? 'compact' : 'flexible';
+      widgetId = captchaWindow.turnstile.render(security, {
+        sitekey: security.dataset.sitekey!, action: security.dataset.action!,
+        theme: 'light', size: widgetSize,
+        'response-field': false,
+        callback: nextToken => {
+          if (!nextToken || nextToken.length > 2048) { securityError(); return; }
+          token = nextToken;
+          button.disabled = submitting;
+          retry.hidden = true;
+          securityStatus.textContent = 'Security check complete. You can send your enquiry.';
+          clearTimeout(tokenTimer);
+          tokenTimer = setTimeout(() => {
+            invalidate('Security check expired. Please verify again.');
+            retry.hidden = false;
+          }, 290000);
+        },
+        'expired-callback': () => { invalidate('Security check expired. Please verify again.'); retry.hidden = false; },
+        'error-callback': securityError,
+        'timeout-callback': () => { invalidate('Security check timed out. Please retry.'); retry.hidden = false; },
+      });
+    } catch { securityError(); }
+  };
+  const loadWidget = () => {
+    if (loadingScript) return;
+    if (captchaWindow.turnstile) { renderWidget(); return; }
+    loadingScript = true;
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    const loadTimeout = setTimeout(() => { loadingScript = false; script.remove(); securityError(); }, 15000);
+    script.addEventListener('load', () => { clearTimeout(loadTimeout); loadingScript = false; renderWidget(); }, {once:true});
+    script.addEventListener('error', () => { clearTimeout(loadTimeout); loadingScript = false; script.remove(); securityError(); }, {once:true});
+    document.head.appendChild(script);
+  };
+  const resetWidget = () => {
+    invalidate('Complete a fresh security check before sending another enquiry.');
+    if (widgetId !== undefined && captchaWindow.turnstile) {
+      try { captchaWindow.turnstile.reset(widgetId); } catch { securityError(); }
+    } else loadWidget();
+  };
+  retry.addEventListener('click', () => { retry.hidden = true; resetWidget(); });
+  new ResizeObserver(() => {
+    if (widgetId === undefined || !captchaWindow.turnstile || (security.clientWidth < 300 ? 'compact' : 'flexible') === widgetSize) return;
+    invalidate('Complete the security check to enable sending.');
+    captchaWindow.turnstile.remove(widgetId);
+    widgetId = undefined;
+    renderWidget();
+  }).observe(security);
+  window.addEventListener('pageshow', event => { if (event.persisted) resetWidget(); });
+  loadWidget();
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (submitting || !form.reportValidity()) return;
+    if (!token) { invalidate('Complete the security check before sending.'); return; }
     const values = Object.fromEntries(new FormData(form).entries());
     if (values.fax_number) return;
+    values['cf-turnstile-response'] = token;
+    token = '';
+    clearTimeout(tokenTimer);
     submitting = true;
     button.disabled = true;
     button.querySelector('span')!.textContent = 'Sending enquiry…';
@@ -59,8 +155,10 @@ import { site } from '../data/site';
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 20000);
     try {
-      await sendLead(createLeadPayload(values, params.get('cl') || 'Contact Page'), { signal: controller.signal });
-      status.textContent = 'Your enquiry was sent, but delivery has not been confirmed. For a confirmed conversation, call +91 9606846445, email info@srinfotech.biz or use WhatsApp. Your details remain here for reference.';
+      const result = await sendLead(createLeadPayload(values, params.get('cl') || 'Contact Page'), { signal: controller.signal });
+      status.textContent = result.status === 'confirmed'
+        ? 'Your inventory enquiry has been received. We’ll contact you using the details provided. Your details remain here for reference.'
+        : 'Your enquiry was sent, but delivery has not been confirmed. For a confirmed conversation, call +91 9606846445, email info@srinfotech.biz or use WhatsApp. Your details remain here for reference.';
     } catch {
       status.classList.add('error');
       status.textContent = 'We couldn’t confirm delivery of your enquiry. Your details are still here. Please call +91 9606846445, email info@srinfotech.biz or try again.';
@@ -68,9 +166,16 @@ import { site } from '../data/site';
       clearTimeout(timeout);
       status.hidden = false;
       status.focus();
-      button.disabled = false;
       button.querySelector('span')!.textContent = 'Discuss my inventory';
       submitting = false;
+      resetWidget();
     }
   });
 </script>
+<style>
+  .contact-form { min-width: 0; }
+  .security-check { margin: 1.5rem 0; min-width: 0; }
+  .security-check .info-note { margin: .65rem 0 0; font-size: .8rem; }
+  .security-retry { margin-top: .6rem; border: 0; background: transparent; padding: .4rem 0; color: var(--ink); text-decoration: underline; cursor: pointer; font: inherit; }
+  #submit-enquiry:disabled { cursor: not-allowed; }
+</style>

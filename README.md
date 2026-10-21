@@ -47,14 +47,17 @@ Edit the generated Markdown file, then set `draft: false` when reviewed. Article
 | `src/components/` | Header, footer, cards, FAQs, steps and CTAs |
 | `src/pages/` | Prerendered routes and RSS |
 | `src/lib/contact.mjs` | Original CRM endpoint and payload adapter |
+| `integrations/frappe/` | Paste-in Python controller, saved Discord template and backend-first release instructions |
 | `public/images/` | Local, optimised visual assets |
 | `tests/` | Contract, publishing and browser checks |
 | `docs/` | Research, publishing and launch guidance |
 
 ## Launch
 
-The new website is prepared locally; it has not been deployed. Serve **only `dist/`**, never the repository root. The original business archive and spilled legacy root files were deleted at the owner's request; retained integrations and assets live in the new source and `public/`.
+The website is live at **https://srinfotech.biz** on Cloudflare Pages, migrated on 20 October 2026. Serve **only `dist/`**, never the repository root. The original business archive and spilled legacy root files were deleted at the owner's request; retained integrations and assets live in the new source and `public/`.
 
-The existing `srinfotech.biz` domain is retained. A manual GitHub Pages workflow is included for the existing GitHub repository; setup and remaining CRM verification are documented in [launch notes](docs/launch-notes.md).
+Cloudflare project `srinfo-website` automatically deploys pushes to `main` from the existing GitHub repository, using `npm run verify` and output directory `dist`. Both apex and www have SSL; www redirects to the apex. GitHub Pages and the historical manual deployment workflow are disabled. Hosting settings and remaining CRM verification are documented in [launch notes](docs/launch-notes.md).
+
+The prepared structured CRM integration requires installing the [replacement Frappe controller](integrations/frappe/README.md) before publishing the matching frontend changes. The Discord template is already updated in the CRM; the new Python handler and frontend have not been deployed by this task.
 
 Further references: [research and search strategy](docs/research-and-search-strategy.md), [SEO/GEO/AEO audit](docs/seo-audit.md), [verification results](docs/verification.md), and [generated visuals, saved asset paths and prompt set](docs/asset-provenance.md).
