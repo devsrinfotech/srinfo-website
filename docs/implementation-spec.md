@@ -1,7 +1,7 @@
 # SR Infotech: liquidation business website
 
 ## Objective
-Convert ecommerce operators and retail brands with excess inventory into qualified supplier enquiries. SR Infotech is the inventory buyer. Categories: apparel, home and kitchen, electronics. Coverage: India. Retain the existing phone, address, social profiles and CRM form contract.
+Convert ecommerce operators and retail brands with excess inventory into qualified supplier enquiries. SR Infotech is the inventory buyer. Categories: apparel, footwear, home and kitchen, electronics. Coverage: India. Retain the existing phone, address, social profiles and CRM form contract.
 
 ## Design and scope
 Modern technology-forward corporate direction, using the existing navy/azure logo, airy white layouts and a custom 3D inventory illustration. Homepage, three category pages, three buying-solution pages, process, about, contact, searchable/filterable insights, article template, privacy notice and useful 404. No fictitious customers, testimonials, operating volumes, response SLAs, or certifications.

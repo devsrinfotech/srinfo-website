@@ -22,7 +22,7 @@ test('all key pages fit mobile and desktop without console errors or serious acc
     await page.screenshot({path:`artifacts/home-${width}.png`,fullPage:true});
     await page.screenshot({path:`artifacts/home-top-${width}.png`});
   }
-  const routes = ['/', '/categories/apparel/', '/categories/home-kitchen/', '/categories/electronics/', '/contact/', '/insights/', '/insights/prepare-surplus-stock-list/', '/how-it-works/', '/about/'];
+  const routes = ['/', '/categories/apparel/', '/categories/footwear/', '/categories/home-kitchen/', '/categories/electronics/', '/contact/', '/insights/', '/insights/prepare-surplus-stock-list/', '/insights/how-to-prepare-a-footwear-stocklot-for-a-bulk-buyer/', '/how-it-works/', '/about/'];
   for (const width of [320, 390, 768, 1024, 1440]) {
     await page.setViewportSize({width,height:950});
     for (const route of routes) {
@@ -51,12 +51,13 @@ test('mobile navigation, FAQ, search and empty-state reset work', async ({page})
   await toggle.click();
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Insights',exact:true}).click();
   await expect(page).toHaveURL(/\/insights\/$/);
+  const allInsightsCount = await page.locator('.article-card:visible').count();
   await page.getByRole('button',{name:'Electronics',exact:true}).click();
   await expect(page.locator('.article-card:visible')).toHaveCount(1);
   await page.getByRole('searchbox',{name:'Search insights'}).fill('no-match-stock-123');
   await expect(page.locator('#no-results')).toBeVisible();
   await page.getByRole('button',{name:'Show all insights'}).click();
-  await expect(page.locator('.article-card:visible')).toHaveCount(4);
+  await expect(page.locator('.article-card:visible')).toHaveCount(allInsightsCount);
   await page.goto('/');
   await page.getByText('Do you arrange pickup across India?',{exact:true}).click();
   await expect(page.locator('details[open]')).toContainText('own logistics');

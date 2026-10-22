@@ -10,6 +10,7 @@ These are AI-generated illustrative scenes, not photographs of SR Infotech's act
 | --- | --- |
 | `hero` | Homepage/about: cinematic warehouse racks, bulk cartons and parked forklift, no driver |
 | `apparel` | Apparel category: garment intake tables and open lots in front of tall warehouse racks |
+| `footwear` | Footwear category/guide: matched pairs, shoeboxes and bulk cartons in a large warehouse; no people |
 | `home-kitchen` | Home/kitchen category: cookware and ceramics in a large receiving/consolidation bay |
 | `electronics` | Electronics category: bulk return cartons and sorting benches with palletised stock behind |
 | `warehouse` | Manifest/stock-list guidance: inventory desk overlooking a large warehouse receiving bay |
@@ -20,5 +21,7 @@ These are AI-generated illustrative scenes, not photographs of SR Infotech's act
 Files live in `public/images/`. The hero has 1200×1200 and 640×640 WebP exports. Landscape scenes have 1200×800 and 640×427 WebP exports using `<key>.webp` and `<key>-small.webp`. `social-cover.jpg` is a 1200×630 crop of the new hero. The shared card and page templates choose sizes through `srcset`; keep explicit width/height attributes and lazy loading on below-the-fold cards.
 
 The blog image enum is in `src/content.config.ts`. For a new scene, add both responsive WebP sizes and its schema option, set an article-specific `imageAlt`, then run `npm run verify` and review desktop/mobile crops. Do not change article publication dates merely because an image changed.
+
+The footwear image added on 22 October 2026 uses the same built-in image-generation tool and warehouse direction. Its files are `public/images/footwear.webp` (1200×800) and `public/images/footwear-small.webp` (640×427). Its private prompt is `local-context/footwear-image/prompts.json`, with the full-resolution original in `artifacts/footwear/originals/footwear.png`.
 
 The October 2026 refresh used the built-in image-generation tool. The current eight warehouse-scale prompts and source paths are in git-ignored `local-context/image-refresh-warehouse-scale/prompts.json`; full-resolution originals are preserved under ignored `artifacts/image-refresh-warehouse-scale/originals/`. The earlier image sets remain in the corresponding `image-refresh` and `image-refresh-candid` local folders for reference. These local folders are not served by the production build.

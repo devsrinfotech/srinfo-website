@@ -15,7 +15,7 @@ This is the **new inventory liquidation buying business**. The audience is brand
 
 ## Confirmed operating facts
 - SR Infotech buys bulk surplus, ecommerce returns, damaged labels/packaging stock.
-- Categories: apparel, home and kitchen, electronics.
+- Categories: apparel, footwear, home and kitchen, electronics.
 - Its own logistics collects goods across India.
 - Untested electronics are considered when commercially viable.
 - The user wants minimums, pricing, payment terms and registration details kept off public pages. Invite direct contact.

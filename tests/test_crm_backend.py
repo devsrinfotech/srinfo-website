@@ -61,6 +61,15 @@ class BackendTests(unittest.TestCase):
         self.assertEqual(response.headers['Access-Control-Allow-Origin'],'https://srinfotech.biz')
         self.assertNotIn('Access-Control-Allow-Credentials',response.headers)
 
+    def test_footwear_category_is_saved_without_losing_pair_quantities(self):
+        response = self.module.save_form(**dict(self.values, service='Footwear liquidation',
+            approximate_quantity='800 pairs / 24 cartons', stock_condition='Surplus / overstock'))
+        self.assertEqual(response.status_code, 201)
+        data = self.frappe.get_doc.call_args.args[0]
+        self.assertEqual(data['service'], 'Footwear liquidation')
+        self.assertEqual(data['approximate_quantity'], '800 pairs / 24 cartons')
+        self.requests.post.assert_called_once()
+
     def test_original_eight_arguments_remain_accepted_without_invented_consent(self):
         values = {k:v for k,v in self.values.items() if k in ['name','email_id','mobile_number','organization','company_website','service','message','click_location','turnstile_token']}
         response = self.module.save_form(**values)

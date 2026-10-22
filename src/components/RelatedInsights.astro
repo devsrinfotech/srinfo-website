@@ -3,7 +3,8 @@ import { getCollection } from 'astro:content';
 import ArticleCard from './ArticleCard.astro';
 import Icon from './Icon.astro';
 import { isPublished, newestFirst } from '../lib/content.mjs';
-interface Props { category?: 'apparel' | 'home-kitchen' | 'electronics' }
+import type { CategorySlug } from '../data/business';
+interface Props { category?: CategorySlug }
 const { category } = Astro.props;
 const posts = (await getCollection('blog', ({data}) =>
   isPublished(data) && (!category || data.relatedCategories.includes(category))

@@ -23,7 +23,7 @@ WEBSITE_ORIGINS = {"https://srinfotech.biz", "https://www.srinfotech.biz"}
 TURNSTILE_HOSTNAMES = {"srinfotech.biz", "www.srinfotech.biz"}
 TURNSTILE_ACTION = "inventory_enquiry"
 CATEGORIES = {
-    "Apparel liquidation", "Home and kitchen liquidation",
+    "Apparel liquidation", "Footwear liquidation", "Home and kitchen liquidation",
     "Electronics liquidation", "Mixed inventory liquidation",
 }
 CONDITIONS = {

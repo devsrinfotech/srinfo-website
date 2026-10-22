@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('buying pages and articles are readable and connected without JavaScript', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  for (const path of ['/', '/categories/electronics/', '/ecommerce-returns/', '/insights/prepare-surplus-stock-list/']) {
+  for (const path of ['/', '/categories/electronics/', '/categories/footwear/', '/ecommerce-returns/', '/insights/prepare-surplus-stock-list/', '/insights/how-to-prepare-a-footwear-stocklot-for-a-bulk-buyer/']) {
     const response = await page.goto(`${baseURL}${path}`);
     expect(response?.status()).toBe(200);
     await expect(page.locator('main h1')).toBeVisible();

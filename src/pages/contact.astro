@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Icon from '../components/Icon.astro';
 import { site } from '../data/site';
+import { categories } from '../data/business';
 import { turnstileSiteKey, turnstileAction } from '../data/turnstile';
 // Cloudflare's official always-pass key is local-development only.
 const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSiteKey;
@@ -25,7 +26,7 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
         <div><label for="organization">Company name *</label><input id="organization" name="organization" autocomplete="organization" maxlength="160" required placeholder="Your company" /></div>
         <div><label for="email_id">Work email *</label><input id="email_id" name="email_id" type="email" autocomplete="email" maxlength="254" required placeholder="you@company.com" /></div>
         <div><label for="mobile_number">Phone number *</label><input id="mobile_number" name="mobile_number" type="tel" autocomplete="tel" minlength="7" maxlength="25" pattern={String.raw`(?=.*[0-9])[+0-9 \(\)\-]{7,25}`} title="Enter a phone number using digits, spaces, +, parentheses or hyphens." required placeholder="+91" /></div>
-        <div><label for="service">Inventory category *</label><select id="service" name="service" required><option value="">Select a category</option><option value="Apparel liquidation">Apparel & fashion</option><option value="Home and kitchen liquidation">Home & kitchen</option><option value="Electronics liquidation">Electronics</option><option value="Mixed inventory liquidation">Mixed categories</option></select></div>
+        <div><label for="service">Inventory category *</label><select id="service" name="service" required><option value="">Select a category</option>{categories.map(category => <option value={category.crmCategory} data-category={category.slug} data-unit={category.slug === 'footwear' ? 'pairs' : 'units'}>{category.name}</option>)}<option value="Mixed inventory liquidation">Mixed categories</option></select></div>
         <div><label for="location">Stock location *</label><input id="location" name="location" autocomplete="off" required maxlength="200" placeholder="City or multiple locations" /></div>
         <div><label for="quantity">Approximate quantity</label><input id="quantity" name="quantity" maxlength="100" placeholder="e.g. 2,000 units / 30 cartons" /></div>
         <div><label for="condition">Stock type</label><select id="condition" name="condition"><option value="">Select if known</option><option>Surplus / overstock</option><option>Ecommerce returns</option><option>Damaged labels / packaging</option><option>Untested electronics</option><option>Mixed condition</option></select></div>
@@ -64,9 +65,16 @@ const siteKey = import.meta.env.DEV ? '1x00000000000000000000AA' : turnstileSite
     remove: (id: string) => void;
   }};
   const params = new URLSearchParams(window.location.search);
-  const categories: Record<string, string> = { apparel: 'Apparel liquidation', 'home-kitchen': 'Home and kitchen liquidation', electronics: 'Electronics liquidation' };
+  const categorySelect = form.elements.namedItem('service') as HTMLSelectElement;
   const category = params.get('category');
-  if (category && categories[category]) (form.elements.namedItem('service') as HTMLSelectElement).value = categories[category];
+  const option = Array.from(categorySelect.options).find(option => option.dataset.category === category);
+  if (option) categorySelect.value = option.value;
+  const updateQuantityHint = () => {
+    const unit = categorySelect.selectedOptions[0]?.dataset.unit || 'units';
+    (form.elements.namedItem('quantity') as HTMLInputElement).placeholder = `e.g. 2,000 ${unit} / 30 cartons`;
+  };
+  categorySelect.addEventListener('change', updateQuantityHint);
+  updateQuantityHint();
   let submitting = false;
   let received = false;
   let token = '';

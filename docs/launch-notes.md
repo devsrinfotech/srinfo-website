@@ -10,6 +10,9 @@
 - The CRM/Turnstile release `a497a8b` deployed successfully on 21 October 2026. After the owner corrected the private backend secret and restarted Frappe, the live form confirmed the labelled test was saved; the owner confirmed Discord receipt. The post-success UI now ends the attempt without launching another CAPTCHA and blocks a duplicate submission on the same page.
 
 ## CRM contract and remaining verification
+
+The footwear category update has a backend-first dependency: the installed controller must allow `Footwear liquidation` before the matching frontend is released. The website, prepared controller and local checks include it; see [footwear launch notes](./footwear-launch.md) for the targeted server edit. The CRM Data field and Discord payload already support the value without schema changes.
+The owner confirmed installing this category and restarting Frappe on 22 October 2026. No live footwear test enquiry has been submitted.
 Endpoint:
 
 ```text

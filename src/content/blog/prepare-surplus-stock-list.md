@@ -1,9 +1,10 @@
 ---
 title: "How to prepare a surplus stock list for a bulk buyer"
-description: "A practical inventory manifest checklist for brands and ecommerce teams preparing apparel, home, kitchen or electronics stock for sale in India."
+description: "An inventory manifest checklist for brands and ecommerce teams selling bulk apparel, footwear, home, kitchen or electronics stock in India."
 pubDate: 2026-10-20
+updatedDate: 2026-10-22
 category: "Supplier guides"
-relatedCategories: ["apparel", "home-kitchen", "electronics"]
+relatedCategories: ["apparel", "footwear", "home-kitchen", "electronics"]
 image: "warehouse"
 imageAlt: "Illustrative warehouse receiving desk with an inventory laptop, mixed stock cartons and tall pallet racks"
 readingTime: 5
@@ -47,6 +48,8 @@ Where your business uses internal grades, include a short definition. A grade su
 
 **Apparel:** include style, size, colour, tag status and any known garment defects. An uneven size mix can matter to a buyer even when every item is new.
 
+**Footwear:** count matched pairs by style and labelled size, identify the size system and list single or mismatched shoes separately. Record shoe condition independently from box damage. See the [footwear stocklot preparation guide](/insights/how-to-prepare-a-footwear-stocklot-for-a-bulk-buyer/) for a more detailed checklist.
+
 **Home and kitchen:** describe set contents, dimensions when relevant, breakage and missing pieces. Identify whether a “unit” means one item, a boxed set or a carton.
 
 **Electronics:** include model and variant, tested or untested status, known faults and supplied accessories. Note device locks or other access restrictions where relevant.
@@ -65,6 +68,6 @@ Before sharing a file externally, remove unrelated customer information, interna
 
 A first enquiry can be short: category, approximate quantity, known condition and stock location. Tell the buyer if a detailed manifest is available, then agree an appropriate way to share it.
 
-SR Infotech buys bulk stock in [apparel](/categories/apparel/), [home and kitchen](/categories/home-kitchen/) and [electronics](/categories/electronics/), with its own logistics for pickup across India.
+SR Infotech buys bulk stock in [apparel](/categories/apparel/), [footwear](/categories/footwear/), [home and kitchen](/categories/home-kitchen/) and [electronics](/categories/electronics/), with its own logistics for pickup across India.
 
 **Have a lot ready to discuss? [Tell us about your inventory](/contact/?cl=Stock%20List%20Guide).** Commercial details are discussed directly with your team.

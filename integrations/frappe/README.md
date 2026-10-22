@@ -10,6 +10,10 @@
 
 ## Request and response
 
+### Footwear addition — backend first
+
+Before releasing the footwear website update, add `"Footwear liquidation"` to the `CATEGORIES` set in the installed Frappe controller, then reload the web processes. The committed controller includes this one-line addition. Make this targeted edit to the installed file; preserve its existing private Turnstile configuration. No DocType field or Discord template change is needed: `service` is already a Data field and the webhook renders that value dynamically. The static website cannot update the live Python allowlist. See [footwear launch notes](../../docs/footwear-launch.md).
+
 The original eight multipart fields remain: `name`, `email_id`, `mobile_number`, `organization`, `company_website`, `service`, `message`, `click_location`. Additional arguments: `stock_location`, `approximate_quantity`, `stock_condition`, `contact_consent`, `form_version`, `fax_number`, `turnstile_token`. The token is mandatory for acceptance, never stored on a lead, and never included in Discord or analytics.
 
 The new frontend always supplies `form_version=inventory-v1`; this requires explicit contact consent and stock location. Consent is `1` or `0`; the server sets its timestamp. Legacy field sets retain their mapping but **also require a valid Turnstile token**, even when `form_version` is omitted; the old deployed frontend cannot submit after enforcement until the matching website is released. Plan the backend-first change and website release together in a short maintenance window. Do not add a legacy-token bypass. Historical records are not changed and no historical consent is invented. The old retired digital-marketing category values are not valid new inventory enquiries. The compatibility stock summary remains in `message` alongside the dedicated fields.
