@@ -22,8 +22,8 @@ test('all key pages fit mobile and desktop without console errors or serious acc
     await page.screenshot({path:`artifacts/home-${width}.png`,fullPage:true});
     await page.screenshot({path:`artifacts/home-top-${width}.png`});
   }
-  const routes = ['/', '/categories/apparel/', '/categories/footwear/', '/categories/home-kitchen/', '/categories/electronics/', '/contact/', '/insights/', '/insights/prepare-surplus-stock-list/', '/insights/how-to-prepare-a-footwear-stocklot-for-a-bulk-buyer/', '/how-it-works/', '/about/'];
-  for (const width of [320, 390, 768, 1024, 1440]) {
+  const routes = ['/', '/for-brands/', '/categories/apparel/', '/categories/footwear/', '/categories/home-kitchen/', '/categories/electronics/', '/contact/', '/insights/', '/insights/prepare-surplus-stock-list/', '/insights/how-to-prepare-a-footwear-stocklot-for-a-bulk-buyer/', '/insights/how-apparel-brands-can-plan-an-end-of-season-stock-release/', '/insights/how-footwear-teams-can-reconcile-returns-before-bulk-liquidation/', '/insights/how-electronics-brands-can-hand-over-return-lots-to-a-buyer/', '/how-it-works/', '/about/'];
+  for (const width of [320, 390, 768, 1000, 1024, 1151, 1440]) {
     await page.setViewportSize({width,height:950});
     for (const route of routes) {
       await page.goto(route);
@@ -32,7 +32,7 @@ test('all key pages fit mobile and desktop without console errors or serious acc
       expect(overflow, `${route} overflows at ${width}px`).toBe(false);
     }
   }
-  for (const route of ['/', '/contact/', '/insights/', '/insights/prepare-surplus-stock-list/']) {
+  for (const route of ['/', '/for-brands/', '/contact/', '/insights/', '/insights/prepare-surplus-stock-list/', '/insights/how-electronics-brands-can-hand-over-return-lots-to-a-buyer/']) {
     await page.goto(route);
     const { violations } = await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
     expect(violations.map(v => `${v.id}: ${v.nodes.map(n=>n.target).join('; ')}`),route).toEqual([]);
@@ -52,8 +52,11 @@ test('mobile navigation, FAQ, search and empty-state reset work', async ({page})
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Insights',exact:true}).click();
   await expect(page).toHaveURL(/\/insights\/$/);
   const allInsightsCount = await page.locator('.article-card:visible').count();
+  const electronicsCount = await page.locator('.article-card[data-category="Electronics"]').count();
+  expect(electronicsCount).toBeGreaterThan(0);
   await page.getByRole('button',{name:'Electronics',exact:true}).click();
-  await expect(page.locator('.article-card:visible')).toHaveCount(1);
+  await expect(page.locator('.article-card:visible')).toHaveCount(electronicsCount);
+  await expect(page.locator('.article-card:visible:not([data-category="Electronics"])')).toHaveCount(0);
   await page.getByRole('searchbox',{name:'Search insights'}).fill('no-match-stock-123');
   await expect(page.locator('#no-results')).toBeVisible();
   await page.getByRole('button',{name:'Show all insights'}).click();

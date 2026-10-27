@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('buying pages and articles are readable and connected without JavaScript', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  for (const path of ['/', '/categories/electronics/', '/categories/footwear/', '/ecommerce-returns/', '/insights/prepare-surplus-stock-list/', '/insights/how-to-prepare-a-footwear-stocklot-for-a-bulk-buyer/']) {
+  for (const path of ['/', '/for-brands/', '/categories/electronics/', '/categories/footwear/', '/ecommerce-returns/', '/insights/prepare-surplus-stock-list/', '/insights/how-to-prepare-a-footwear-stocklot-for-a-bulk-buyer/', '/insights/how-apparel-brands-can-plan-an-end-of-season-stock-release/', '/insights/how-footwear-teams-can-reconcile-returns-before-bulk-liquidation/', '/insights/how-electronics-brands-can-hand-over-return-lots-to-a-buyer/']) {
     const response = await page.goto(`${baseURL}${path}`);
     expect(response?.status()).toBe(200);
     await expect(page.locator('main h1')).toBeVisible();

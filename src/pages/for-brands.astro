@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTA from '../components/CTA.astro';
+import FAQ from '../components/FAQ.astro';
+import Icon from '../components/Icon.astro';
+import Steps from '../components/Steps.astro';
+import { site } from '../data/site';
+
+const description = 'Direct surplus and returns buying for brand inventory, warehouse and operations teams. Apparel, footwear and electronics, with our own pickup across India.';
+const teams = [
+  ['Inventory & merchandising', 'Identify the ranges, sizes or models your company is ready to release, with available quantities and any stock held back for other channels.'],
+  ['Warehouse & returns', 'Confirm where the goods are held, the count basis and known condition. Keep inspected stock and unchecked returns clearly identified.'],
+  ['Commercial & supply chain', 'Bring the person authorised to approve the sale into the discussion, with any brand requirements and the relevant collection contacts.'],
+];
+const buyingCategories = [
+  { name: 'Apparel', slug: 'apparel', text: 'End-of-season collections, discontinued styles, excess size runs and garment returns.', guide: 'how-apparel-brands-can-plan-an-end-of-season-stock-release', guideLabel: 'Plan an apparel stock release' },
+  { name: 'Footwear', slug: 'footwear', text: 'Surplus shoes, sandals and slippers, uneven size runs and customer-return lots.', guide: 'how-footwear-teams-can-reconcile-returns-before-bulk-liquidation', guideLabel: 'Reconcile footwear returns' },
+  { name: 'Electronics', slug: 'electronics', text: 'Surplus models, open-box inventory and return lots, including commercially suitable untested stock.', guide: 'how-electronics-brands-can-hand-over-return-lots-to-a-buyer', guideLabel: 'Prepare an electronics returns handover' },
+];
+const questions = [
+  { question: 'Who is this buying service for?', answer: 'SR Infotech focuses on direct purchases from brands, retailers and ecommerce businesses that own surplus or returned inventory. The company’s inventory, warehouse, returns, operations or commercial team can start the discussion.' },
+  { question: 'Can a warehouse manager enquire before the sale is approved?', answer: 'Yes. Share a stock overview and explain that internal approval is pending. Involve the person authorised to agree the sale before confirming a transaction or releasing goods.' },
+  { question: 'What if our brand’s stock is in a third-party warehouse?', answer: 'Tell us which business owns the goods and where they are held. Your team should confirm who can authorise release and coordinate with the warehouse. Our own logistics handles agreed pickups across India.' },
+  { question: 'Can we discuss recurring surplus or return lots?', answer: 'Yes. Describe the categories, locations and how your team reviews surplus or returns. A recurring buying arrangement can be discussed directly; acceptance and collection are agreed for the stock involved.' },
+  { question: 'What should we share in the first enquiry?', answer: 'Start with your company, your role, category, approximate quantity, known condition, locations and release status. Mention whether a stock list is available. Keep confidential documents and customer information out of the public form.' },
+];
+---
+<BaseLayout title="Surplus Inventory Buying for Brand Teams | SR Infotech" description={description} schema={{ '@type': 'Service', name: 'Direct surplus inventory buying for brands', serviceType: 'Bulk inventory procurement', provider: { '@id': `${site.url}/#organization` }, areaServed: 'India', description }}>
+  <section class="page-hero"><div class="container">
+    <Breadcrumbs items={[{ name: 'For brands' }]} />
+    <span class="eyebrow">BRANDS · RETAILERS · ECOMMERCE BUSINESSES</span>
+    <h1>A direct buyer for<br />your company’s surplus.</h1>
+    <p>SR Infotech buys bulk surplus inventory and ecommerce returns directly from the business that owns the stock. We work with your inventory, warehouse and operations teams, with our own pickup logistics across India.</p>
+    <a class="button" href="/contact/?cl=For%20Brands">Discuss your company’s stock <Icon name="diagonal" /></a>
+  </div></section>
+  <section class="section"><div class="container">
+    <div class="section-heading"><div><span class="eyebrow">THE PEOPLE BEHIND THE STOCK</span><h2>Bring the right team<br />into the conversation.</h2></div><p>You don’t need to hold every answer yourself. Start with your role and involve the colleagues responsible for the lot.</p></div>
+    <div class="editorial-sections">{teams.map(([title, text]) => <div class="editorial-row"><h3>{title}</h3><p>{text}</p></div>)}</div>
+    <p class="info-note">We prioritise enquiries with a clear stock owner and access to the team that can confirm availability and authorise sale. Please introduce your business and your relationship to the inventory.</p>
+  </div></section>
+  <section class="section insights-section"><div class="container">
+    <div class="section-heading"><div><span class="eyebrow">OUR BUYING FOCUS</span><h2>Apparel. Footwear.<br />Electronics.</h2></div><p>From seasonal surplus to accumulated returns, each lot is reviewed on its known condition and commercial fit.</p></div>
+    <div class="editorial-sections">{buyingCategories.map(category => <div class="editorial-row"><h3><a class="text-link" href={`/categories/${category.slug}/`}>{category.name} buying <Icon name="diagonal" size={18} /></a></h3><div><p>{category.text}</p><a class="text-link" href={`/insights/${category.guide}/`}>{category.guideLabel} <Icon name="diagonal" size={16} /></a></div></div>)}</div>
+    <p class="info-note">We also review <a class="text-link" href="/categories/home-kitchen/">home and kitchen inventory</a>. Share the categories in your company’s lot so we can discuss the fit.</p>
+  </div></section>
+  <section class="section"><div class="container">
+    <div class="section-heading"><div><span class="eyebrow">FROM INTERNAL REVIEW TO PICKUP</span><h2>Your stock decision.<br />A practical next step.</h2></div><a class="text-link" href="/how-it-works/">See the buying process <Icon name="diagonal" size={18} /></a></div>
+    <Steps />
+  </div></section>
+  <section class="section insights-section"><div class="container split-content">
+    <div><span class="eyebrow">PREPARE A USEFUL FIRST ENQUIRY</span><h2>Start with the lot<br />your team can confirm.</h2><p>A short overview is enough to begin. Identify estimates and pending approvals clearly; a stock list can follow through an agreed channel.</p><a class="text-link" href="/insights/prepare-surplus-stock-list/">Prepare your stock overview <Icon name="diagonal" size={18} /></a></div>
+    <div><ul class="check-list">{['Company that owns the inventory and your role', 'Category and approximate units or matched pairs', 'Known condition and what remains unchecked', 'Warehouse locations and release status', 'Any brand or channel requirements to discuss'].map(item => <li><Icon name="check" size={18} />{item}</li>)}</ul><p class="info-note">Commercial terms and collection arrangements are discussed directly. Brand restrictions must be raised and agreed for the specific transaction.</p></div>
+  </div></section>
+  <FAQ items={questions} title="Questions from brand teams." />
+  <CTA />
+</BaseLayout>

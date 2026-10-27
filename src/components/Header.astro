@@ -4,6 +4,7 @@ import { site } from '../data/site';
 const path = Astro.url.pathname;
 const links = [
   { href: '/#what-we-buy', label: 'What we buy' },
+  { href: '/for-brands/', label: 'For brands' },
   { href: '/how-it-works/', label: 'How it works' },
   { href: '/about/', label: 'About us' },
   { href: '/insights/', label: 'Insights' },
@@ -15,7 +16,7 @@ const links = [
     <nav class="container contact-links" aria-label="Quick contact">
       <a href={`mailto:${site.email}`}><Icon name="mail" size={15} /><span>{site.email}</span></a>
       <a href={`tel:${site.phoneHref}`}><Icon name="phone" size={14} /><span>{site.phone}</span></a>
-      <a href={`${site.whatsapp}?text=${encodeURIComponent('Hello SR Infotech, I would like to discuss selling bulk inventory.')}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with SR Infotech on WhatsApp"><span>WhatsApp</span><Icon name="diagonal" size={14} /></a>
+      <a href={`${site.whatsapp}?text=${encodeURIComponent('Hello SR Infotech, I would like to discuss our company’s surplus inventory. Company: [name]. My role: [role]. Category and stock location: [details].')}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with SR Infotech on WhatsApp"><span>WhatsApp</span><Icon name="diagonal" size={14} /></a>
     </nav>
   </div>
   <div class="container nav-inner">

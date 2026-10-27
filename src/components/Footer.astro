@@ -7,10 +7,10 @@ import Icon from './Icon.astro';
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" aria-label="SR Infotech home"><img src="/images/logo-white.png" alt="SR Infotech" width="514" height="84" loading="lazy" /></a>
-      <p>A new perspective on surplus.<br />A new opportunity for your business.</p>
+      <p>Buying surplus inventory directly<br />from brands and retail businesses.</p>
       <div class="footer-coverage"><Icon name="globe" size={18} /> Buying & picking up across India</div>
     </div>
-    <div><h2>Explore</h2><a href="/about/">About SR Infotech</a><a href="/how-it-works/">How it works</a><a href="/insights/">Inventory insights</a><a href="/contact/">Contact us</a></div>
+    <div><h2>Explore</h2><a href="/for-brands/">For brands & inventory teams</a><a href="/about/">About SR Infotech</a><a href="/how-it-works/">How it works</a><a href="/insights/">Inventory insights</a><a href="/contact/">Contact us</a></div>
     <div><h2>What we buy</h2>{categories.map(category => <a href={`/categories/${category.slug}/`}>{category.name}</a>)}<a href="/ecommerce-returns/">Ecommerce returns</a></div>
     <div><h2>Let’s talk inventory</h2><a href={`tel:${site.phoneHref}`}>{site.phone}</a><a href={`mailto:${site.email}`}>{site.email}</a><p class="footer-address">{site.address}<br />{site.city} – {site.postalCode}, {site.country}</p></div>
   </div>

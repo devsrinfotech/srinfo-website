@@ -9,8 +9,8 @@ import { isPublished, newestFirst } from '../../lib/content.mjs';
 const posts = (await getCollection('blog', ({data}) => isPublished(data))).sort(newestFirst);
 const categories = ['All insights', ...new Set(posts.map(post => post.data.category))];
 ---
-<BaseLayout title="Inventory Liquidation Guides & Insights | SR Infotech" description="Practical guides for brands and ecommerce businesses selling surplus apparel, footwear, home, kitchen and electronics inventory in India.">
-  <section class="page-hero"><div class="container"><Breadcrumbs items={[{name:'Insights'}]} /><span class="eyebrow">THE INVENTORY PERSPECTIVE</span><h1>Fresh thinking.<br />For stock that isn’t moving.</h1><p>Practical perspectives for the teams managing surplus, returns and the next big inventory decision.</p></div></section>
+<BaseLayout title="Surplus & Returns Guides for Brand Teams | SR Infotech" description="Practical surplus and returns guides for brand inventory, warehouse and operations teams. Prepare apparel, footwear and electronics lots for direct sale.">
+  <section class="page-hero"><div class="container"><Breadcrumbs items={[{name:'Insights'}]} /><span class="eyebrow">FOR BRAND INVENTORY & OPERATIONS TEAMS</span><h1>Clearer stock reviews.<br />Better prepared handovers.</h1><p>Practical guides for the people managing their company’s surplus and returns: stock lists, internal release decisions and warehouse handovers.</p></div></section>
   <section class="section"><div class="container">
     <div class="insights-controls" id="insights-controls" hidden><div class="filter-buttons" role="group" aria-label="Filter insights by topic">{categories.map((category,i) => <button type="button" class="filter-button" data-filter={category} aria-pressed={i === 0 ? 'true' : 'false'}>{category}</button>)}</div><div class="search-box"><label class="sr-only" for="insight-search">Search insights</label><Icon name="search" size={19} /><input id="insight-search" type="search" placeholder="Search insights" /></div></div>
     <div class="article-grid" id="insights-grid">{posts.map(post => <ArticleCard post={post} />)}</div>

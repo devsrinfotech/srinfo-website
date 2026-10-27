@@ -26,7 +26,7 @@ const organization = {
   '@type': 'Organization', '@id': `${site.url}/#organization`, name: site.name, url: site.url,
   logo: { '@type': 'ImageObject', url: `${site.url}/images/organization-logo.png`, width: 600, height: 160 },
   telephone: site.phoneHref, email: site.email,
-  description: 'SR Infotech buys bulk surplus inventory, ecommerce returns and damaged-label stock across India, with its own pickup logistics.',
+  description: 'SR Infotech buys bulk surplus inventory, ecommerce returns and damaged-label stock directly from brands and retail businesses, with its own pickup logistics across India.',
   address: { '@type': 'PostalAddress', streetAddress: site.address, addressLocality: site.city, postalCode: site.postalCode, addressCountry: 'IN' },
   areaServed: { '@type': 'Country', name: 'India' }, sameAs: site.socials.map(s => s.url),
 };

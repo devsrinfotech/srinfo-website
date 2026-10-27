@@ -3,6 +3,10 @@
 ## Audience and purpose
 Write for heads of inventory, ecommerce, retail operations, reverse logistics and brand teams who need to sell surplus stock. SR Infotech is the buyer. The conversion is a relevant supplier enquiry, not a consumer shopping visit.
 
+The October 2026 acquisition focus is direct enquiries from employees of the stock-owning brand or retailer, especially in apparel, footwear and electronics. Address the people who confirm availability, manage returns and approve release. Use `/for-brands/` as the shared buying overview. Home and kitchen remains an active buying category. Avoid speculative lot-trading, reseller-profit and bargain-pallet angles. Search and AI systems cannot be instructed to exclude brokers; clear audience, ownership and operational context help visitors assess fit.
+
+The 27 October guides cover apparel release planning, footwear returns reconciliation and electronics handover coordination. They complement the earlier product-level manifest checklists. Future articles should add a distinct supplier task rather than repeat those checklists under new keywords.
+
 ## One file publishes an article
 
 Run:

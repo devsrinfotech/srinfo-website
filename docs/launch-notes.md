@@ -62,6 +62,17 @@ Retired digital marketing/SaaS pages have no relevant liquidation replacement. K
 
 There are no automatic ranking, rich-result or AI-citation guarantees. Technical readiness is the foundation; useful original content, verifiable business information and relevant industry references support ongoing growth.
 
+## Direct brand acquisition release — 27 October 2026
+
+- Owner authorised website/content changes and pushing the completed release to `main`, triggering the existing Cloudflare Pages pipeline. LinkedIn work remains phase 2.
+- Homepage, category/service introductions, about/process pages, shared CTAs and contact prompts now prioritise the stock-owning brand or retailer and its inventory, warehouse, returns and commercial teams. Apparel, footwear and electronics lead the homepage category order; home and kitchen remains available.
+- `/for-brands/` provides a linked buying overview with role-specific guidance, ownership/release context, third-party warehouse guidance and visible FAQs. Shared Organization descriptions and the page's Service description match the public offer.
+- Three guides dated 27 October cover apparel stock-release planning, footwear returns reconciliation and electronics handover coordination. Examples are labelled hypothetical; the electronics guide links to checked manufacturer guidance. Existing URLs and older publication dates are preserved.
+- Contact changes are copy and placeholder changes only. The existing `message` field asks for role and stock context. WhatsApp opens an editable generic introduction; it does not send anything automatically. No backend rollout, new form fields or analytics changes are required.
+- `npm run verify` passed: Astro diagnostics, eight unit tests, build, metadata, dates, internal links, sitemap/RSS and crawlable reachability. All 11 browser tests passed against the local production preview with CRM and Turnstile mocked. New pages were included in JavaScript-disabled and responsive checks; widths 320, 390, 768, 1000, 1024, 1151 and 1440 passed. Desktop/mobile screenshots were inspected in ignored `artifacts/brand-release/`.
+- Independent review found no blocking content or code issues. No live lead was submitted. Production deployment still needs to be confirmed after the push; local checks do not establish live deployment or indexing.
+- Clear audience language is intended to improve enquiry fit, not exclude brokers through a search-engine rule. [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features), checked 27 October, recommends the existing SEO foundations, useful text, internal links and schema consistent with visible content; no special AI file or ranking guarantee was added.
+
 ## Migration verification — 20 October 2026
 
 - The initial Cloudflare build passed type checks, all seven unit tests, production build and rendered-site SEO verification. Homepage, contact, category and article content were inspected on the deployed site.

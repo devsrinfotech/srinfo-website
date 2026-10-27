@@ -5,11 +5,11 @@ export const categories = [
     cardDescription: 'End-of-season collections, excess size runs and bulk garment returns.',
     tag: 'SEASONAL · SURPLUS · RETURNS',
     imageAlt: 'Illustrative apparel warehouse intake with folded garments, bulk cartons and tall stocked pallet racks',
-    title: 'A fresh start for your surplus apparel.',
-    description: 'Sell bulk apparel stocklots, end-of-season garments, excess size runs and damaged-label stock to SR Infotech. Pickup across India.',
-    intro: 'SR Infotech buys surplus apparel, end-of-season garments and return stocklots from brands, retailers and ecommerce businesses across India, with our own pickup logistics.',
+    title: 'A direct buyer for your brand’s surplus apparel.',
+    description: 'Sell your brand’s surplus apparel, end-of-season garments and bulk returns directly to SR Infotech, with our own pickup logistics across India.',
+    intro: 'SR Infotech buys surplus apparel, end-of-season garments and return lots directly from brands, retailers and ecommerce businesses. We work with your inventory, merchandising or warehouse team to review company-owned stock, with our own pickup logistics across India.',
     types: ['End-of-season collections', 'Overstock & excess size runs', 'Discontinued styles', 'Damaged-label stock', 'Customer return lots'],
-    details: ['Style or SKU, sizes and colour mix', 'Quantity by size and condition', 'Tag and label condition', 'Stock location and representative photos'],
+    details: ['Stock-owning company and your role in the release', 'Style or SKU, sizes and colour mix', 'Quantity by size and condition', 'Tag and label condition', 'Stock location and representative photos'],
     note: 'A label issue and a garment defect are different things. Share both clearly so the lot can be assessed on its own merits.',
     faqs: [
       { question: 'What apparel stocklots can I sell to SR Infotech?', answer: 'Submit end-of-season garments, overstock, discontinued styles, damaged-label inventory or customer return lots for review. Include style, size, colour, quantity and known condition.' },
@@ -22,11 +22,11 @@ export const categories = [
     cardDescription: 'Shoes, sandals and slippers. Bulk stocklots, size runs and customer returns.',
     tag: 'SURPLUS · SIZE RUNS · RETURNS',
     imageAlt: 'Illustrative footwear warehouse with matched shoe pairs, open bulk cartons and tall stocked pallet racks',
-    title: 'A direct buyer for your surplus footwear.',
-    description: 'Sell surplus footwear, shoe stocklots and bulk returns to SR Infotech. We buy from brands and ecommerce businesses, with our own pickup logistics across India.',
-    intro: 'SR Infotech buys bulk footwear stock from brands, retailers and ecommerce businesses across India. Share your surplus shoes, sandals, slippers or return lots; our own logistics handles pickup of the agreed stock.',
+    title: 'Move your brand’s surplus footwear forward.',
+    description: 'Direct bulk footwear buying for brands and retailers. Sell surplus shoes, sandals, slippers and return lots to SR Infotech, with pickup across India.',
+    intro: 'SR Infotech buys bulk footwear stock directly from brands, retailers and ecommerce businesses. Your inventory or returns team can share company-owned shoes, sandals, slippers and return lots; our own logistics handles pickup of the agreed stock across India.',
     types: ['Casual, sports and formal shoe stocklots', 'Sandals and slippers in bulk', 'End-of-season and discontinued styles', 'Excess sizes and uneven size runs', 'Customer returns and packaging-damaged stock'],
-    details: ['Brand, style or SKU, colour and labelled size system', 'Number of matched pairs by size; identify single shoes separately', 'Known wear, sole or upper damage and missing parts', 'Original box condition, stock location and representative photos'],
+    details: ['Stock-owning company and your role in the release', 'Brand, style or SKU, colour and labelled size system', 'Number of matched pairs by size; identify single shoes separately', 'Known wear, sole or upper damage and missing parts', 'Original box condition, stock location and representative photos'],
     note: 'Count footwear in matched pairs and state the size system shown on the product. Describe shoe condition separately from box damage. Any single shoes, mismatched pairs or known defects should be identified for review.',
     faqs: [
       { question: 'What footwear stocklots does SR Infotech buy?', answer: 'We review bulk shoes, sandals and slippers, including surplus stock, discontinued styles, excess size runs, ecommerce returns and packaging-damaged lots. Share the pair count, size mix, known condition and location so we can assess the lot.' },
@@ -57,11 +57,11 @@ export const categories = [
     cardDescription: 'Overstock, open-box and untested return lots, reviewed for their commercial fit.',
     tag: 'SURPLUS · RETURNS · UNTESTED',
     imageAlt: 'Illustrative electronics receiving bay with bulk return cartons, sorting benches and stocked warehouse racks',
-    title: 'A smarter route for surplus electronics.',
-    description: 'SR Infotech buys surplus electronics, open-box stock and untested return lots in bulk, with its own pickup logistics across India.',
-    intro: 'SR Infotech buys surplus electronics, open-box stock and commercially suitable untested return lots across India. Share the models, quantities and known condition; our own logistics handles agreed pickups.',
+    title: 'Direct buying for your brand’s electronics surplus.',
+    description: 'SR Infotech buys surplus electronics and return lots directly from brands and retailers, including suitable untested stock. Our own pickup across India.',
+    intro: 'SR Infotech buys surplus electronics, open-box stock and commercially suitable untested return lots directly from brands and retailers. We review the lot with your inventory, returns or operations team, with our own logistics for agreed pickups across India.',
     types: ['Consumer electronics & accessories', 'Overstock & discontinued models', 'Open-box inventory', 'Tested customer returns', 'Untested electronics lots'],
-    details: ['Brand, model, variant and quantities', 'Tested or untested status and known faults', 'Accessories, packaging and device locks', 'Stock location and representative photos'],
+    details: ['Stock-owning company and your role in the release', 'Brand, model, variant and quantities', 'Tested or untested status and known faults', 'Accessories, packaging and device locks', 'Stock location and representative photos'],
     note: 'Untested electronics are considered for purchase. Acceptance and pricing depend on the lot. Products discarded as e-waste require a separate route; this is an inventory buying service.',
     faqs: [
       { question: 'Do you buy untested electronics in bulk?', answer: 'Yes. SR Infotech considers untested electronics lots when the commercial fit works. Identify the models, quantities, known faults and stock location; acceptance and pricing are discussed directly.' },
@@ -77,10 +77,10 @@ export const solutions = [
     slug: 'sell-excess-inventory', name: 'Surplus & overstock', icon: 'layers',
     title: 'Less stock standing still. More room to move.',
     description: 'Sell excess inventory, overstock and slow-moving stock in India. SR Infotech buys bulk lots from brands and ecommerce businesses.',
-    intro: 'Overstock ties up space and working capital. SR Infotech buys surplus inventory in apparel, footwear, home and kitchen, and electronics, with our own logistics for pickup across India.',
+    intro: 'SR Infotech buys excess inventory directly from brands, retailers and ecommerce businesses. We discuss company-owned surplus with the team responsible for its release, with our own pickup logistics across India.',
     paragraphs: [
       ['When your stock outgrows your plan', 'An optimistic purchase order, a changed product range or a season that moved faster than expected can leave useful stock behind. Bring us the inventory your business is ready to sell in bulk.'],
-      ['One commercial conversation', 'Share your category, approximate quantity, condition and location. We review the opportunity directly with your team and discuss a purchase that fits the lot.'],
+      ['Work directly with the stock owner', 'Introduce your company and your role in inventory, operations or commercial approval. Share the available category, quantity, condition and location so we can review a purchase with the people responsible for the stock.'],
       ['From stock list to pickup', 'Our own logistics supports pickup across India. The offer, payment and collection details are agreed directly, so your team has a clear route forward.'],
     ],
     faqs: [
@@ -91,11 +91,11 @@ export const solutions = [
   {
     slug: 'ecommerce-returns', name: 'Ecommerce returns', icon: 'repeat',
     title: 'Give returned inventory a way forward.',
-    description: 'Sell ecommerce customer returns in bulk to SR Infotech. Apparel, footwear, home, kitchen and electronics return lots considered across India.',
-    intro: 'SR Infotech buys bulk ecommerce returns from brands and businesses across India, including commercially suitable untested electronics. Our own logistics handles pickup of the agreed stock.',
+    description: 'Bulk ecommerce returns buying for brands and retail teams in India. Discuss your company’s apparel, footwear or electronics return lots with SR Infotech.',
+    intro: 'SR Infotech buys bulk ecommerce returns directly from brands and retail businesses across India, including commercially suitable untested electronics. Your returns or warehouse team confirms the stock available; our own logistics handles pickup of the agreed lot.',
     paragraphs: [
       ['Returned doesn’t tell the whole story', 'A returned product may be unopened, open-box, incomplete, faulty or untested. Tell us what you know about the lot so we can assess the actual opportunity.'],
-      ['A direct route for bulk returns', 'Whether you are clearing a one-time accumulation or exploring a recurring buying relationship, start with the product categories, volume and stock location.'],
+      ['A direct route for your returns team', 'Whether your company is clearing an accumulated lot or exploring a recurring buying relationship, identify the stock owner and the team that can approve release. Share the product categories, quantities and warehouse locations.'],
       ['Keep the operational details in the conversation', 'We discuss inspection needs, commercial terms and pickup with your team. Our logistics covers collection across India, with arrangements confirmed for the specific lot.'],
     ],
     faqs: [
@@ -107,7 +107,7 @@ export const solutions = [
     slug: 'damaged-label-stock', name: 'Damaged labels & packaging', icon: 'box',
     title: 'The label changed. The opportunity didn’t.',
     description: 'Sell damaged-label and packaging-damaged stock in bulk. SR Infotech reviews apparel, footwear, home, kitchen and electronics inventory across India.',
-    intro: 'SR Infotech reviews bulk damaged-label and packaging-damaged stock for purchase across India. Share the product mix, quantity and condition so we can discuss the opportunity and pickup.',
+    intro: 'SR Infotech reviews company-owned damaged-label and packaging-damaged stock directly with brands and retail teams across India. Share the product mix, quantity and condition so we can discuss the purchase and pickup.',
     paragraphs: [
       ['Separate the product from its packaging', 'Show us whether the issue affects the label, outer box, inner packaging or the product itself. Clear photographs help us understand what your lot contains.'],
       ['Tell us about the restrictions', 'Share any applicable brand, channel or labelling requirements during the commercial discussion. These details belong in the agreed terms of the transaction.'],
@@ -122,9 +122,9 @@ export const solutions = [
 
 export const faqs = [
   { question: 'What does SR Infotech buy?', answer: 'We buy bulk surplus stock, overstock, ecommerce returns, end-of-season inventory and damaged-label or packaging-damaged goods in apparel, footwear, home and kitchen, and electronics.' },
-  { question: 'Who can sell inventory to you?', answer: 'We work with ecommerce businesses, retail brands and other businesses that own or are authorised to sell bulk inventory. Share the details of your lot to start a buying conversation.' },
+  { question: 'Who should contact SR Infotech about surplus stock?', answer: 'Our focus is direct buying from brands, retailers and ecommerce businesses that own the inventory. Inventory, warehouse, returns, supply-chain or commercial teams can introduce the lot and involve the person authorised to approve its sale.' },
   { question: 'Do you arrange pickup across India?', answer: 'Yes. SR Infotech has its own logistics for collecting goods across India. Pickup timing and arrangements are discussed for your specific lot.' },
   { question: 'Do you buy untested electronics?', answer: 'Yes, we consider untested electronics lots. Share the models, quantities, known condition and location. Acceptance and pricing depend on the specific lot and its commercial fit.' },
   { question: 'What are your minimum quantity and payment terms?', answer: 'Contact us with your stock details. We discuss quantities, pricing, payment and the other commercial terms directly with your team.' },
-  { question: 'How do I get started?', answer: 'Use the inventory enquiry form or contact us by phone, email or WhatsApp. Tell us the category, approximate quantity, condition and stock location. We can arrange the next steps for sharing your stock list.' },
+  { question: 'How do I get started?', answer: 'Introduce your company and your role, then share the category, approximate quantity, known condition and stock location through our enquiry form, phone, email or WhatsApp. Mention whether the lot is approved for release. We can arrange the next steps for sharing your stock list.' },
 ];
